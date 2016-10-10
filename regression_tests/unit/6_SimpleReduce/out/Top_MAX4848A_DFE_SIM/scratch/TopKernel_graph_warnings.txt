@@ -1,0 +1,522 @@
+*** After kernel graph-pass 'Init Graph' ***
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000000; 0.0" (ID 4) has unconnected outputs: [value]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+	engine.BaseLib.<init>(BaseLib.maxj:44)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:30)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0" (ID 6) has unconnected outputs: [value]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+	engine.BaseLib.<init>(BaseLib.maxj:46)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:30)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0" (ID 7) has unconnected outputs: [value]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:80)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:46)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "&" (ID 12) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:518)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:63)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "&" (ID 19) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:518)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:86)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "&" (ID 33) has unconnected outputs: [result]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:518)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:135)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'Init Graph' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'FoldConstantsPass' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'OptimiseNodesPass' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'SubstituteEqPlaceholders' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'SubstituteEqPlaceholders' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'ScheduleApplier' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'TapFIFOsPass' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'ReplaceEvalStreamOffsetNodes' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+*** After kernel graph-pass 'RemoveUntypedConstants' ***
+node "Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0" (ID 17) has unconnected outputs: [count]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain.addCounter(CounterChain.java:523)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:84)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (CounterChain474_sm)" (ID 21) has unconnected outputs: [saturated]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:92)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (pipe481_sm)" (ID 13) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:72)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void485_sm)" (ID 27) has unconnected outputs: [ctr_maxOut_0]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:127)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (mainSm)" (ID 1) has unconnected outputs: [sm_done]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernel.<init>(TopKernel.maxj:32)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	
+node "State Machine (void487_sm)" (ID 8) has unconnected outputs: [rst_en]
+stack trace of node origin follows:
+	com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+	engine.TopKernelLib.<init>(TopKernelLib.maxj:54)
+	engine.TopKernel.<init>(TopKernel.maxj:42)
+	engine.TopManager.<init>(MaxJManager.maxj:68)
+	engine.TopManager.main(MaxJManager.maxj:146)
+	

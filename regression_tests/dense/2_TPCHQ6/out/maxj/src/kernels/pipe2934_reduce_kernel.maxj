@@ -1,0 +1,82 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class pipe2934_reduce_kernel extends KernelLib {
+void common(DFEVector<DFEVar> Vector2895,DFEVector<DFEVar> Vector2896,DFEVector<DFEVar> Vector2897,DFEVector<DFEVar> Vector2898 /*1*/ ,
+                DFEVar FixedPoint2931 /*2*/ , DFEVar const0_FixedPoint195,DFEVar const0_FixedPoint221,DFEVar const24_FixedPoint303,DFEVar const9999_FixedPoint295,DFEVar const9999_FixedPoint300 /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+DFEVar FixedPoint2900 = Vector2895[0];
+DFEVar Bit2901 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2901 = const0_FixedPoint221 < FixedPoint2900;
+DFEVar Bit2902 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2902 = FixedPoint2900 < const9999_FixedPoint295;
+DFEVar Bit2903 = Bit2901 & Bit2902;
+DFEVar FixedPoint2904 = Vector2896[0];
+DFEVar Bit2905 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2905 = const0_FixedPoint195 <= FixedPoint2904;
+DFEVar Bit2906 = Bit2903 & Bit2905;
+DFEVar Bit2907 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2907 = FixedPoint2904 <= const9999_FixedPoint300;
+DFEVar Bit2908 = Bit2906 & Bit2907;
+DFEVar FixedPoint2909 = Vector2897[0];
+DFEVar Bit2910 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2910 = FixedPoint2909 < const24_FixedPoint303;
+DFEVar Bit2911 = Bit2908 & Bit2910;
+DFEVar FixedPoint2912 = Vector2898[0];
+DFEVar FixedPoint2913 = FixedPoint2912 * FixedPoint2904;
+DFEVar FixedPoint2914 = Bit2911 ? FixedPoint2913 : const0_FixedPoint195 ;
+DFEVar FixedPoint2915 = Vector2895[1];
+DFEVar Bit2916 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2916 = const0_FixedPoint221 < FixedPoint2915;
+DFEVar Bit2917 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2917 = FixedPoint2915 < const9999_FixedPoint295;
+DFEVar Bit2918 = Bit2916 & Bit2917;
+DFEVar FixedPoint2919 = Vector2896[1];
+DFEVar Bit2920 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2920 = const0_FixedPoint195 <= FixedPoint2919;
+DFEVar Bit2921 = Bit2918 & Bit2920;
+DFEVar Bit2922 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2922 = FixedPoint2919 <= const9999_FixedPoint300;
+DFEVar Bit2923 = Bit2921 & Bit2922;
+DFEVar FixedPoint2924 = Vector2897[1];
+DFEVar Bit2925 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2925 = FixedPoint2924 < const24_FixedPoint303;
+DFEVar Bit2926 = Bit2923 & Bit2925;
+DFEVar FixedPoint2927 = Vector2898[1];
+DFEVar FixedPoint2928 = FixedPoint2927 * FixedPoint2919;
+DFEVar FixedPoint2929 = Bit2926 ? FixedPoint2928 : const0_FixedPoint195 ;
+DFEVar FixedPoint2930 = FixedPoint2914 + FixedPoint2929;
+FixedPoint2931 <== FixedPoint2930; // is tree result, do not add Sym(2899)
+/* Unknown Deff Sym(2932) Reg_write(Sym(2334),Sym(2931),Sym(316)) */
+/* Unknown Deff Sym(2933) Reify(Sym(2932),Summary(mayRead(Sym(2771), Sym(2775), Sym(2773), Sym(2777), Sym(2334)), mstRead(Sym(2771), Sym(2775), Sym(2773), Sym(2777), Sym(2334)), mayWrite(Sym(2334)), mstWrite(Sym(2334))),List(Sym(2895), Sym(2896), Sym(2897), Sym(2898), Sym(2899), Sym(2932))) */
+}
+
+pipe2934_reduce_kernel(KernelLib owner , /*1*/ DFEVector<DFEVar> Vector2895,DFEVector<DFEVar> Vector2896,DFEVector<DFEVar> Vector2897,DFEVector<DFEVar> Vector2898 , /*2*/
+                DFEVar FixedPoint2931 , /*3*/  DFEVar const0_FixedPoint195,DFEVar const0_FixedPoint221,DFEVar const24_FixedPoint303,DFEVar const9999_FixedPoint295,DFEVar const9999_FixedPoint300) {
+  super(owner);
+  common(Vector2895, Vector2896, Vector2897, Vector2898 , FixedPoint2931 , const0_FixedPoint195,const0_FixedPoint221,const24_FixedPoint303,const9999_FixedPoint295,const9999_FixedPoint300);
+}
+}

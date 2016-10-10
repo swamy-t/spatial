@@ -1,0 +1,42 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class void1705_reduce_kernel extends KernelLib {
+void common( /*1*/ 
+                DFEVar FixedPoint1702 /*2*/ , DFEVar FixedPoint1698,DFEVar FixedPoint1699 /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+DFEVar FixedPoint1701 = FixedPoint1698 + FixedPoint1699;
+FixedPoint1702 <== FixedPoint1701; // is tree result, do not add Sym(1700)
+/* Unknown Deff Sym(1703) Reg_write(Sym(1594),Sym(1702),Sym(192)) */
+/* Unknown Deff Sym(1704) Reify(Sym(1703),Summary(mayRead(Sym(1662), Sym(1663), Sym(1594)), mstRead(Sym(1662), Sym(1663), Sym(1594)), mayWrite(Sym(1594)), mstWrite(Sym(1594))),List(Sym(1698), Sym(1699), Sym(1700), Sym(1703))) */
+}
+
+void1705_reduce_kernel(KernelLib owner  /*1*/  , /*2*/
+                DFEVar FixedPoint1702 , /*3*/  DFEVar FixedPoint1698,DFEVar FixedPoint1699) {
+  super(owner);
+  common(  FixedPoint1702 , FixedPoint1698,FixedPoint1699);
+}
+}

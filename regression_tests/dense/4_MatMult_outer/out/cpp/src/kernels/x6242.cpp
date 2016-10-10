@@ -1,0 +1,9 @@
+#include "cpphelperFuncs.h"
+string  kernel_x6242(resourceInfo_t *resourceInfo,int32_t  x6241) {
+string  x6242 = string_plus( convert_to_string< string >(string("result cksum: ")), convert_to_string< int32_t >(x6241));
+
+return x6242;
+}
+
+/**********/
+

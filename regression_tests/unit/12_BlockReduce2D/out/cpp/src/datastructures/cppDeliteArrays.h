@@ -1,0 +1,7 @@
+#include "cppDeliteStructs.h"
+#include "cppHashMap.h"
+#include "cppDeliteArraycppDeliteArrayint32_t.h"
+#include "cppDeliteArrayint32_t.h"
+#include "cppDeliteArraydouble.h"
+#include "cppDeliteArraystring.h"
+#include "cppDeliteArraybool.h"

@@ -1,0 +1,145 @@
+NodeCast {HWOffsetFix:8, 0, UNSIGNED} {HWOffsetFix:8, 0, UNSIGNED} ID: 94
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:161)
+engine.BoxedMem.write(BoxedMem.maxj:32)
+engine.BramLib.connectWport(BramLib.maxj:442)
+engine.BramLib.connectWport(BramLib.maxj:843)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:157)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(4) {HWOffsetFix:8, 0, UNSIGNED} 4 ID: 232
+
+NodeStreamOffset stream offset: -1 {HWOffsetFix:1, 0, UNSIGNED} ID: 10
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:61)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(27) {HWOffsetFix:1, 0, UNSIGNED} 27 ID: 238
+
+NodeStreamOffset stream offset: -22 {HWOffsetFix:1, 0, UNSIGNED} ID: 211
+com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:157)
+	FIFO(23) {HWOffsetFix:1, 0, UNSIGNED} 23 ID: 222
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 244
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 245
+
+NodeStateMachine State Machine (void853_sm) {HWOffsetFix:1, 0, UNSIGNED} ID: 9
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:59)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(22) {HWOffsetFix:1, 0, UNSIGNED} 22 ID: 224
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 227
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 229
+
+NodeStreamOffset stream offset: -22 {HWOffsetFix:1, 0, UNSIGNED} ID: 210
+com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:157)
+	FIFO(22) {HWOffsetFix:1, 0, UNSIGNED} 22 ID: 223
+
+NodeStreamOffset stream offset: -18 {HWOffsetFix:1, 0, UNSIGNED} ID: 208
+com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:157)
+	FIFO(19) {HWOffsetFix:1, 0, UNSIGNED} 19 ID: 215
+
+NodeStateMachine State Machine (void835_sm) {HWOffsetFix:1, 0, UNSIGNED} ID: 19
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:94)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(18) {HWOffsetFix:1, 0, UNSIGNED} 18 ID: 218
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 219
+
+NodeStreamOffset stream offset: -18 {HWOffsetFix:1, 0, UNSIGNED} ID: 207
+com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:157)
+	FIFO(17) {HWOffsetFix:1, 0, UNSIGNED} 17 ID: 217
+
+NodeStateMachine State Machine (pipe833_sm) {HWOffsetFix:1, 0, UNSIGNED} ID: 88
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:122)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(4) {HWOffsetFix:1, 0, UNSIGNED} 4 ID: 243
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 214
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 216
+
+NodeStateMachine State Machine (void851_sm) {HWOffsetFix:1, 0, UNSIGNED} ID: 110
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:230)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 225
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 226
+
+NodeAnd & {HWOffsetFix:1, 0, UNSIGNED} ID: 107
+com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:518)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:216)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(2) {HWOffsetFix:1, 0, UNSIGNED} 2 ID: 236
+
+NodeStreamOffset stream offset: -1 {HWOffsetFix:1, 0, UNSIGNED} ID: 28
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.MemoryCmdGenLib.common(MemoryCmdGen.maxj:106)
+engine.MemoryCmdGenLib.<init>(MemoryCmdGen.maxj:192)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:108)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 230
+
+NodeStateMachine State Machine (void837_sm) {HWOffsetFix:1, 0, UNSIGNED} ID: 14
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:75)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 220
+
+NodeStreamOffset stream offset: -1 {HWOffsetFix:1, 0, UNSIGNED} ID: 100
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:184)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 221
+
+NodeCounterV1 Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0 {HWOffsetFix:1, 0, UNSIGNED} ID: 119
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:383)
+engine.TopKernel.<init>(TopKernel.maxj:47)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 228
+
+NodeStateMachine State Machine (DRAM783_void825_inldSM) {HWOffsetFix:1, 0, UNSIGNED} ID: 27
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.MemoryCmdGenLib.common(MemoryCmdGen.maxj:104)
+engine.MemoryCmdGenLib.<init>(MemoryCmdGen.maxj:192)
+engine.TopKernelLib.<init>(TopKernelLib.maxj:108)
+engine.TopKernel.<init>(TopKernel.maxj:42)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 231
+
+NodeStateMachine State Machine (mainSm) {HWOffsetFix:1, 0, UNSIGNED} ID: 1
+com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernel.<init>(TopKernel.maxj:32)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWOffsetFix:1, 0, UNSIGNED} 1 ID: 239
+
+NodeReinterpret <{HWRawBits:1}> {HWRawBits:1} ID: 150
+com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.<init>(TopKernel.maxj:50)
+engine.TopManager.<init>(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:147)
+	FIFO(1) {HWRawBits:1} 1 ID: 241
+

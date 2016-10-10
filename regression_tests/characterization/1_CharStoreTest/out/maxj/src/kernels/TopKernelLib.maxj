@@ -1,0 +1,970 @@
+/*****************************************
+  MaxJ BACKEND: emitSource 
+*******************************************/
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class TopKernelLib extends BaseLib {
+TopKernelLib(KernelLib owner, DFEVar top_en, DFEVar top_done) {
+super(owner);
+
+
+
+
+
+
+
+
+
+
+int DRAM1714 = 1048576;
+
+int DRAM1715 = 2097152;
+
+int DRAM1716 = 3145728;
+
+int DRAM1717 = 4194304;
+
+
+
+
+
+
+
+
+/* Emitting Hwblock dependencies { */
+// Dep: const0_FixedPoint53 = ConstFixPt(0,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const368640_FixedPoint354 = ConstFixPt(368640,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: argin1710 = Reflect(Argin_new(Sym(53)),Summary(mutable),List())
+// Dep: const1_FixedPoint66 = ConstFixPt(1,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: argin1711 = Reflect(Argin_new(Sym(53)),Summary(mutable),List())
+// Dep: const2_FixedPoint93 = ConstFixPt(2,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const3_FixedPoint99 = ConstFixPt(3,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const512_FixedPoint111 = ConstFixPt(512,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const192_FixedPoint58 = ConstFixPt(192,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const1920_FixedPoint59 = ConstFixPt(1920,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$Signed,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B32,CharStoreTest$@558aeea2.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: Bit131 = ConstBit(true)
+DFEVar Bit131 = constant.var( true );
+// Dep: DRAM1714 = Reflect(Offchip_new(Sym(354)),Summary(mutable),List())
+// Dep: DRAM1715 = Reflect(Offchip_new(Sym(354)),Summary(mutable),List())
+// Dep: DRAM1716 = Reflect(Offchip_new(Sym(354)),Summary(mutable),List())
+// Dep: DRAM1717 = Reflect(Offchip_new(Sym(354)),Summary(mutable),List())
+/*  End Hwblock dependencies } */
+/* quoteSuffix = Map(Sym(1765) -> Map(Sym(1396) -> _chain[1].read()), Sym(1763) -> Map(Sym(1396) -> _chain[0].read()), Sym(1813) -> Map(Sym(1486) -> _chain[1].read()), Sym(1835) -> Map(Sym(1531) -> _chain[0].read()), Sym(1831) -> Map(), Sym(1807) -> Map(), Sym(1789) -> Map(Sym(1441) -> _chain[1].read()), Sym(1759) -> Map(), Sym(1837) -> Map(Sym(1531) -> _chain[1].read()), Sym(1811) -> Map(Sym(1486) -> _chain[0].read()), Sym(1787) -> Map(Sym(1441) -> _chain[0].read()), Sym(1783) -> Map()) */
+DFEVar void1847_en = top_en;
+top_done <== void1847_done;
+// Hwblock: childrenOf(void1847) = List(Sym(1845))
+/* void1847_SeqSM void1847 { */
+SMIO void1847_sm = addStateMachine("void1847_sm", new void1847_SeqSM(this));
+    void1847_sm.connectInput("sm_en", void1847_en);
+    void1847_done <== stream.offset(void1847_sm.getOutput("sm_done"),-1);
+void1847_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1847_rst_en = void1847_sm.getOutput("rst_en");
+void1847_sm.connectInput("s0_done", seq1845_done);
+seq1845_en <== void1847_sm.getOutput("s0_en");
+DFEVar void1847_datapath_en = void1847_en & ~void1847_rst_en;
+DFEVar void1847_ctr_en = void1847_datapath_en;
+/* } void1847_SeqSM void1847 */
+/* ParPipeForeach seq1845 = ParPipeForeach(CounterChain1720) { */
+{
+/* SeqSM to be emitted */
+/* seq1845_SeqSM seq1845 { */
+SMIO seq1845_sm = addStateMachine("seq1845_sm", new seq1845_SeqSM(this));
+    seq1845_sm.connectInput("sm_en", seq1845_en);
+    seq1845_done <== stream.offset(seq1845_sm.getOutput("sm_done"),-1);
+DFEVar seq1845_niter = ((FixedPoint1718 - const0_FixedPoint53) / (const1_FixedPoint66 * 1));
+seq1845_sm.connectInput("sm_numIter", seq1845_niter.cast(dfeUInt(32)));
+DFEVar seq1845_rst_en = seq1845_sm.getOutput("rst_en");
+seq1845_sm.connectInput("s0_done", void1745_done);
+void1745_en <== seq1845_sm.getOutput("s0_en");
+seq1845_sm.connectInput("s1_done", void1843_done);
+void1843_en <== seq1845_sm.getOutput("s1_en");
+DFEVar Counter1719_max_0 = FixedPoint1718;
+DFEVar seq1845_datapath_en = seq1845_en;
+DFEVar seq1845_ctr_en = void1843_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1720_en = void1843_done;
+DFEVar[] CounterChain1720_max = {FixedPoint1718};
+int[] CounterChain1720_strides = {1};
+OffsetExpr CounterChain1720_offset = stream.makeOffsetAutoLoop("CounterChain1720_offset");
+SMIO CounterChain1720 = addStateMachine("CounterChain1720_sm", new CounterChain1720_CtrSM(owner, CounterChain1720_strides)); // gap = 0
+CounterChain1720.connectInput("en", CounterChain1720_en);
+CounterChain1720.connectInput("reset", seq1845_done);
+DFEVar CounterChain1720_maxed = CounterChain1720.getOutput("saturated");
+DFEVar CounterChain1720_done = stream.offset(CounterChain1720.getOutput("done"), -1);
+OffsetExpr CounterChain1720_additionalOffset = new OffsetExpr();
+CounterChain1720.connectInput("max0", CounterChain1720_max[0]);
+DFEVar Counter1719 = CounterChain1720.getOutput("counter0");
+/* } CustomCounterChain */
+/* } seq1845_SeqSM seq1845 */
+DFEVar seq1845_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1367 = Counter1719;
+/* void1745_ParSM void1745 { */
+SMIO void1745_sm = addStateMachine("void1745_sm", new void1745_ParSM(this));
+    void1745_sm.connectInput("sm_en", void1745_en);
+    void1745_done <== stream.offset(void1745_sm.getOutput("sm_done"),-1);
+void1745_sm.connectInput("s0_done", void1728_done);
+void1728_en <== void1745_sm.getOutput("s0_en");
+void1745_sm.connectInput("s1_done", void1733_done);
+void1733_en <== void1745_sm.getOutput("s1_en");
+void1745_sm.connectInput("s2_done", void1738_done);
+void1738_en <== void1745_sm.getOutput("s2_en");
+void1745_sm.connectInput("s3_done", void1743_done);
+void1743_en <== void1745_sm.getOutput("s3_en");
+/* } void1745_ParSM void1745 */
+/* Block void1745 Parallel { */
+{
+// Unit pipe writtenIn(void1728) = List(Sym(1721))
+//   BRAM1721 = Reflect(Bram_new(Sym(354),Sym(53)),Summary(mutable),List()), isAccum(BRAM1721) = false
+/* PipeSM void1728 { */
+OffsetExpr void1728_offset = stream.makeOffsetAutoLoop("void1728_offset");
+SMIO void1728_sm = addStateMachine("void1728_sm", new PipeSM(this, 1));
+    void1728_sm.connectInput("sm_en", void1728_en);
+    void1728_done <== stream.offset(void1728_sm.getOutput("sm_done"),-1-void1728_offset);
+DFEVar void1728_rst_en = void1728_sm.getOutput("rst_en");
+void1728_sm.connectInput("rst_done", void1728_rst_done);
+void1728_rst_done <== stream.offset(void1728_rst_en, -void1728_offset-1);
+void1728_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1728_sm.connectInput("ctr_done", stream.offset(void1728_sm.getOutput("ctr_en"), -1));
+DFEVar void1728_datapath_en = void1728_en & ~void1728_rst_en;
+DFEVar void1728_ctr_en = void1728_datapath_en;
+/* } PipeSM void1728 */
+/* Block void1728 Unitpipe { */
+{
+/* Bram_store { */
+BRAM1721_0.connectWport(const0_FixedPoint53, FixedPoint1725, void1728_datapath_en); //w6
+/* } Bram_store */
+}
+/* } Block void1728 Unitpipe */
+// Unit pipe writtenIn(void1733) = List(Sym(1722))
+//   BRAM1722 = Reflect(Bram_new(Sym(354),Sym(53)),Summary(mutable),List()), isAccum(BRAM1722) = false
+/* PipeSM void1733 { */
+OffsetExpr void1733_offset = stream.makeOffsetAutoLoop("void1733_offset");
+SMIO void1733_sm = addStateMachine("void1733_sm", new PipeSM(this, 1));
+    void1733_sm.connectInput("sm_en", void1733_en);
+    void1733_done <== stream.offset(void1733_sm.getOutput("sm_done"),-1-void1733_offset);
+DFEVar void1733_rst_en = void1733_sm.getOutput("rst_en");
+void1733_sm.connectInput("rst_done", void1733_rst_done);
+void1733_rst_done <== stream.offset(void1733_rst_en, -void1733_offset-1);
+void1733_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1733_sm.connectInput("ctr_done", stream.offset(void1733_sm.getOutput("ctr_en"), -1));
+DFEVar void1733_datapath_en = void1733_en & ~void1733_rst_en;
+DFEVar void1733_ctr_en = void1733_datapath_en;
+/* } PipeSM void1733 */
+/* Block void1733 Unitpipe { */
+{
+DFEVar FixedPoint1730 = FixedPoint1729 + const1_FixedPoint66;
+/* Bram_store { */
+BRAM1722_0.connectWport(const0_FixedPoint53, FixedPoint1730, void1733_datapath_en); //w6
+/* } Bram_store */
+}
+/* } Block void1733 Unitpipe */
+// Unit pipe writtenIn(void1738) = List(Sym(1723))
+//   BRAM1723 = Reflect(Bram_new(Sym(354),Sym(53)),Summary(mutable),List()), isAccum(BRAM1723) = false
+/* PipeSM void1738 { */
+OffsetExpr void1738_offset = stream.makeOffsetAutoLoop("void1738_offset");
+SMIO void1738_sm = addStateMachine("void1738_sm", new PipeSM(this, 1));
+    void1738_sm.connectInput("sm_en", void1738_en);
+    void1738_done <== stream.offset(void1738_sm.getOutput("sm_done"),-1-void1738_offset);
+DFEVar void1738_rst_en = void1738_sm.getOutput("rst_en");
+void1738_sm.connectInput("rst_done", void1738_rst_done);
+void1738_rst_done <== stream.offset(void1738_rst_en, -void1738_offset-1);
+void1738_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1738_sm.connectInput("ctr_done", stream.offset(void1738_sm.getOutput("ctr_en"), -1));
+DFEVar void1738_datapath_en = void1738_en & ~void1738_rst_en;
+DFEVar void1738_ctr_en = void1738_datapath_en;
+/* } PipeSM void1738 */
+/* Block void1738 Unitpipe { */
+{
+DFEVar FixedPoint1735 = FixedPoint1734 + const2_FixedPoint93;
+/* Bram_store { */
+BRAM1723_0.connectWport(const0_FixedPoint53, FixedPoint1735, void1738_datapath_en); //w6
+/* } Bram_store */
+}
+/* } Block void1738 Unitpipe */
+// Unit pipe writtenIn(void1743) = List(Sym(1724))
+//   BRAM1724 = Reflect(Bram_new(Sym(354),Sym(53)),Summary(mutable),List()), isAccum(BRAM1724) = false
+/* PipeSM void1743 { */
+OffsetExpr void1743_offset = stream.makeOffsetAutoLoop("void1743_offset");
+SMIO void1743_sm = addStateMachine("void1743_sm", new PipeSM(this, 1));
+    void1743_sm.connectInput("sm_en", void1743_en);
+    void1743_done <== stream.offset(void1743_sm.getOutput("sm_done"),-1-void1743_offset);
+DFEVar void1743_rst_en = void1743_sm.getOutput("rst_en");
+void1743_sm.connectInput("rst_done", void1743_rst_done);
+void1743_rst_done <== stream.offset(void1743_rst_en, -void1743_offset-1);
+void1743_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1743_sm.connectInput("ctr_done", stream.offset(void1743_sm.getOutput("ctr_en"), -1));
+DFEVar void1743_datapath_en = void1743_en & ~void1743_rst_en;
+DFEVar void1743_ctr_en = void1743_datapath_en;
+/* } PipeSM void1743 */
+/* Block void1743 Unitpipe { */
+{
+DFEVar FixedPoint1740 = FixedPoint1739 + const3_FixedPoint99;
+/* Bram_store { */
+BRAM1724_0.connectWport(const0_FixedPoint53, FixedPoint1740, void1743_datapath_en); //w6
+/* } Bram_store */
+}
+/* } Block void1743 Unitpipe */
+}
+/* } Block void1745 Parallel */
+/* void1843_ParSM void1843 { */
+SMIO void1843_sm = addStateMachine("void1843_sm", new void1843_ParSM(this));
+    void1843_sm.connectInput("sm_en", void1843_en);
+    void1843_done <== stream.offset(void1843_sm.getOutput("sm_done"),-1);
+void1843_sm.connectInput("s0_done", void1769_done);
+void1769_en <== void1843_sm.getOutput("s0_en");
+void1843_sm.connectInput("s1_done", void1793_done);
+void1793_en <== void1843_sm.getOutput("s1_en");
+void1843_sm.connectInput("s2_done", void1817_done);
+void1817_en <== void1843_sm.getOutput("s2_en");
+void1843_sm.connectInput("s3_done", void1841_done);
+void1841_en <== void1843_sm.getOutput("s3_en");
+/* } void1843_ParSM void1843 */
+/* Block void1843 Parallel { */
+{
+// Unit pipe writtenIn(void1769) = List()
+/* void1769_MPSM void1769 { */
+SMIO void1769_sm = addStateMachine("void1769_sm", new void1769_MPSM(this));
+    void1769_sm.connectInput("sm_en", void1769_en);
+    void1769_done <== stream.offset(void1769_sm.getOutput("sm_done"),-1);
+void1769_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1769_rst_en = void1769_sm.getOutput("rst_en");
+void1769_sm.connectInput("s0_done", metapipe1767_done);
+metapipe1767_en <== void1769_sm.getOutput("s0_en");
+DFEVar void1769_datapath_en = void1769_en & ~void1769_rst_en;
+DFEVar void1769_ctr_en = void1769_datapath_en;
+/* } void1769_MPSM void1769 */
+/* Block void1769 Unitpipe { */
+{
+// FIFO FIFO1746 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint111, const0_FixedPoint53);
+DFEVector<DFEVar> FIFO1746_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVector<DFEVar> FIFO1746_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVar FIFO1746_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1746_writeEn = dfeBool().newInstance(this);
+/* ParPipeForeach metapipe1767 = ParPipeForeach(CounterChain1748) { */
+{
+/* MPSM to be emitted */
+/* metapipe1767_MPSM metapipe1767 { */
+SMIO metapipe1767_sm = addStateMachine("metapipe1767_sm", new metapipe1767_MPSM(this));
+    metapipe1767_sm.connectInput("sm_en", metapipe1767_en);
+    metapipe1767_done <== stream.offset(metapipe1767_sm.getOutput("sm_done"),-1);
+DFEVar metapipe1767_niter = ((const192_FixedPoint58 - const0_FixedPoint53) / (const1_FixedPoint66 * 1));
+metapipe1767_sm.connectInput("sm_numIter", metapipe1767_niter.cast(dfeUInt(32)));
+DFEVar metapipe1767_rst_en = metapipe1767_sm.getOutput("rst_en");
+metapipe1767_sm.connectInput("s0_done", pipe1759_done);
+pipe1759_en <== metapipe1767_sm.getOutput("s0_en");
+metapipe1767_sm.connectInput("s1_done", void1763_done);
+void1763_en <== metapipe1767_sm.getOutput("s1_en");
+metapipe1767_sm.connectInput("s2_done", void1765_done);
+void1765_en <== metapipe1767_sm.getOutput("s2_en");
+DFEVar Counter1747_max_0 = const192_FixedPoint58;
+DFEVar metapipe1767_datapath_en = metapipe1767_en;
+DFEVar metapipe1767_ctr_en = pipe1759_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1748_en = pipe1759_done;
+DFEVar[] CounterChain1748_max = {const192_FixedPoint58};
+int[] CounterChain1748_strides = {1};
+OffsetExpr CounterChain1748_offset = stream.makeOffsetAutoLoop("CounterChain1748_offset");
+SMIO CounterChain1748 = addStateMachine("CounterChain1748_sm", new CounterChain1748_CtrSM(owner, CounterChain1748_strides)); // gap = 0
+CounterChain1748.connectInput("en", CounterChain1748_en);
+CounterChain1748.connectInput("reset", metapipe1767_done);
+DFEVar CounterChain1748_maxed = CounterChain1748.getOutput("saturated");
+DFEVar CounterChain1748_done = stream.offset(CounterChain1748.getOutput("done"), -1);
+OffsetExpr CounterChain1748_additionalOffset = new OffsetExpr();
+CounterChain1748.connectInput("max0", CounterChain1748_max[0]);
+DFEVar Counter1747 = CounterChain1748.getOutput("counter0");
+/* } CustomCounterChain */
+/* } metapipe1767_MPSM metapipe1767 */
+DFEVar metapipe1767_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1396 = Counter1747;
+DblBufReg[] FixedPoint1396_chain = spatialUtils.getRegChain(
+              "metapipe1767_FixedPoint1396", 3, FixedPoint1396,
+              new DFEVar[]{pipe1759_done,void1763_done,void1765_done});
+/* ParPipeForeach pipe1759 = ParPipeForeach(CounterChain1750) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1759 { */
+OffsetExpr pipe1759_offset = stream.makeOffsetAutoLoop("pipe1759_offset");
+SMIO pipe1759_sm = addStateMachine("pipe1759_sm", new PipeSM(this, 1));
+    pipe1759_sm.connectInput("sm_en", pipe1759_en);
+    pipe1759_done <== stream.offset(pipe1759_sm.getOutput("sm_done"),-1-pipe1759_offset);
+DFEVar pipe1759_rst_en = pipe1759_sm.getOutput("rst_en");
+pipe1759_sm.connectInput("rst_done", pipe1759_rst_done);
+pipe1759_rst_done <== stream.offset(pipe1759_rst_en, -pipe1759_offset-1);
+pipe1759_sm.connectInput("sm_maxIn_0", const1920_FixedPoint59);
+DFEVar Counter1749_max_0 = pipe1759_sm.getOutput("ctr_maxOut_0");
+pipe1759_sm.connectInput("ctr_done", CounterChain1750_done);
+DFEVar pipe1759_datapath_en = pipe1759_sm.getOutput("ctr_en");
+DFEVar pipe1759_ctr_en = pipe1759_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1750_en = pipe1759_datapath_en;
+DFEVar[] CounterChain1750_max = {Counter1749_max_0};
+int[] CounterChain1750_strides = {1};
+OffsetExpr CounterChain1750_offset = stream.makeOffsetAutoLoop("CounterChain1750_offset");
+SMIO CounterChain1750 = addStateMachine("CounterChain1750_sm", new CounterChain1750_CtrSM(owner, CounterChain1750_strides)); // gap = 0
+CounterChain1750.connectInput("en", CounterChain1750_en);
+CounterChain1750.connectInput("reset", pipe1759_done);
+DFEVar CounterChain1750_maxed = CounterChain1750.getOutput("saturated");
+CounterChain1750_done <== stream.offset(CounterChain1750.getOutput("done"), -1);
+OffsetExpr CounterChain1750_additionalOffset = new OffsetExpr();
+CounterChain1750.connectInput("max0", CounterChain1750_max[0]);
+DFEVector<DFEVar> Counter1749 = new DFEVectorType<DFEVar>(dfeInt(32), 4).newInstance(this);
+Counter1749[0] <== CounterChain1750.getOutput("counter0");
+for (int i = 0; i < 3; i++) {
+  Counter1749[i+1] <== CounterChain1750.getOutput("counter0_extension" + i);
+}
+/* } CustomCounterChain */
+/* } PipeSM pipe1759 */
+DFEVar pipe1759_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1399 = Counter1749[0];
+DFEVar FixedPoint1400 = Counter1749[1];
+DFEVar FixedPoint1401 = Counter1749[2];
+DFEVar FixedPoint1402 = Counter1749[3];
+DFEVar FixedPoint1403 = FixedPoint1396 * const1920_FixedPoint59;
+DFEVar FixedPoint1404 = FixedPoint1403 + FixedPoint1399;
+DFEVar FixedPoint1405 = FixedPoint1403 + FixedPoint1400;
+DFEVar FixedPoint1406 = FixedPoint1403 + FixedPoint1401;
+DFEVar FixedPoint1407 = FixedPoint1403 + FixedPoint1402;
+DFEVector<DFEVar> Vector1408 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1404,FixedPoint1405,FixedPoint1406,FixedPoint1407));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1751 = BRAM1721_0.connectRport(Vector1408); //r1.0
+/* } Bram_load */
+DFEVar Bit1415 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1415 <== FixedPoint1399 < const1920_FixedPoint59;
+DFEVar Bit1416 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1416 <== FixedPoint1400 < const1920_FixedPoint59;
+DFEVar Bit1417 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1417 <== FixedPoint1401 < const1920_FixedPoint59;
+DFEVar Bit1418 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1418 <== FixedPoint1402 < const1920_FixedPoint59;
+DFEVector<DFEVar> Vector1419 = new DFEVectorType<DFEVar>(dfeFixOffset(1, 0, SignMode.UNSIGNED), 4).newInstance(this, Arrays.asList(Bit1415,Bit1416,Bit1417,Bit1418));
+DFEVar FixedPoint1752 = Vector1751[0];
+DFEVar FixedPoint1753 = Vector1751[1];
+DFEVar FixedPoint1754 = Vector1751[2];
+DFEVar FixedPoint1755 = Vector1751[3];
+DFEVector<DFEVar> Vector1756 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1752,FixedPoint1753,FixedPoint1754,FixedPoint1755));
+// Par_push_fifo(FIFO1746, Vector1756, Vector1419, true);
+FIFO1746_writeEn <== pipe1759_ctr_en;
+FIFO1746_wdata <== Vector1756;
+}
+/* } ParPipeForeach pipe1759 */
+// Unit pipe writtenIn(void1763) = List(Sym(1760))
+//   reg1760 = Reflect(Reg_new(Sym(53)),Summary(mutable),List()), isAccum(reg1760) = false
+/* PipeSM void1763 { */
+OffsetExpr void1763_offset = stream.makeOffsetAutoLoop("void1763_offset");
+SMIO void1763_sm = addStateMachine("void1763_sm", new PipeSM(this, 1));
+    void1763_sm.connectInput("sm_en", void1763_en);
+    void1763_done <== stream.offset(void1763_sm.getOutput("sm_done"),-1-void1763_offset);
+DFEVar void1763_rst_en = void1763_sm.getOutput("rst_en");
+void1763_sm.connectInput("rst_done", void1763_rst_done);
+void1763_rst_done <== stream.offset(void1763_rst_en, -void1763_offset-1);
+void1763_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1763_sm.connectInput("ctr_done", stream.offset(void1763_sm.getOutput("ctr_en"), -1));
+DFEVar void1763_datapath_en = void1763_en & ~void1763_rst_en;
+DFEVar void1763_ctr_en = void1763_datapath_en;
+/* } PipeSM void1763 */
+/* Block void1763 Unitpipe { */
+{
+DFEVar FixedPoint1403 = FixedPoint1396_chain[0].read() * const1920_FixedPoint59;
+/* Reg_write { */
+reg1760_0_lib.write(FixedPoint1403, void1763_done, constant.var(false), 0);
+/* } Reg_write // regType spatial.shared.SpatialIdentifiers$Regular$@5e9861b7, numDuplicates = 1 */
+}
+/* } Block void1763 Unitpipe */
+DFEVar FixedPoint1764 = reg1760_0_lib.read(1); // reg read
+// void1765: Offchip_store_cmd(DRAM1714,FIFO1746, FixedPoint1764, const1920_FixedPoint59, 4)
+MemoryCmdStLib void1765 = new MemoryCmdStLib(
+          this,
+          void1765_en, void1765_done,
+          DRAM1714, FixedPoint1764,
+          "DRAM1714_void1765_out",
+          const1920_FixedPoint59,
+          FIFO1746_writeEn, FIFO1746_wdata);
+FIFO1746_readEn <== void1765_en;
+}
+/* } ParPipeForeach metapipe1767 */
+}
+/* } Block void1769 Unitpipe */
+// Unit pipe writtenIn(void1793) = List()
+/* void1793_MPSM void1793 { */
+SMIO void1793_sm = addStateMachine("void1793_sm", new void1793_MPSM(this));
+    void1793_sm.connectInput("sm_en", void1793_en);
+    void1793_done <== stream.offset(void1793_sm.getOutput("sm_done"),-1);
+void1793_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1793_rst_en = void1793_sm.getOutput("rst_en");
+void1793_sm.connectInput("s0_done", metapipe1791_done);
+metapipe1791_en <== void1793_sm.getOutput("s0_en");
+DFEVar void1793_datapath_en = void1793_en & ~void1793_rst_en;
+DFEVar void1793_ctr_en = void1793_datapath_en;
+/* } void1793_MPSM void1793 */
+/* Block void1793 Unitpipe { */
+{
+// FIFO FIFO1770 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint111, const0_FixedPoint53);
+DFEVector<DFEVar> FIFO1770_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVector<DFEVar> FIFO1770_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVar FIFO1770_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1770_writeEn = dfeBool().newInstance(this);
+/* ParPipeForeach metapipe1791 = ParPipeForeach(CounterChain1772) { */
+{
+/* MPSM to be emitted */
+/* metapipe1791_MPSM metapipe1791 { */
+SMIO metapipe1791_sm = addStateMachine("metapipe1791_sm", new metapipe1791_MPSM(this));
+    metapipe1791_sm.connectInput("sm_en", metapipe1791_en);
+    metapipe1791_done <== stream.offset(metapipe1791_sm.getOutput("sm_done"),-1);
+DFEVar metapipe1791_niter = ((const192_FixedPoint58 - const0_FixedPoint53) / (const1_FixedPoint66 * 1));
+metapipe1791_sm.connectInput("sm_numIter", metapipe1791_niter.cast(dfeUInt(32)));
+DFEVar metapipe1791_rst_en = metapipe1791_sm.getOutput("rst_en");
+metapipe1791_sm.connectInput("s0_done", pipe1783_done);
+pipe1783_en <== metapipe1791_sm.getOutput("s0_en");
+metapipe1791_sm.connectInput("s1_done", void1787_done);
+void1787_en <== metapipe1791_sm.getOutput("s1_en");
+metapipe1791_sm.connectInput("s2_done", void1789_done);
+void1789_en <== metapipe1791_sm.getOutput("s2_en");
+DFEVar Counter1771_max_0 = const192_FixedPoint58;
+DFEVar metapipe1791_datapath_en = metapipe1791_en;
+DFEVar metapipe1791_ctr_en = pipe1783_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1772_en = pipe1783_done;
+DFEVar[] CounterChain1772_max = {const192_FixedPoint58};
+int[] CounterChain1772_strides = {1};
+OffsetExpr CounterChain1772_offset = stream.makeOffsetAutoLoop("CounterChain1772_offset");
+SMIO CounterChain1772 = addStateMachine("CounterChain1772_sm", new CounterChain1772_CtrSM(owner, CounterChain1772_strides)); // gap = 0
+CounterChain1772.connectInput("en", CounterChain1772_en);
+CounterChain1772.connectInput("reset", metapipe1791_done);
+DFEVar CounterChain1772_maxed = CounterChain1772.getOutput("saturated");
+DFEVar CounterChain1772_done = stream.offset(CounterChain1772.getOutput("done"), -1);
+OffsetExpr CounterChain1772_additionalOffset = new OffsetExpr();
+CounterChain1772.connectInput("max0", CounterChain1772_max[0]);
+DFEVar Counter1771 = CounterChain1772.getOutput("counter0");
+/* } CustomCounterChain */
+/* } metapipe1791_MPSM metapipe1791 */
+DFEVar metapipe1791_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1441 = Counter1771;
+DblBufReg[] FixedPoint1441_chain = spatialUtils.getRegChain(
+              "metapipe1791_FixedPoint1441", 3, FixedPoint1441,
+              new DFEVar[]{pipe1783_done,void1787_done,void1789_done});
+/* ParPipeForeach pipe1783 = ParPipeForeach(CounterChain1774) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1783 { */
+OffsetExpr pipe1783_offset = stream.makeOffsetAutoLoop("pipe1783_offset");
+SMIO pipe1783_sm = addStateMachine("pipe1783_sm", new PipeSM(this, 1));
+    pipe1783_sm.connectInput("sm_en", pipe1783_en);
+    pipe1783_done <== stream.offset(pipe1783_sm.getOutput("sm_done"),-1-pipe1783_offset);
+DFEVar pipe1783_rst_en = pipe1783_sm.getOutput("rst_en");
+pipe1783_sm.connectInput("rst_done", pipe1783_rst_done);
+pipe1783_rst_done <== stream.offset(pipe1783_rst_en, -pipe1783_offset-1);
+pipe1783_sm.connectInput("sm_maxIn_0", const1920_FixedPoint59);
+DFEVar Counter1773_max_0 = pipe1783_sm.getOutput("ctr_maxOut_0");
+pipe1783_sm.connectInput("ctr_done", CounterChain1774_done);
+DFEVar pipe1783_datapath_en = pipe1783_sm.getOutput("ctr_en");
+DFEVar pipe1783_ctr_en = pipe1783_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1774_en = pipe1783_datapath_en;
+DFEVar[] CounterChain1774_max = {Counter1773_max_0};
+int[] CounterChain1774_strides = {1};
+OffsetExpr CounterChain1774_offset = stream.makeOffsetAutoLoop("CounterChain1774_offset");
+SMIO CounterChain1774 = addStateMachine("CounterChain1774_sm", new CounterChain1774_CtrSM(owner, CounterChain1774_strides)); // gap = 0
+CounterChain1774.connectInput("en", CounterChain1774_en);
+CounterChain1774.connectInput("reset", pipe1783_done);
+DFEVar CounterChain1774_maxed = CounterChain1774.getOutput("saturated");
+CounterChain1774_done <== stream.offset(CounterChain1774.getOutput("done"), -1);
+OffsetExpr CounterChain1774_additionalOffset = new OffsetExpr();
+CounterChain1774.connectInput("max0", CounterChain1774_max[0]);
+DFEVector<DFEVar> Counter1773 = new DFEVectorType<DFEVar>(dfeInt(32), 4).newInstance(this);
+Counter1773[0] <== CounterChain1774.getOutput("counter0");
+for (int i = 0; i < 3; i++) {
+  Counter1773[i+1] <== CounterChain1774.getOutput("counter0_extension" + i);
+}
+/* } CustomCounterChain */
+/* } PipeSM pipe1783 */
+DFEVar pipe1783_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1444 = Counter1773[0];
+DFEVar FixedPoint1445 = Counter1773[1];
+DFEVar FixedPoint1446 = Counter1773[2];
+DFEVar FixedPoint1447 = Counter1773[3];
+DFEVar FixedPoint1448 = FixedPoint1441 * const1920_FixedPoint59;
+DFEVar FixedPoint1449 = FixedPoint1448 + FixedPoint1444;
+DFEVar FixedPoint1450 = FixedPoint1448 + FixedPoint1445;
+DFEVar FixedPoint1451 = FixedPoint1448 + FixedPoint1446;
+DFEVar FixedPoint1452 = FixedPoint1448 + FixedPoint1447;
+DFEVector<DFEVar> Vector1453 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1449,FixedPoint1450,FixedPoint1451,FixedPoint1452));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1775 = BRAM1722_0.connectRport(Vector1453); //r1.0
+/* } Bram_load */
+DFEVar Bit1460 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1460 <== FixedPoint1444 < const1920_FixedPoint59;
+DFEVar Bit1461 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1461 <== FixedPoint1445 < const1920_FixedPoint59;
+DFEVar Bit1462 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1462 <== FixedPoint1446 < const1920_FixedPoint59;
+DFEVar Bit1463 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1463 <== FixedPoint1447 < const1920_FixedPoint59;
+DFEVector<DFEVar> Vector1464 = new DFEVectorType<DFEVar>(dfeFixOffset(1, 0, SignMode.UNSIGNED), 4).newInstance(this, Arrays.asList(Bit1460,Bit1461,Bit1462,Bit1463));
+DFEVar FixedPoint1776 = Vector1775[0];
+DFEVar FixedPoint1777 = Vector1775[1];
+DFEVar FixedPoint1778 = Vector1775[2];
+DFEVar FixedPoint1779 = Vector1775[3];
+DFEVector<DFEVar> Vector1780 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1776,FixedPoint1777,FixedPoint1778,FixedPoint1779));
+// Par_push_fifo(FIFO1770, Vector1780, Vector1464, true);
+FIFO1770_writeEn <== pipe1783_ctr_en;
+FIFO1770_wdata <== Vector1780;
+}
+/* } ParPipeForeach pipe1783 */
+// Unit pipe writtenIn(void1787) = List(Sym(1784))
+//   reg1784 = Reflect(Reg_new(Sym(53)),Summary(mutable),List()), isAccum(reg1784) = false
+/* PipeSM void1787 { */
+OffsetExpr void1787_offset = stream.makeOffsetAutoLoop("void1787_offset");
+SMIO void1787_sm = addStateMachine("void1787_sm", new PipeSM(this, 1));
+    void1787_sm.connectInput("sm_en", void1787_en);
+    void1787_done <== stream.offset(void1787_sm.getOutput("sm_done"),-1-void1787_offset);
+DFEVar void1787_rst_en = void1787_sm.getOutput("rst_en");
+void1787_sm.connectInput("rst_done", void1787_rst_done);
+void1787_rst_done <== stream.offset(void1787_rst_en, -void1787_offset-1);
+void1787_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1787_sm.connectInput("ctr_done", stream.offset(void1787_sm.getOutput("ctr_en"), -1));
+DFEVar void1787_datapath_en = void1787_en & ~void1787_rst_en;
+DFEVar void1787_ctr_en = void1787_datapath_en;
+/* } PipeSM void1787 */
+/* Block void1787 Unitpipe { */
+{
+DFEVar FixedPoint1448 = FixedPoint1441_chain[0].read() * const1920_FixedPoint59;
+/* Reg_write { */
+reg1784_0_lib.write(FixedPoint1448, void1787_done, constant.var(false), 0);
+/* } Reg_write // regType spatial.shared.SpatialIdentifiers$Regular$@5e9861b7, numDuplicates = 1 */
+}
+/* } Block void1787 Unitpipe */
+DFEVar FixedPoint1788 = reg1784_0_lib.read(1); // reg read
+// void1789: Offchip_store_cmd(DRAM1715,FIFO1770, FixedPoint1788, const1920_FixedPoint59, 4)
+MemoryCmdStLib void1789 = new MemoryCmdStLib(
+          this,
+          void1789_en, void1789_done,
+          DRAM1715, FixedPoint1788,
+          "DRAM1715_void1789_out",
+          const1920_FixedPoint59,
+          FIFO1770_writeEn, FIFO1770_wdata);
+FIFO1770_readEn <== void1789_en;
+}
+/* } ParPipeForeach metapipe1791 */
+}
+/* } Block void1793 Unitpipe */
+// Unit pipe writtenIn(void1817) = List()
+/* void1817_MPSM void1817 { */
+SMIO void1817_sm = addStateMachine("void1817_sm", new void1817_MPSM(this));
+    void1817_sm.connectInput("sm_en", void1817_en);
+    void1817_done <== stream.offset(void1817_sm.getOutput("sm_done"),-1);
+void1817_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1817_rst_en = void1817_sm.getOutput("rst_en");
+void1817_sm.connectInput("s0_done", metapipe1815_done);
+metapipe1815_en <== void1817_sm.getOutput("s0_en");
+DFEVar void1817_datapath_en = void1817_en & ~void1817_rst_en;
+DFEVar void1817_ctr_en = void1817_datapath_en;
+/* } void1817_MPSM void1817 */
+/* Block void1817 Unitpipe { */
+{
+// FIFO FIFO1794 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint111, const0_FixedPoint53);
+DFEVector<DFEVar> FIFO1794_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVector<DFEVar> FIFO1794_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVar FIFO1794_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1794_writeEn = dfeBool().newInstance(this);
+/* ParPipeForeach metapipe1815 = ParPipeForeach(CounterChain1796) { */
+{
+/* MPSM to be emitted */
+/* metapipe1815_MPSM metapipe1815 { */
+SMIO metapipe1815_sm = addStateMachine("metapipe1815_sm", new metapipe1815_MPSM(this));
+    metapipe1815_sm.connectInput("sm_en", metapipe1815_en);
+    metapipe1815_done <== stream.offset(metapipe1815_sm.getOutput("sm_done"),-1);
+DFEVar metapipe1815_niter = ((const192_FixedPoint58 - const0_FixedPoint53) / (const1_FixedPoint66 * 1));
+metapipe1815_sm.connectInput("sm_numIter", metapipe1815_niter.cast(dfeUInt(32)));
+DFEVar metapipe1815_rst_en = metapipe1815_sm.getOutput("rst_en");
+metapipe1815_sm.connectInput("s0_done", pipe1807_done);
+pipe1807_en <== metapipe1815_sm.getOutput("s0_en");
+metapipe1815_sm.connectInput("s1_done", void1811_done);
+void1811_en <== metapipe1815_sm.getOutput("s1_en");
+metapipe1815_sm.connectInput("s2_done", void1813_done);
+void1813_en <== metapipe1815_sm.getOutput("s2_en");
+DFEVar Counter1795_max_0 = const192_FixedPoint58;
+DFEVar metapipe1815_datapath_en = metapipe1815_en;
+DFEVar metapipe1815_ctr_en = pipe1807_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1796_en = pipe1807_done;
+DFEVar[] CounterChain1796_max = {const192_FixedPoint58};
+int[] CounterChain1796_strides = {1};
+OffsetExpr CounterChain1796_offset = stream.makeOffsetAutoLoop("CounterChain1796_offset");
+SMIO CounterChain1796 = addStateMachine("CounterChain1796_sm", new CounterChain1796_CtrSM(owner, CounterChain1796_strides)); // gap = 0
+CounterChain1796.connectInput("en", CounterChain1796_en);
+CounterChain1796.connectInput("reset", metapipe1815_done);
+DFEVar CounterChain1796_maxed = CounterChain1796.getOutput("saturated");
+DFEVar CounterChain1796_done = stream.offset(CounterChain1796.getOutput("done"), -1);
+OffsetExpr CounterChain1796_additionalOffset = new OffsetExpr();
+CounterChain1796.connectInput("max0", CounterChain1796_max[0]);
+DFEVar Counter1795 = CounterChain1796.getOutput("counter0");
+/* } CustomCounterChain */
+/* } metapipe1815_MPSM metapipe1815 */
+DFEVar metapipe1815_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1486 = Counter1795;
+DblBufReg[] FixedPoint1486_chain = spatialUtils.getRegChain(
+              "metapipe1815_FixedPoint1486", 3, FixedPoint1486,
+              new DFEVar[]{pipe1807_done,void1811_done,void1813_done});
+/* ParPipeForeach pipe1807 = ParPipeForeach(CounterChain1798) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1807 { */
+OffsetExpr pipe1807_offset = stream.makeOffsetAutoLoop("pipe1807_offset");
+SMIO pipe1807_sm = addStateMachine("pipe1807_sm", new PipeSM(this, 1));
+    pipe1807_sm.connectInput("sm_en", pipe1807_en);
+    pipe1807_done <== stream.offset(pipe1807_sm.getOutput("sm_done"),-1-pipe1807_offset);
+DFEVar pipe1807_rst_en = pipe1807_sm.getOutput("rst_en");
+pipe1807_sm.connectInput("rst_done", pipe1807_rst_done);
+pipe1807_rst_done <== stream.offset(pipe1807_rst_en, -pipe1807_offset-1);
+pipe1807_sm.connectInput("sm_maxIn_0", const1920_FixedPoint59);
+DFEVar Counter1797_max_0 = pipe1807_sm.getOutput("ctr_maxOut_0");
+pipe1807_sm.connectInput("ctr_done", CounterChain1798_done);
+DFEVar pipe1807_datapath_en = pipe1807_sm.getOutput("ctr_en");
+DFEVar pipe1807_ctr_en = pipe1807_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1798_en = pipe1807_datapath_en;
+DFEVar[] CounterChain1798_max = {Counter1797_max_0};
+int[] CounterChain1798_strides = {1};
+OffsetExpr CounterChain1798_offset = stream.makeOffsetAutoLoop("CounterChain1798_offset");
+SMIO CounterChain1798 = addStateMachine("CounterChain1798_sm", new CounterChain1798_CtrSM(owner, CounterChain1798_strides)); // gap = 0
+CounterChain1798.connectInput("en", CounterChain1798_en);
+CounterChain1798.connectInput("reset", pipe1807_done);
+DFEVar CounterChain1798_maxed = CounterChain1798.getOutput("saturated");
+CounterChain1798_done <== stream.offset(CounterChain1798.getOutput("done"), -1);
+OffsetExpr CounterChain1798_additionalOffset = new OffsetExpr();
+CounterChain1798.connectInput("max0", CounterChain1798_max[0]);
+DFEVector<DFEVar> Counter1797 = new DFEVectorType<DFEVar>(dfeInt(32), 4).newInstance(this);
+Counter1797[0] <== CounterChain1798.getOutput("counter0");
+for (int i = 0; i < 3; i++) {
+  Counter1797[i+1] <== CounterChain1798.getOutput("counter0_extension" + i);
+}
+/* } CustomCounterChain */
+/* } PipeSM pipe1807 */
+DFEVar pipe1807_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1489 = Counter1797[0];
+DFEVar FixedPoint1490 = Counter1797[1];
+DFEVar FixedPoint1491 = Counter1797[2];
+DFEVar FixedPoint1492 = Counter1797[3];
+DFEVar FixedPoint1493 = FixedPoint1486 * const1920_FixedPoint59;
+DFEVar FixedPoint1494 = FixedPoint1493 + FixedPoint1489;
+DFEVar FixedPoint1495 = FixedPoint1493 + FixedPoint1490;
+DFEVar FixedPoint1496 = FixedPoint1493 + FixedPoint1491;
+DFEVar FixedPoint1497 = FixedPoint1493 + FixedPoint1492;
+DFEVector<DFEVar> Vector1498 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1494,FixedPoint1495,FixedPoint1496,FixedPoint1497));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1799 = BRAM1723_0.connectRport(Vector1498); //r1.0
+/* } Bram_load */
+DFEVar Bit1505 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1505 <== FixedPoint1489 < const1920_FixedPoint59;
+DFEVar Bit1506 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1506 <== FixedPoint1490 < const1920_FixedPoint59;
+DFEVar Bit1507 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1507 <== FixedPoint1491 < const1920_FixedPoint59;
+DFEVar Bit1508 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1508 <== FixedPoint1492 < const1920_FixedPoint59;
+DFEVector<DFEVar> Vector1509 = new DFEVectorType<DFEVar>(dfeFixOffset(1, 0, SignMode.UNSIGNED), 4).newInstance(this, Arrays.asList(Bit1505,Bit1506,Bit1507,Bit1508));
+DFEVar FixedPoint1800 = Vector1799[0];
+DFEVar FixedPoint1801 = Vector1799[1];
+DFEVar FixedPoint1802 = Vector1799[2];
+DFEVar FixedPoint1803 = Vector1799[3];
+DFEVector<DFEVar> Vector1804 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1800,FixedPoint1801,FixedPoint1802,FixedPoint1803));
+// Par_push_fifo(FIFO1794, Vector1804, Vector1509, true);
+FIFO1794_writeEn <== pipe1807_ctr_en;
+FIFO1794_wdata <== Vector1804;
+}
+/* } ParPipeForeach pipe1807 */
+// Unit pipe writtenIn(void1811) = List(Sym(1808))
+//   reg1808 = Reflect(Reg_new(Sym(53)),Summary(mutable),List()), isAccum(reg1808) = false
+/* PipeSM void1811 { */
+OffsetExpr void1811_offset = stream.makeOffsetAutoLoop("void1811_offset");
+SMIO void1811_sm = addStateMachine("void1811_sm", new PipeSM(this, 1));
+    void1811_sm.connectInput("sm_en", void1811_en);
+    void1811_done <== stream.offset(void1811_sm.getOutput("sm_done"),-1-void1811_offset);
+DFEVar void1811_rst_en = void1811_sm.getOutput("rst_en");
+void1811_sm.connectInput("rst_done", void1811_rst_done);
+void1811_rst_done <== stream.offset(void1811_rst_en, -void1811_offset-1);
+void1811_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1811_sm.connectInput("ctr_done", stream.offset(void1811_sm.getOutput("ctr_en"), -1));
+DFEVar void1811_datapath_en = void1811_en & ~void1811_rst_en;
+DFEVar void1811_ctr_en = void1811_datapath_en;
+/* } PipeSM void1811 */
+/* Block void1811 Unitpipe { */
+{
+DFEVar FixedPoint1493 = FixedPoint1486_chain[0].read() * const1920_FixedPoint59;
+/* Reg_write { */
+reg1808_0_lib.write(FixedPoint1493, void1811_done, constant.var(false), 0);
+/* } Reg_write // regType spatial.shared.SpatialIdentifiers$Regular$@5e9861b7, numDuplicates = 1 */
+}
+/* } Block void1811 Unitpipe */
+DFEVar FixedPoint1812 = reg1808_0_lib.read(1); // reg read
+// void1813: Offchip_store_cmd(DRAM1716,FIFO1794, FixedPoint1812, const1920_FixedPoint59, 4)
+MemoryCmdStLib void1813 = new MemoryCmdStLib(
+          this,
+          void1813_en, void1813_done,
+          DRAM1716, FixedPoint1812,
+          "DRAM1716_void1813_out",
+          const1920_FixedPoint59,
+          FIFO1794_writeEn, FIFO1794_wdata);
+FIFO1794_readEn <== void1813_en;
+}
+/* } ParPipeForeach metapipe1815 */
+}
+/* } Block void1817 Unitpipe */
+// Unit pipe writtenIn(void1841) = List()
+/* void1841_MPSM void1841 { */
+SMIO void1841_sm = addStateMachine("void1841_sm", new void1841_MPSM(this));
+    void1841_sm.connectInput("sm_en", void1841_en);
+    void1841_done <== stream.offset(void1841_sm.getOutput("sm_done"),-1);
+void1841_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1841_rst_en = void1841_sm.getOutput("rst_en");
+void1841_sm.connectInput("s0_done", metapipe1839_done);
+metapipe1839_en <== void1841_sm.getOutput("s0_en");
+DFEVar void1841_datapath_en = void1841_en & ~void1841_rst_en;
+DFEVar void1841_ctr_en = void1841_datapath_en;
+/* } void1841_MPSM void1841 */
+/* Block void1841 Unitpipe { */
+{
+// FIFO FIFO1818 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint111, const0_FixedPoint53);
+DFEVector<DFEVar> FIFO1818_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVector<DFEVar> FIFO1818_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this);
+DFEVar FIFO1818_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1818_writeEn = dfeBool().newInstance(this);
+/* ParPipeForeach metapipe1839 = ParPipeForeach(CounterChain1820) { */
+{
+/* MPSM to be emitted */
+/* metapipe1839_MPSM metapipe1839 { */
+SMIO metapipe1839_sm = addStateMachine("metapipe1839_sm", new metapipe1839_MPSM(this));
+    metapipe1839_sm.connectInput("sm_en", metapipe1839_en);
+    metapipe1839_done <== stream.offset(metapipe1839_sm.getOutput("sm_done"),-1);
+DFEVar metapipe1839_niter = ((const192_FixedPoint58 - const0_FixedPoint53) / (const1_FixedPoint66 * 1));
+metapipe1839_sm.connectInput("sm_numIter", metapipe1839_niter.cast(dfeUInt(32)));
+DFEVar metapipe1839_rst_en = metapipe1839_sm.getOutput("rst_en");
+metapipe1839_sm.connectInput("s0_done", pipe1831_done);
+pipe1831_en <== metapipe1839_sm.getOutput("s0_en");
+metapipe1839_sm.connectInput("s1_done", void1835_done);
+void1835_en <== metapipe1839_sm.getOutput("s1_en");
+metapipe1839_sm.connectInput("s2_done", void1837_done);
+void1837_en <== metapipe1839_sm.getOutput("s2_en");
+DFEVar Counter1819_max_0 = const192_FixedPoint58;
+DFEVar metapipe1839_datapath_en = metapipe1839_en;
+DFEVar metapipe1839_ctr_en = pipe1831_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1820_en = pipe1831_done;
+DFEVar[] CounterChain1820_max = {const192_FixedPoint58};
+int[] CounterChain1820_strides = {1};
+OffsetExpr CounterChain1820_offset = stream.makeOffsetAutoLoop("CounterChain1820_offset");
+SMIO CounterChain1820 = addStateMachine("CounterChain1820_sm", new CounterChain1820_CtrSM(owner, CounterChain1820_strides)); // gap = 0
+CounterChain1820.connectInput("en", CounterChain1820_en);
+CounterChain1820.connectInput("reset", metapipe1839_done);
+DFEVar CounterChain1820_maxed = CounterChain1820.getOutput("saturated");
+DFEVar CounterChain1820_done = stream.offset(CounterChain1820.getOutput("done"), -1);
+OffsetExpr CounterChain1820_additionalOffset = new OffsetExpr();
+CounterChain1820.connectInput("max0", CounterChain1820_max[0]);
+DFEVar Counter1819 = CounterChain1820.getOutput("counter0");
+/* } CustomCounterChain */
+/* } metapipe1839_MPSM metapipe1839 */
+DFEVar metapipe1839_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1531 = Counter1819;
+DblBufReg[] FixedPoint1531_chain = spatialUtils.getRegChain(
+              "metapipe1839_FixedPoint1531", 3, FixedPoint1531,
+              new DFEVar[]{pipe1831_done,void1835_done,void1837_done});
+/* ParPipeForeach pipe1831 = ParPipeForeach(CounterChain1822) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1831 { */
+OffsetExpr pipe1831_offset = stream.makeOffsetAutoLoop("pipe1831_offset");
+SMIO pipe1831_sm = addStateMachine("pipe1831_sm", new PipeSM(this, 1));
+    pipe1831_sm.connectInput("sm_en", pipe1831_en);
+    pipe1831_done <== stream.offset(pipe1831_sm.getOutput("sm_done"),-1-pipe1831_offset);
+DFEVar pipe1831_rst_en = pipe1831_sm.getOutput("rst_en");
+pipe1831_sm.connectInput("rst_done", pipe1831_rst_done);
+pipe1831_rst_done <== stream.offset(pipe1831_rst_en, -pipe1831_offset-1);
+pipe1831_sm.connectInput("sm_maxIn_0", const1920_FixedPoint59);
+DFEVar Counter1821_max_0 = pipe1831_sm.getOutput("ctr_maxOut_0");
+pipe1831_sm.connectInput("ctr_done", CounterChain1822_done);
+DFEVar pipe1831_datapath_en = pipe1831_sm.getOutput("ctr_en");
+DFEVar pipe1831_ctr_en = pipe1831_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1822_en = pipe1831_datapath_en;
+DFEVar[] CounterChain1822_max = {Counter1821_max_0};
+int[] CounterChain1822_strides = {1};
+OffsetExpr CounterChain1822_offset = stream.makeOffsetAutoLoop("CounterChain1822_offset");
+SMIO CounterChain1822 = addStateMachine("CounterChain1822_sm", new CounterChain1822_CtrSM(owner, CounterChain1822_strides)); // gap = 0
+CounterChain1822.connectInput("en", CounterChain1822_en);
+CounterChain1822.connectInput("reset", pipe1831_done);
+DFEVar CounterChain1822_maxed = CounterChain1822.getOutput("saturated");
+CounterChain1822_done <== stream.offset(CounterChain1822.getOutput("done"), -1);
+OffsetExpr CounterChain1822_additionalOffset = new OffsetExpr();
+CounterChain1822.connectInput("max0", CounterChain1822_max[0]);
+DFEVector<DFEVar> Counter1821 = new DFEVectorType<DFEVar>(dfeInt(32), 4).newInstance(this);
+Counter1821[0] <== CounterChain1822.getOutput("counter0");
+for (int i = 0; i < 3; i++) {
+  Counter1821[i+1] <== CounterChain1822.getOutput("counter0_extension" + i);
+}
+/* } CustomCounterChain */
+/* } PipeSM pipe1831 */
+DFEVar pipe1831_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1534 = Counter1821[0];
+DFEVar FixedPoint1535 = Counter1821[1];
+DFEVar FixedPoint1536 = Counter1821[2];
+DFEVar FixedPoint1537 = Counter1821[3];
+DFEVar FixedPoint1538 = FixedPoint1531 * const1920_FixedPoint59;
+DFEVar FixedPoint1539 = FixedPoint1538 + FixedPoint1534;
+DFEVar FixedPoint1540 = FixedPoint1538 + FixedPoint1535;
+DFEVar FixedPoint1541 = FixedPoint1538 + FixedPoint1536;
+DFEVar FixedPoint1542 = FixedPoint1538 + FixedPoint1537;
+DFEVector<DFEVar> Vector1543 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1539,FixedPoint1540,FixedPoint1541,FixedPoint1542));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1823 = BRAM1724_0.connectRport(Vector1543); //r1.0
+/* } Bram_load */
+DFEVar Bit1550 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1550 <== FixedPoint1534 < const1920_FixedPoint59;
+DFEVar Bit1551 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1551 <== FixedPoint1535 < const1920_FixedPoint59;
+DFEVar Bit1552 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1552 <== FixedPoint1536 < const1920_FixedPoint59;
+DFEVar Bit1553 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1553 <== FixedPoint1537 < const1920_FixedPoint59;
+DFEVector<DFEVar> Vector1554 = new DFEVectorType<DFEVar>(dfeFixOffset(1, 0, SignMode.UNSIGNED), 4).newInstance(this, Arrays.asList(Bit1550,Bit1551,Bit1552,Bit1553));
+DFEVar FixedPoint1824 = Vector1823[0];
+DFEVar FixedPoint1825 = Vector1823[1];
+DFEVar FixedPoint1826 = Vector1823[2];
+DFEVar FixedPoint1827 = Vector1823[3];
+DFEVector<DFEVar> Vector1828 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 4).newInstance(this, Arrays.asList(FixedPoint1824,FixedPoint1825,FixedPoint1826,FixedPoint1827));
+// Par_push_fifo(FIFO1818, Vector1828, Vector1554, true);
+FIFO1818_writeEn <== pipe1831_ctr_en;
+FIFO1818_wdata <== Vector1828;
+}
+/* } ParPipeForeach pipe1831 */
+// Unit pipe writtenIn(void1835) = List(Sym(1832))
+//   reg1832 = Reflect(Reg_new(Sym(53)),Summary(mutable),List()), isAccum(reg1832) = false
+/* PipeSM void1835 { */
+OffsetExpr void1835_offset = stream.makeOffsetAutoLoop("void1835_offset");
+SMIO void1835_sm = addStateMachine("void1835_sm", new PipeSM(this, 1));
+    void1835_sm.connectInput("sm_en", void1835_en);
+    void1835_done <== stream.offset(void1835_sm.getOutput("sm_done"),-1-void1835_offset);
+DFEVar void1835_rst_en = void1835_sm.getOutput("rst_en");
+void1835_sm.connectInput("rst_done", void1835_rst_done);
+void1835_rst_done <== stream.offset(void1835_rst_en, -void1835_offset-1);
+void1835_sm.connectInput("sm_maxIn_0", constant.var(dfeInt(32), 1));
+void1835_sm.connectInput("ctr_done", stream.offset(void1835_sm.getOutput("ctr_en"), -1));
+DFEVar void1835_datapath_en = void1835_en & ~void1835_rst_en;
+DFEVar void1835_ctr_en = void1835_datapath_en;
+/* } PipeSM void1835 */
+/* Block void1835 Unitpipe { */
+{
+DFEVar FixedPoint1538 = FixedPoint1531_chain[0].read() * const1920_FixedPoint59;
+/* Reg_write { */
+reg1832_0_lib.write(FixedPoint1538, void1835_done, constant.var(false), 0);
+/* } Reg_write // regType spatial.shared.SpatialIdentifiers$Regular$@5e9861b7, numDuplicates = 1 */
+}
+/* } Block void1835 Unitpipe */
+DFEVar FixedPoint1836 = reg1832_0_lib.read(1); // reg read
+// void1837: Offchip_store_cmd(DRAM1717,FIFO1818, FixedPoint1836, const1920_FixedPoint59, 4)
+MemoryCmdStLib void1837 = new MemoryCmdStLib(
+          this,
+          void1837_en, void1837_done,
+          DRAM1717, FixedPoint1836,
+          "DRAM1717_void1837_out",
+          const1920_FixedPoint59,
+          FIFO1818_writeEn, FIFO1818_wdata);
+FIFO1818_readEn <== void1837_en;
+}
+/* } ParPipeForeach metapipe1839 */
+}
+/* } Block void1841 Unitpipe */
+}
+/* } Block void1843 Parallel */
+}
+/* } ParPipeForeach seq1845 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// rdone signals for N-Buffers go here
+reg1784_0_lib.connectStageCtrl(void1789_done, void1789_en, new int[] { 1 }); /*read*/
+reg1784_0_lib.connectStageCtrl(void1787_done, void1787_en, new int[] { 0 }); /*write*/
+reg1784_0_lib.connectUnwrittenPorts(new int[] {1});
+reg1784_0_lib.connectUnreadPorts(new int[] {0});
+reg1784_0_lib.connectUntouchedPorts(new int[] {});
+reg1784_0_lib.connectDummyBroadcast();
+reg1760_0_lib.connectStageCtrl(void1765_done, void1765_en, new int[] { 1 }); /*read*/
+reg1760_0_lib.connectStageCtrl(void1763_done, void1763_en, new int[] { 0 }); /*write*/
+reg1760_0_lib.connectUnwrittenPorts(new int[] {1});
+reg1760_0_lib.connectUnreadPorts(new int[] {0});
+reg1760_0_lib.connectUntouchedPorts(new int[] {});
+reg1760_0_lib.connectDummyBroadcast();
+reg1808_0_lib.connectStageCtrl(void1813_done, void1813_en, new int[] { 1 }); /*read*/
+reg1808_0_lib.connectStageCtrl(void1811_done, void1811_en, new int[] { 0 }); /*write*/
+reg1808_0_lib.connectUnwrittenPorts(new int[] {1});
+reg1808_0_lib.connectUnreadPorts(new int[] {0});
+reg1808_0_lib.connectUntouchedPorts(new int[] {});
+reg1808_0_lib.connectDummyBroadcast();
+reg1832_0_lib.connectStageCtrl(void1837_done, void1837_en, new int[] { 1 }); /*read*/
+reg1832_0_lib.connectStageCtrl(void1835_done, void1835_en, new int[] { 0 }); /*write*/
+reg1832_0_lib.connectUnwrittenPorts(new int[] {1});
+reg1832_0_lib.connectUnreadPorts(new int[] {0});
+reg1832_0_lib.connectUntouchedPorts(new int[] {});
+reg1832_0_lib.connectDummyBroadcast();
+// Emit consts
+	}
+}
+/*****************************************
+  End of MaxJ BACKEND 
+*******************************************/

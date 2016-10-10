@@ -1,0 +1,227 @@
+
+package engine;
+  import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+  import com.maxeler.maxcompiler.v2.statemachine.DFEsmInput;
+  import com.maxeler.maxcompiler.v2.statemachine.DFEsmOutput;
+  import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum;
+  import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue;
+  import com.maxeler.maxcompiler.v2.statemachine.kernel.KernelStateMachine;
+  import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmValueType;
+
+class void781_MPSM extends KernelStateMachine {
+
+    // States
+    enum States {
+      INIT,
+      RSET,
+      S0,
+      S01,
+      S1,
+DONE
+    }
+  
+
+
+    // State IO
+    private final DFEsmOutput sm_done;
+    private final DFEsmOutput sm_last;
+    private final DFEsmInput sm_en;
+    private final DFEsmInput sm_numIter;
+    private final DFEsmOutput rst_en;
+  
+
+    private final DFEsmInput s0_done;
+    private final DFEsmOutput s0_en;
+    
+
+    private final DFEsmInput s1_done;
+    private final DFEsmOutput s1_en;
+    
+
+    // State storage
+    private final DFEsmStateValue sizeFF;
+    private final DFEsmStateValue lastFF;
+    private final DFEsmStateEnum<States> stateFF;
+    private final DFEsmStateValue counterFF;
+    private final DFEsmStateValue rstCounterFF;
+    private final DFEsmStateValue[] bitVector;
+
+    private final int numStates = 2;
+    private final int rstCycles = 10; // <-- hardcoded
+    // Initialize state machine in constructor
+    public void781_MPSM(KernelLib owner) {
+      super(owner);
+
+      // Declare all types required to wire the state machine together
+      DFEsmValueType counterType = dfeUInt(32);
+      DFEsmValueType wireType = dfeBool();
+
+      // Define state machine IO
+      sm_done = io.output("sm_done", wireType);
+      sm_last = io.output("sm_last", wireType);
+      sm_en = io.input("sm_en", wireType);
+      sm_numIter = io.input("sm_numIter", counterType);
+      rst_en = io.output("rst_en", wireType);
+  
+
+      s0_done = io.input("s0_done", wireType);
+      s0_en = io.output("s0_en", wireType);
+    
+
+      s1_done = io.input("s1_done", wireType);
+      s1_en = io.output("s1_en", wireType);
+    
+
+    // Define state storage elements and initial state
+      stateFF = state.enumerated(States.class, States.INIT);
+      counterFF = state.value(counterType, 0);
+      rstCounterFF = state.value(counterType, 0);
+      sizeFF = state.value(counterType, 0);
+      lastFF = state.value(wireType, 0);
+
+      // Bitvector keeps track of which kernels have finished execution
+      // This is a useful hardware synchronization structure to keep
+      // track of which kernels have executed/finished execution
+      bitVector = new DFEsmStateValue[numStates];
+      for (int i=0; i<numStates; i++) {
+        bitVector[i] = state.value(wireType, 0);
+      }
+    }
+
+    private void resetBitVector() {
+      for (int i=0; i<numStates; i++) {
+        bitVector[i].next <== 0;
+      }
+    }
+      
+
+    @Override
+    protected void nextState() {
+      IF(sm_en) {
+        // State-agnostic update logic for bitVector
+    
+
+        IF (s0_done) {
+          bitVector[0].next <== 1;
+        }
+
+        IF (s1_done) {
+          bitVector[1].next <== 1;
+        }
+
+        IF (counterFF === sizeFF-2) {
+          lastFF.next <== 1;
+        }
+
+        SWITCH(stateFF) {
+          CASE (States.INIT) {
+            sizeFF.next <== sm_numIter;
+            stateFF.next <== States.RSET;
+            counterFF.next <== 0;
+            rstCounterFF.next <== 0;
+            lastFF.next <== 0;
+          }
+
+          CASE (States.RSET) {
+            rstCounterFF.next <== rstCounterFF + 1;
+            IF (rstCounterFF === rstCycles) {
+              stateFF.next <== States.S0;
+            } ELSE {
+              stateFF.next <== States.RSET;
+            }
+          }
+          
+
+          CASE (States.S0) {
+IF(bitVector[0]) {
+      resetBitVector();
+  counterFF.next <== counterFF + 1;
+  IF (counterFF >= sizeFF-1) {
+    stateFF.next <== States.S1;
+  } ELSE {
+    stateFF.next <== States.S01;
+  }
+}
+
+          }
+
+          CASE (States.S01) {
+IF(bitVector[0] & bitVector[1]) {
+      resetBitVector();
+  counterFF.next <== counterFF + 1;
+  IF (counterFF >= sizeFF-1) {
+    stateFF.next <== States.S1;
+  } ELSE {
+    stateFF.next <== States.S01;
+  }
+}
+
+          }
+
+          CASE (States.S1) {
+IF(bitVector[1]) {
+      resetBitVector();
+  stateFF.next <== States.DONE;
+}
+
+          }
+
+         CASE (States.DONE) {
+           resetBitVector();
+           stateFF.next <== States.INIT;
+         }
+
+         OTHERWISE {
+           stateFF.next <== stateFF;
+         }
+        }
+      }
+    }
+
+  @Override
+    protected void outputFunction() {
+      sm_done <== 0;
+      sm_last <== 0;
+      rst_en <== 0;
+      
+
+      s0_en <== 0;
+
+      s1_en <== 0;
+
+     IF (sm_en) {
+        IF (counterFF >= sizeFF-1) {
+          sm_last <== 1;
+        } ELSE {
+          sm_last <== 0;
+        }
+       SWITCH(stateFF) {
+            CASE (States.RSET) {
+              rst_en <== 1;
+            }
+
+            CASE (States.S0) {
+s0_en <== ~(bitVector[0] | s0_done);
+
+                }
+
+            CASE (States.S01) {
+s0_en <== ~(bitVector[0] | s0_done);
+s1_en <== ~(bitVector[1] | s1_done);
+
+                }
+
+            CASE (States.S1) {
+s1_en <== ~(bitVector[1] | s1_done);
+
+                }
+
+          CASE (States.DONE) {
+            sm_done <== 1;
+          }
+
+      }
+    }
+  }
+  }
+  

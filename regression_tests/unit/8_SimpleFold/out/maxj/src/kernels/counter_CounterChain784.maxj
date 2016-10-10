@@ -1,0 +1,138 @@
+
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.statemachine.DFEsmInput;
+import com.maxeler.maxcompiler.v2.statemachine.DFEsmOutput;
+import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum;
+import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue;
+import com.maxeler.maxcompiler.v2.statemachine.kernel.KernelStateMachine;
+import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmValueType;
+class CounterChain784_CtrSM extends KernelStateMachine {
+// ** VISUALIZATION FOR COUNTER **
+//    ctr0: o o o o o o o o
+
+    // States
+    enum States {
+      COUNT,
+      SATURATED
+    }
+
+    // State IO
+    private final DFEsmOutput[] count;
+    private final DFEsmOutput[] counter0_extension;
+
+    private final DFEsmOutput saturated;
+    private final DFEsmOutput done;
+    private final DFEsmInput en;
+    private final DFEsmInput reset;
+    private final DFEsmInput[] max;
+    private final int[] strides;
+    // Gap between the end of one array of count to the start of the next.
+    //   This is useful for padding non-powerof2-banked BRAMs to the next highest pwr of 2 banks
+    // i.e- gap = 32, stride = 1, par = 96 would do this:
+    // cycle1: count = [0, 1, ..., 94, 95]
+    // cycle2: count = [128, 129, ..., 222, 223]
+    private final int gap;
+    private final int[] ff_extensions;
+
+    // State storage
+    private final DFEsmStateValue[] countFF;
+    private final DFEsmStateEnum<States> stateFF;
+    
+
+    // Initialize state machine in constructor
+    // NOTE: strides is a constructor argument and max is an io.input
+    //       because old DHDL specifies max as CombNodes and strides as
+    //       ints so this was the easiest way to make this CtrSM
+    public CounterChain784_CtrSM(KernelLib owner, int[] s) {
+      super(owner);
+      // Declare all types required to wire the state machine together
+      DFEsmValueType numberType = dfeInt(32);
+      DFEsmValueType wireType = dfeBool();
+
+      strides = s;
+      gap = 0;
+      ff_extensions = new int[1];
+      // Define state machine IO
+      count = new DFEsmOutput[1];
+      max = new DFEsmInput[1];
+      for (int i = 0; i < 1; i++) {
+        count[i] = io.output("counter" + i, numberType);
+        max[i] = io.input("max" + i, numberType);
+      }
+      // Par extension for 0
+      ff_extensions[0] = 7 * strides[0];
+      counter0_extension = new DFEsmOutput[7];
+      for (int i = 0; i < 7; i++) {
+        counter0_extension[i] = io.output("counter0_extension" + i, numberType);
+      }
+
+      saturated = io.output("saturated", wireType);
+      done = io.output("done", wireType);
+      en = io.input("en", wireType);
+      reset = io.input("reset", wireType);
+
+      // Define state storage elements and initial state
+      stateFF = state.enumerated(States.class, States.COUNT);
+      countFF = new DFEsmStateValue[1];
+      for (int i = 0; i < 1; i++) {
+        countFF[i] = state.value(numberType, 0);
+      }
+    }
+  
+
+    @Override
+    protected void nextState() {
+      IF (reset) {
+        countFF[0].next <== 0;
+        stateFF.next <== States.COUNT;
+      } ELSE {
+          SWITCH(stateFF) {
+            CASE(States.COUNT) {
+              IF(en) {
+                IF (
+                  (countFF[0] + ff_extensions[0] >= max[0] - strides[0])) {
+                stateFF.next <== States.SATURATED;
+                } ELSE { // innermost ctr
+                countFF[0].next <== countFF[0] + 8 * strides[0] + gap;
+}           } ELSE {
+              stateFF.next <== States.COUNT;
+            }
+          }
+          CASE(States.SATURATED) {
+            stateFF.next <== States.SATURATED;
+          }
+        }
+      }
+    }
+
+  @Override
+    protected void outputFunction() {
+        
+      count[0] <== countFF[0];
+      for (int i = 0; i < 7; i++) {
+        counter0_extension[i] <== countFF[0] + strides[0] * (i+1);
+      }
+
+      saturated <== 0;
+      done <== 0;
+      SWITCH(stateFF){
+        CASE(States.COUNT){
+          IF(en) {
+
+            IF (
+               (countFF[0] + ff_extensions[0] >= max[0] - strides[0])) {
+             saturated <== 1;
+             done <== 1;
+            }
+          }
+        }
+        CASE(States.SATURATED){
+          IF (en) {
+            done <== 1;
+          }
+          saturated <== 1;
+        }
+      }
+    }
+}

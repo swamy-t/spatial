@@ -1,0 +1,2137 @@
+Ignoring silly LD_PRELOAD  e r r o r
+Ignoring silly LD_PRELOAD  e r r o r
+Delite Application Being Staged:[SimpleFold$]
+******Generating the program******
+Loaded RoutingLUTs model from file
+Loaded FanoutRegisters model from file
+Loaded UnavailableALMs model from file
+Resource Estimate Breakdown: 
+-----------------------------
+Estimated unavailable ALMs: 565
+LUT3: 24587
+LUT4: 11466
+LUT5: 12420
+LUT6: 9253
+LUT7: 468
+Estimated routing luts: 20570
+Logic+register ALMs: 49304
+Register-only ALMS:  0
+Recovered ALMs:      35725
+MEM64: 4619
+MEM32: 522
+MEM16: 559
+Design registers: 78080
+Memory registers: 0
+Fanout registers: 3726
+Design BRAMs: 340
+Fanout BRAMs: 0
+
+Resource Estimate Summary: 
+---------------------------
+ALMs: 49304 / 262400 (18.79%)
+Regs: 81806
+DSPs: 0 / 1963 (0.00%)
+BRAM: 340 / 2567 (13.25%)
+
+Loaded TileLoadModel model from file
+Estimated cycles: 2420955
+Estimated runtime (at 150.00MHz): 0.01613970s
+Instruction statistics:
+  Instructions: 6230022 (0.006 GI)
+  FLOPs: 0 (0.000 GFLOPs)
+  On-chip loads: 56623104 bits (0.007 GB)
+  On-chip stores: 28311552 bits (0.003 GB)
+  Off-chip loads: 28311552 bits (0.003 GB)
+  Off-chip stores: 0 bits (0.000 GB)
+--
+  Total on-chip transfers: 0.010 GB
+  Total off-chip transfers: 0.003 GB
+
+Performance statistics (based on estimated runtime):
+  Instructions: 0.386 GIPS
+  Floating point: 0.000 GFLOPS
+  On-chip load bandwidth: 0.408 GB/s
+  On-chip store bandwidth: 0.204 GB/s
+  Off-chip load bandwidth: 0.204 GB/s
+  Off-chip store bandwidth: 0.000 GB/s
+--
+  Total on-chip bandwidth: 0.613 GB/s
+  Total off-chip bandwidth: 0.204 GB/s
+ Reduction pipe805 unroll Sym(635) Vector_from_list(List(Sym(627), Sym(628), Sym(629), Sym(630), Sym(631), Sym(632), Sym(633), Sym(634)))
+ Reduction pipe805 unroll Sym(785) Par_bram_load(Sym(769),Sym(635))
+ Reduction pipe805 unroll Sym(786) Reg_read(Sym(619))
+ Reduction pipe805 unroll Sym(101) ConstBit(true)
+ Reduction pipe805 unroll Sym(787) Vec_apply(Sym(785),0)
+ Reduction pipe805 unroll Sym(788) Vec_apply(Sym(785),1)
+ Reduction pipe805 unroll Sym(789) FixPt_Add(Sym(787),Sym(788))
+ Reduction pipe805 unroll Sym(790) Vec_apply(Sym(785),2)
+ Reduction pipe805 unroll Sym(791) Vec_apply(Sym(785),3)
+ Reduction pipe805 unroll Sym(792) FixPt_Add(Sym(790),Sym(791))
+ Reduction pipe805 unroll Sym(793) FixPt_Add(Sym(789),Sym(792))
+ Reduction pipe805 unroll Sym(794) Vec_apply(Sym(785),4)
+ Reduction pipe805 unroll Sym(795) Vec_apply(Sym(785),5)
+ Reduction pipe805 unroll Sym(796) FixPt_Add(Sym(794),Sym(795))
+ Reduction pipe805 unroll Sym(797) Vec_apply(Sym(785),6)
+ Reduction pipe805 unroll Sym(798) Vec_apply(Sym(785),7)
+ Reduction pipe805 unroll Sym(799) FixPt_Add(Sym(797),Sym(798))
+ Reduction pipe805 unroll Sym(800) FixPt_Add(Sym(796),Sym(799))
+ Reduction pipe805 unroll Sym(801) FixPt_Add(Sym(793),Sym(800))
+ Reduction pipe805 unroll Sym(802) FixPt_Add(Sym(801),Sym(786))
+ Reduction pipe805 unroll Sym(803) Reg_write(Sym(619),Sym(802),Sym(101))
+ Reduction pipe805 unroll Sym(804) Reify(Sym(803),Summary(mayRead(Sym(769), Sym(619)), mstRead(Sym(769), Sym(619)), mayWrite(Sym(619)), mstWrite(Sym(619))),List(Sym(785), Sym(786), Sym(803)))
+ Reduction void811 unroll Sym(806) Reg_read(Sym(782))
+ Reduction void811 unroll Sym(807) Reg_read(Sym(763))
+ Reduction void811 unroll Sym(101) ConstBit(true)
+ Reduction void811 unroll Sym(808) FixPt_Add(Sym(806),Sym(807))
+ Reduction void811 unroll Sym(809) Reg_write(Sym(763),Sym(808),Sym(101))
+ Reduction void811 unroll Sym(810) Reify(Sym(809),Summary(mayRead(Sym(782), Sym(763)), mstRead(Sym(782), Sym(763)), mayWrite(Sym(763)), mstWrite(Sym(763))),List(Sym(806), Sym(807), Sym(809)))
+[getFileStream] Created file /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial/generated/SimpleFold//maxj/kernels//TopKernelLib.maxj
+[emitAnyNode] s = x50, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x50, tpestr = int32_t 
+[emitAnyNode] s = x50, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x50, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x720, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x720, tpestr = int32_t  *
+[emitAnyNode] s = x720, tpestr = spatial.compiler.ops.Register[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x720, node = Argin_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x721, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x721, tpestr = int32_t  *
+[emitAnyNode] s = x721, tpestr = spatial.compiler.ops.Register[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x721, node = Argout_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x1, tpestr = java.lang.String
+[emitAnyNode] s = x1, tpestr = string 
+[emitAnyNode] s = x1, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(0))[0m
+[emitAnyNode] kernelName = x1, node = ArrayApply, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x2, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x2, tpestr = int32_t 
+[emitAnyNode] s = x2, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(1))[0m
+[emitAnyNode] kernelName = x2, node = Tpes_String_to_fixpt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x3, tpestr = Int
+[emitAnyNode] s = x3, tpestr = int32_t 
+[emitAnyNode] s = x3, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(2))[0m
+[emitAnyNode] kernelName = x3, node = Tpes_Fix_to_int, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x49, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x49, tpestr = int32_t 
+[emitAnyNode] s = x49, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x49, node = Tpes_Int_to_fix, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x722, tpestr = Unit
+[emitAnyNode] s = x722, tpestr = void 
+[emitAnyNode] s = x722, tpestr = Unit
+[emitAnyNode] kernelName = x722, node = Set_arg, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x723, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x723, tpestr = int32_t 
+[emitAnyNode] s = x723, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x723, node = Reg_read, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x724, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x724, tpestr = maxjLmem *
+[emitAnyNode] s = x724, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x724, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x761, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x761, tpestr = cppDeliteArrayint32_t *
+[emitAnyNode] s = x761, tpestr = ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayNew(Sym(8),spatial.compiler.ops.FixedPoint[SimpleFold$@3977ef09.type#spatial.shared.SpatialIdentifiers$Signed, SimpleFold$@3977ef09.type#spatial.shared.SpatialIdentifiers$B32, SimpleFold$@3977ef09.type#spatial.shared.SpatialIdentifiers$B0],PartitionTag(DeliteArray,false))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayUpdate(Sym(6),Sym(4),Sym(7))[0m
+[emitAnyNode] kernelName = x761, node = SimpleFatLoop, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x762, tpestr = Unit
+[emitAnyNode] s = x762, tpestr = void 
+[emitAnyNode] s = x762, tpestr = Unit
+[emitAnyNode] kernelName = x762, node = Set_mem, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x821, tpestr = Unit
+[emitAnyNode] s = x821, tpestr = void 
+[emitAnyNode] s = x821, tpestr = Unit
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(0))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(1))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(2))[0m
+[WARNING] Assume duplicate 0 is the inside reduction register and do not emit lib
+[WARNING] Assume duplicate 0 is the inside reduction register and do not emit lib
+Checking writers of Sym(782) ((Sym(803),(Sym(805),false))) for Sym(803)
+Checking writers of Sym(763) ((Sym(809),(Sym(811),false))) for Sym(809)
+Checking writers of Sym(721) ((Sym(815),(Sym(817),false))) for Sym(815)
+[emitAnyNode] kernelName = x821, node = Hwblock, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x822, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x822, tpestr = int32_t 
+[emitAnyNode] s = x822, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x822, node = Get_arg, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x826, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x826, tpestr = int32_t 
+[emitAnyNode] s = x826, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(761),Sym(130))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(761),Sym(130))[0m
+[emitAnyNode] kernelName = x826, node = SimpleFatLoop, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x827, tpestr = java.lang.String
+[emitAnyNode] s = x827, tpestr = string 
+[emitAnyNode] s = x827, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: FString_Forge_string_plus(Const(expected: ),Sym(826))[0m
+[emitAnyNode] kernelName = x827, node = FString_Forge_string_plus, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x828, tpestr = Unit
+[emitAnyNode] s = x828, tpestr = void 
+[emitAnyNode] s = x828, tpestr = Unit
+[emitAnyNode] kernelName = x828, node = Nosynth1_Println, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x829, tpestr = java.lang.String
+[emitAnyNode] s = x829, tpestr = string 
+[emitAnyNode] s = x829, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: FString_Forge_string_plus(Const(result:   ),Sym(822))[0m
+[emitAnyNode] kernelName = x829, node = FString_Forge_string_plus, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x830, tpestr = Unit
+[emitAnyNode] s = x830, tpestr = void 
+[emitAnyNode] s = x830, tpestr = Unit
+[emitAnyNode] kernelName = x830, node = Nosynth1_Println, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x831, tpestr = Boolean
+[emitAnyNode] s = x831, tpestr = bool 
+[emitAnyNode] s = x831, tpestr = spatial.compiler.ops.SpatialBit
+[emitAnyNode] kernelName = x831, node = FixPt_Eql, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x832, tpestr = java.lang.String
+[emitAnyNode] s = x832, tpestr = string 
+[emitAnyNode] s = x832, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: FString_Forge_string_plus(Const(PASS: ),Sym(831))[0m
+[emitAnyNode] kernelName = x832, node = FString_Forge_string_plus, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x833, tpestr = java.lang.String
+[emitAnyNode] s = x833, tpestr = string 
+[emitAnyNode] s = x833, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: FString_Forge_string_plus(Sym(832),Const( (SimpleFold)))[0m
+[emitAnyNode] kernelName = x833, node = FString_Forge_string_plus, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x834, tpestr = Unit
+[emitAnyNode] s = x834, tpestr = void 
+[emitAnyNode] s = x834, tpestr = Unit
+[emitAnyNode] kernelName = x834, node = Nosynth1_Println, supportedTargets = ListBuffer(scala, cpp, maxj)
+[delite info 2016-10-09 21:41:46.690701]: Generating DEG file with options: {'enable_pir': True, 'verbose': False, 'no_fusion': False, 'cluster': False, 'debuglast': False, 'no_blas': False, 'no_multidimgpu': False, 'latency': False, 'xdebug': False, 'jar_app': False, 'opencl': False, 'build_dir': '/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial', 'maxj': False, 'dump_exception': True, 'no_soa': False, 'strict_control': False, 'profile': False, 'enable_dse': True, 'debug': False, 'optimize': 0, 'long_int': False, 'xnocache': False, 'cuda': False, 'cpp': False, 'dot': False}
+Ignoring silly LD_PRELOAD  e r r o r
+Ignoring silly LD_PRELOAD  e r r o r
+numMaxJ = 1
+scheduler = dynamic
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x1')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x2')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x3')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x722')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x723')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x724')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x762')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x821')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x822')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x826')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x828')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x830')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x831')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x832')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x833')
+[MaxJExecutableGenerator::makeNestedFunction() Cannot generate 'Free_x834')
+[delite info 2016-10-09 21:41:57.524017]: executing application: SimpleFold.deg 
+Parsing log
+Running Spatial with arguments: 
+/opt/maxcompiler/bin/maxcompilersim -n Top$(md5sum ./maxj/src/kernels/TopKernelLib.maxj | cut -c1-5 | sed 's/1/z/g' | sed 's/2/y/g' | sed 's/3/q/g' | sed 's/4/r/g' | sed 's/5/s/g' | sed 's/6/t/g' | sed 's/7/u/g' | sed 's/8/v/g' | sed 's/9/w/g' | sed 's/0/x/g') stop
+ERROR: No PID or lock files found for simulation 'Toperdaz' on host 'london'.
+make: [clean] Error 1 (ignored)
+rm -f maxobj_Top_DFE_SIM.o
+rm -f Top_sim
+rm -rf bin Top_MAX4848A_DFE_SIM
+rm -f maxj/src/runtime/Executable1.o cpp/src/kernels/cpphelperFuncs.o cpp/src/kernels/x1.o cpp/src/kernels/x2.o cpp/src/kernels/x3.o cpp/src/kernels/x49.o cpp/src/kernels/x50.o cpp/src/kernels/x720.o cpp/src/kernels/x721.o cpp/src/kernels/x722.o cpp/src/kernels/x723.o cpp/src/kernels/x724.o cpp/src/kernels/x761.o cpp/src/kernels/x762.o cpp/src/kernels/x821.o cpp/src/kernels/x822.o cpp/src/kernels/x826.o cpp/src/kernels/x827.o cpp/src/kernels/x828.o cpp/src/kernels/x829.o cpp/src/kernels/x830.o cpp/src/kernels/x831.o cpp/src/kernels/x832.o cpp/src/kernels/x833.o cpp/src/kernels/x834.o cpp/src/static/cpp/Config.o cpp/src/static/cpp/cppDeliteArray.o cpp/src/static/cpp/cppInit.o cpp/src/static/cpp/cppList.o cpp/src/static/cpp/cppRef.o cpp/src/static/cpp/DeliteCpp.o cpp/src/static/cpp/DeliteCppProfiler.o cpp/src/static/cpp/DeliteMemory.o cpp/src/static/cpp/DeliteThreadPool.o cpp/src/static/cpp/pcmHelper.o
+rm -f *.log
+rm -rf debug*
+ant
+Buildfile: /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/build.xml
+
+init:
+    [mkdir] Created dir: /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/bin
+
+compile:
+     [echo] Using MaxCompiler from: /opt/maxcompiler
+     [echo] Compiling templates
+[maxjcompiler] 
+[maxjcompiler] 
+[maxjcompiler] Compiling to folder /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/bin
+[maxjcompiler] ----------
+[maxjcompiler] 1. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SingleCtrSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 2. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 3. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 4. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 5. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 6. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 7. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 8. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 9. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 10. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 11. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 12. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 13. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 14. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 24)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 15. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 75)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 16. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 274)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 17. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufSM.maxj (at line 9)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 18. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufSM.maxj (at line 10)
+[maxjcompiler] 	import java.util.List;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.List is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 19. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine.maxj (at line 48)
+[maxjcompiler] 	this.numIter = numIter;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable numIter has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 20. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 21. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 22. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 23. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/ScatterSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 24. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 25. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 26. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 27. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 28. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 29. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 30. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 31. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 24)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 32. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 105)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 33. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 303)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 34. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GBRSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 35. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine_2.maxj (at line 41)
+[maxjcompiler] 	DFEsmValueType counterType = dfeUInt(2);
+[maxjcompiler] 	               ^^^^^^^^^^^
+[maxjcompiler] The local variable counterType is never read
+[maxjcompiler] ----------
+[maxjcompiler] 36. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine_2.maxj (at line 59)
+[maxjcompiler] 	this.numIter = numIter;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable numIter has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 37. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/VDblBufKernelLib.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 38. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 39. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 40. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 41. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 105)
+[maxjcompiler] 	this.type = type;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable type has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 42. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSM.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 43. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSM.maxj (at line 35)
+[maxjcompiler] 	DFEsmValueType counterType = dfeUInt(32);
+[maxjcompiler] 	               ^^^^^^^^^^^
+[maxjcompiler] The local variable counterType is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 44. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 45. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 46. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 47. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 48. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 49. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 50. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 51. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 52. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 23)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 53. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 102)
+[maxjcompiler] 	int par = wdata.getSize();
+[maxjcompiler] 	    ^^^
+[maxjcompiler] The local variable par is never read
+[maxjcompiler] ----------
+[maxjcompiler] 54. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 188)
+[maxjcompiler] 	DFEVar sizecheck = upcast(size_int, wdata[0].getType());
+[maxjcompiler] 	       ^^^^^^^^^
+[maxjcompiler] The local variable sizecheck is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 55. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 56. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 57. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 58. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum is never used
+[maxjcompiler] ----------
+[maxjcompiler] 59. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmAssignableValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmAssignableValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 60. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmVariable;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmVariable is never used
+[maxjcompiler] ----------
+[maxjcompiler] 61. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmTypeFactory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmTypeFactory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 62. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.StateMachineLib;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.StateMachineLib is never used
+[maxjcompiler] ----------
+[maxjcompiler] 63. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 90)
+[maxjcompiler] 	private void resetElemsFF() {
+[maxjcompiler] 	             ^^^^^^^^^^^^^^
+[maxjcompiler] The method resetElemsFF() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] 64. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 99)
+[maxjcompiler] 	private void write() {
+[maxjcompiler] 	             ^^^^^^^
+[maxjcompiler] The method write() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] 65. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 116)
+[maxjcompiler] 	private void stall() {
+[maxjcompiler] 	             ^^^^^^^
+[maxjcompiler] The method stall() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 66. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 67. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 68. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 69. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 70. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 71. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 72. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 73. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 74. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 75. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 76. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 22)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 77. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 83)
+[maxjcompiler] 	int par = wdata.getSize();
+[maxjcompiler] 	    ^^^
+[maxjcompiler] The local variable par is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 78. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 79. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 21)
+[maxjcompiler] 	private final int start0;
+[maxjcompiler] 	                  ^^^^^^
+[maxjcompiler] The field DoubleCtrSM.start0 is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 80. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 24)
+[maxjcompiler] 	private final int start1;
+[maxjcompiler] 	                  ^^^^^^
+[maxjcompiler] The field DoubleCtrSM.start1 is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 81. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockStorer.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 82. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockStorer.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 83. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 84. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 85. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 86. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 87. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 88. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 635)
+[maxjcompiler] 	DFEVar bank_addr = bankAndLocalAddr(srcAddr[i], AddrMode.BANK);
+[maxjcompiler] 	       ^^^^^^^^^
+[maxjcompiler] The local variable bank_addr is never read
+[maxjcompiler] ----------
+[maxjcompiler] 89. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 648)
+[maxjcompiler] 	DFEVar rd_delta = srcAddr[1] - srcAddr[0];
+[maxjcompiler] 	       ^^^^^^^^
+[maxjcompiler] The local variable rd_delta is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 90. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 91. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 92. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 93. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 14)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 94. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 77)
+[maxjcompiler] 	DFEVar test = constant.var(tag.getType(), 0) === tag;
+[maxjcompiler] 	       ^^^^
+[maxjcompiler] The local variable test is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 95. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 96. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 97. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 98. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 99. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 2)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter is never used
+[maxjcompiler] ----------
+[maxjcompiler] 100. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 101. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count is never used
+[maxjcompiler] ----------
+[maxjcompiler] 102. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 103. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 104. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 105. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 106. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters is never used
+[maxjcompiler] ----------
+[maxjcompiler] 107. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 108. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 109. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 110. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 16)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 111. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 17)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 112. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 113. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator is never used
+[maxjcompiler] ----------
+[maxjcompiler] 114. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 115. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 116. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 117. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 24)
+[maxjcompiler] 	import java.util.Arrays;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.Arrays is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 118. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 119. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 120. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 121. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 122. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 123. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 124. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 125. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufKernelLib.maxj (at line 3)
+[maxjcompiler] 	import java.util.List;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.List is never used
+[maxjcompiler] ----------
+[maxjcompiler] 126. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufKernelLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 127. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GatherSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 128. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 129. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 130. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 308)
+[maxjcompiler] 	DFEVector<DFEStruct> vecDataIn = vecType.newInstance(this);
+[maxjcompiler] 	                     ^^^^^^^^^
+[maxjcompiler] The local variable vecDataIn is never read
+[maxjcompiler] ----------
+[maxjcompiler] 130 problems (130 warnings)
+     [echo] Compiling kernel
+[maxjcompiler] 
+[maxjcompiler] 
+[maxjcompiler] Compiling to folder /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/bin
+[maxjcompiler] ----------
+[maxjcompiler] 1. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter is never used
+[maxjcompiler] ----------
+[maxjcompiler] 2. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 3. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 4. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 5. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 6. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 7. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 8. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/TopKernel.maxj (at line 17)
+[maxjcompiler] 	import java.util.Random;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.Random is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 9. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SingleCtrSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 10. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 11. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 12. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQ.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 13. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 14. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 15. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 16. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 17. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 18. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 19. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 20. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 21. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 22. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 24)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 23. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 75)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 24. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Scatter.maxj (at line 274)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 25. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufSM.maxj (at line 9)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 26. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufSM.maxj (at line 10)
+[maxjcompiler] 	import java.util.List;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.List is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 27. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine.maxj (at line 48)
+[maxjcompiler] 	this.numIter = numIter;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable numIter has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 28. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 29. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 30. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufReg.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 31. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/ScatterSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 32. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 33. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 34. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 35. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 36. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 37. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 38. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 39. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 24)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 40. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 105)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 41. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/Gather.maxj (at line 303)
+[maxjcompiler] 	DFEVar package_done = sm.getOutput("package_done");
+[maxjcompiler] 	       ^^^^^^^^^^^^
+[maxjcompiler] The local variable package_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 42. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GBRSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 43. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine_2.maxj (at line 41)
+[maxjcompiler] 	DFEsmValueType counterType = dfeUInt(2);
+[maxjcompiler] 	               ^^^^^^^^^^^
+[maxjcompiler] The local variable counterType is never read
+[maxjcompiler] ----------
+[maxjcompiler] 44. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufStateMachine_2.maxj (at line 59)
+[maxjcompiler] 	this.numIter = numIter;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable numIter has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 45. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/VDblBufKernelLib.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 46. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 47. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 48. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 49. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufKernelLib.maxj (at line 105)
+[maxjcompiler] 	this.type = type;
+[maxjcompiler] 	^^^^^^^^^^^^^^^^
+[maxjcompiler] The assignment to variable type has no effect
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 50. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSM.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 51. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSM.maxj (at line 35)
+[maxjcompiler] 	DFEsmValueType counterType = dfeUInt(32);
+[maxjcompiler] 	               ^^^^^^^^^^^
+[maxjcompiler] The local variable counterType is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 52. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 53. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 54. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 55. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 56. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 57. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 58. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 59. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 60. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 23)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 61. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 102)
+[maxjcompiler] 	int par = wdata.getSize();
+[maxjcompiler] 	    ^^^
+[maxjcompiler] The local variable par is never read
+[maxjcompiler] ----------
+[maxjcompiler] 62. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdGen.maxj (at line 188)
+[maxjcompiler] 	DFEVar sizecheck = upcast(size_int, wdata[0].getType());
+[maxjcompiler] 	       ^^^^^^^^^
+[maxjcompiler] The local variable sizecheck is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 63. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 64. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 65. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/CtrChainLib.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 66. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum is never used
+[maxjcompiler] ----------
+[maxjcompiler] 67. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmAssignableValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmAssignableValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 68. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmVariable;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmVariable is never used
+[maxjcompiler] ----------
+[maxjcompiler] 69. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmTypeFactory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmTypeFactory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 70. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.StateMachineLib;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.StateMachineLib is never used
+[maxjcompiler] ----------
+[maxjcompiler] 71. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 90)
+[maxjcompiler] 	private void resetElemsFF() {
+[maxjcompiler] 	             ^^^^^^^^^^^^^^
+[maxjcompiler] The method resetElemsFF() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] 72. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 99)
+[maxjcompiler] 	private void write() {
+[maxjcompiler] 	             ^^^^^^^
+[maxjcompiler] The method write() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] 73. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/PQSM.maxj (at line 116)
+[maxjcompiler] 	private void stall() {
+[maxjcompiler] 	             ^^^^^^^
+[maxjcompiler] The method stall() from the type PQSM is never used locally
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 74. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 75. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 76. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BoxedMem.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 77. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 78. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 79. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 13)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 80. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 81. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStruct is never used
+[maxjcompiler] ----------
+[maxjcompiler] 82. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 83. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEStructType.StructFieldType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 84. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 22)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 85. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/MemoryCmdSt.maxj (at line 83)
+[maxjcompiler] 	int par = wdata.getSize();
+[maxjcompiler] 	    ^^^
+[maxjcompiler] The local variable par is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 86. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.statemachine.DFEsmValue is never used
+[maxjcompiler] ----------
+[maxjcompiler] 87. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 21)
+[maxjcompiler] 	private final int start0;
+[maxjcompiler] 	                  ^^^^^^
+[maxjcompiler] The field DoubleCtrSM.start0 is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 88. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DoubleCtrSM.maxj (at line 24)
+[maxjcompiler] 	private final int start1;
+[maxjcompiler] 	                  ^^^^^^
+[maxjcompiler] The field DoubleCtrSM.start1 is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 89. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockStorer.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 90. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockStorer.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 91. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 92. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 93. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DummyMemLib.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 94. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 95. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 96. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 635)
+[maxjcompiler] 	DFEVar bank_addr = bankAndLocalAddr(srcAddr[i], AddrMode.BANK);
+[maxjcompiler] 	       ^^^^^^^^^
+[maxjcompiler] The local variable bank_addr is never read
+[maxjcompiler] ----------
+[maxjcompiler] 97. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BramLib.maxj (at line 648)
+[maxjcompiler] 	DFEVar rd_delta = srcAddr[1] - srcAddr[0];
+[maxjcompiler] 	       ^^^^^^^^
+[maxjcompiler] The local variable rd_delta is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 98. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 99. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 100. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 101. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 14)
+[maxjcompiler] 	import java.util.ArrayList;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.ArrayList is never used
+[maxjcompiler] ----------
+[maxjcompiler] 102. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GroupByReduce.maxj (at line 77)
+[maxjcompiler] 	DFEVar test = constant.var(tag.getType(), 0) === tag;
+[maxjcompiler] 	       ^^^^
+[maxjcompiler] The local variable test is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 103. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 104. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 105. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 106. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/FFMem.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 107. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 2)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter is never used
+[maxjcompiler] ----------
+[maxjcompiler] 108. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 109. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count is never used
+[maxjcompiler] ----------
+[maxjcompiler] 110. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 111. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 112. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 113. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 114. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters is never used
+[maxjcompiler] ----------
+[maxjcompiler] 115. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 116. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 117. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 118. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 16)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 119. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 17)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 120. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 121. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator is never used
+[maxjcompiler] ----------
+[maxjcompiler] 122. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 123. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 124. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 125. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/SpatialUtils.maxj (at line 24)
+[maxjcompiler] 	import java.util.Arrays;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.Arrays is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 126. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 127. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 128. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 129. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/NBufReg.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 130. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 131. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 132. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/OnChipMem.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 133. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufKernelLib.maxj (at line 3)
+[maxjcompiler] 	import java.util.List;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.List is never used
+[maxjcompiler] ----------
+[maxjcompiler] 134. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/DblBufKernelLib.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 135. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/GatherSM.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 136. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 137. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Optimization is never used
+[maxjcompiler] ----------
+[maxjcompiler] 138. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/static/templates/BlockLoader.maxj (at line 308)
+[maxjcompiler] 	DFEVector<DFEStruct> vecDataIn = vecType.newInstance(this);
+[maxjcompiler] 	                     ^^^^^^^^^
+[maxjcompiler] The local variable vecDataIn is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 139. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 2)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter is never used
+[maxjcompiler] ----------
+[maxjcompiler] 140. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 141. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count is never used
+[maxjcompiler] ----------
+[maxjcompiler] 142. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 143. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 144. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 145. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 146. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters is never used
+[maxjcompiler] ----------
+[maxjcompiler] 147. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 148. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 149. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 150. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 151. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 16)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 152. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 17)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 153. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 154. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator is never used
+[maxjcompiler] ----------
+[maxjcompiler] 155. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 156. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 21)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector is never used
+[maxjcompiler] ----------
+[maxjcompiler] 157. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 158. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 159. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/void811_reduce_kernel.maxj (at line 24)
+[maxjcompiler] 	import java.util.Arrays;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.Arrays is never used
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 160. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/BaseLib.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 161. ERROR in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/BaseLib.maxj (at line 49)
+[maxjcompiler] 	NBufKernelLib BRAM769_0 = new NBufKernelLib(this, "BRAM769_0",
+[maxjcompiler]                   96, 1, /*size0, size1*/
+[maxjcompiler]                   dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 8, 1, 2, /*banks, strides, depth*/
+[maxjcompiler]                   true, /*all_same access (row_major or col_major)*/
+[maxjcompiler]                   new boolean[] {true}, /*rowmajor read?*/
+[maxjcompiler]                   1, 8 /*writepar, readpar*/);
+[maxjcompiler] 	                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The constructor NBufKernelLib(BaseLib, String, int, int, DFEFix, int, int, int, boolean, boolean[], int, int) is undefined
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 162. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 163. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.managers.standard.Manager;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.managers.standard.Manager is never used
+[maxjcompiler] ----------
+[maxjcompiler] 164. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.managers.standard.Manager.MemAccessPattern;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.managers.standard.Manager.MemAccessPattern is never used
+[maxjcompiler] ----------
+[maxjcompiler] 165. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.managers.standard.Manager.IOType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 166. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 16)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.managers.custom.stdlib.MemoryControllerConfig;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.managers.custom.stdlib.MemoryControllerConfig is never used
+[maxjcompiler] ----------
+[maxjcompiler] 167. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration.OptimizationOptions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration.OptimizationOptions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 168. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration.OptimizationOptions.OptimizationTechnique;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelConfiguration.OptimizationOptions.OptimizationTechnique is never used
+[maxjcompiler] ----------
+[maxjcompiler] 169. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 23)
+[maxjcompiler] 	private static final CPUTypes int8_t =    CPUTypes.INT8;
+[maxjcompiler] 	                              ^^^^^^
+[maxjcompiler] The field TopManager.int8_t is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 170. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 24)
+[maxjcompiler] 	private static final CPUTypes int16_t =    CPUTypes.INT16;
+[maxjcompiler] 	                              ^^^^^^^
+[maxjcompiler] The field TopManager.int16_t is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 171. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 26)
+[maxjcompiler] 	private static final CPUTypes int64_t =    CPUTypes.INT64;
+[maxjcompiler] 	                              ^^^^^^^
+[maxjcompiler] The field TopManager.int64_t is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 172. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 28)
+[maxjcompiler] 	private static final CPUTypes uint16_t =    CPUTypes.UINT16;
+[maxjcompiler] 	                              ^^^^^^^^
+[maxjcompiler] The field TopManager.uint16_t is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 173. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 30)
+[maxjcompiler] 	private static final CPUTypes uint64_t =    CPUTypes.UINT64;
+[maxjcompiler] 	                              ^^^^^^^^
+[maxjcompiler] The field TopManager.uint64_t is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 174. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 31)
+[maxjcompiler] 	private static final CPUTypes FLOAT = CPUTypes.FLOAT;
+[maxjcompiler] 	                              ^^^^^
+[maxjcompiler] The field TopManager.FLOAT is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] 175. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/MaxJManager.maxj (at line 32)
+[maxjcompiler] 	private static final CPUTypes DOUBLE = CPUTypes.DOUBLE;
+[maxjcompiler] 	                              ^^^^^^
+[maxjcompiler] The field TopManager.DOUBLE is never read locally
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 176. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 177. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 10)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 178. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 179. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters is never used
+[maxjcompiler] ----------
+[maxjcompiler] 180. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 181. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 182. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 17)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 183. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 184. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 185. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 72)
+[maxjcompiler] 	DFEVar void821_ctr_en = void821_datapath_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void821_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 186. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 86)
+[maxjcompiler] 	DFEVar void819_ctr_en = void819_datapath_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void819_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 187. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 100)
+[maxjcompiler] 	DFEVar metapipe813_rst_en = metapipe813_sm.getOutput("rst_en");
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable metapipe813_rst_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 188. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 107)
+[maxjcompiler] 	DFEVar Counter765_max_0 = FixedPoint764;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable Counter765_max_0 is never read
+[maxjcompiler] ----------
+[maxjcompiler] 189. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 108)
+[maxjcompiler] 	DFEVar metapipe813_datapath_en = metapipe813_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable metapipe813_datapath_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 190. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 109)
+[maxjcompiler] 	DFEVar metapipe813_ctr_en = void781_done;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable metapipe813_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 191. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 114)
+[maxjcompiler] 	OffsetExpr CounterChain766_offset = stream.makeOffsetAutoLoop("CounterChain766_offset");
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain766_offset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 192. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 118)
+[maxjcompiler] 	DFEVar CounterChain766_maxed = CounterChain766.getOutput("saturated");
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain766_maxed is never read
+[maxjcompiler] ----------
+[maxjcompiler] 193. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 119)
+[maxjcompiler] 	DFEVar CounterChain766_done = stream.offset(CounterChain766.getOutput("done"), -1);
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain766_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 194. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 120)
+[maxjcompiler] 	OffsetExpr CounterChain766_additionalOffset = new OffsetExpr();
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain766_additionalOffset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 195. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 129)
+[maxjcompiler] 	DblBufReg[] FixedPoint599_chain = spatialUtils.getRegChain(
+[maxjcompiler] 	            ^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable FixedPoint599_chain is never read
+[maxjcompiler] ----------
+[maxjcompiler] 196. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 150)
+[maxjcompiler] 	DFEVar void781_ctr_en = void781_datapath_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void781_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 197. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 154)
+[maxjcompiler] 	MemoryCmdGenLib void771 = new MemoryCmdGenLib(
+[maxjcompiler] 	                ^^^^^^^
+[maxjcompiler] The local variable void771 is never read
+[maxjcompiler] ----------
+[maxjcompiler] 198. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 175)
+[maxjcompiler] 	DFEVar Counter772_max_0 = pipe779_sm.getOutput("ctr_maxOut_0");
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable Counter772_max_0 is never read
+[maxjcompiler] ----------
+[maxjcompiler] 199. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 183)
+[maxjcompiler] 	OffsetExpr CounterChain773_offset = stream.makeOffsetAutoLoop("CounterChain773_offset");
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain773_offset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 200. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 187)
+[maxjcompiler] 	DFEVar CounterChain773_maxed = CounterChain773.getOutput("saturated");
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain773_maxed is never read
+[maxjcompiler] ----------
+[maxjcompiler] 201. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 189)
+[maxjcompiler] 	OffsetExpr CounterChain773_additionalOffset = new OffsetExpr();
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain773_additionalOffset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 202. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 194)
+[maxjcompiler] 	DFEVar pipe779_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable pipe779_redLoop_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 203. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 229)
+[maxjcompiler] 	DFEVar pipe805_ctr_en = pipe805_datapath_en & pipe805_redLoop_done;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable pipe805_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 204. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 234)
+[maxjcompiler] 	OffsetExpr CounterChain784_offset = stream.makeOffsetAutoLoop("CounterChain784_offset");
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain784_offset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 205. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 238)
+[maxjcompiler] 	DFEVar CounterChain784_maxed = CounterChain784.getOutput("saturated");
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain784_maxed is never read
+[maxjcompiler] ----------
+[maxjcompiler] 206. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 240)
+[maxjcompiler] 	OffsetExpr CounterChain784_additionalOffset = new OffsetExpr();
+[maxjcompiler] 	           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable CounterChain784_additionalOffset is never read
+[maxjcompiler] ----------
+[maxjcompiler] 207. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 267)
+[maxjcompiler] 	DFEVar Bit101 = constant.var( true );
+[maxjcompiler] 	       ^^^^^^
+[maxjcompiler] The local variable Bit101 is never read
+[maxjcompiler] ----------
+[maxjcompiler] 208. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 308)
+[maxjcompiler] 	DFEVar void811_ctr_en = void811_datapath_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void811_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 209. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 317)
+[maxjcompiler] 	DFEVar void811_redLoop_done = void811_redLoopCounter.getCount() === void811_loopLengthVal-1;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void811_redLoop_done is never read
+[maxjcompiler] ----------
+[maxjcompiler] 210. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 323)
+[maxjcompiler] 	DFEVar Bit101 = constant.var( true );
+[maxjcompiler] 	       ^^^^^^
+[maxjcompiler] The local variable Bit101 is never read
+[maxjcompiler] ----------
+[maxjcompiler] 211. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 352)
+[maxjcompiler] 	DFEVar void817_ctr_en = void817_datapath_en;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^
+[maxjcompiler] The local variable void817_ctr_en is never read
+[maxjcompiler] ----------
+[maxjcompiler] 212. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/TopKernelLib.maxj (at line 357)
+[maxjcompiler] 	DFEVar Bit101 = constant.var( true );
+[maxjcompiler] 	       ^^^^^^
+[maxjcompiler] The local variable Bit101 is never read
+[maxjcompiler] ----------
+[maxjcompiler] ----------
+[maxjcompiler] 213. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 2)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter is never used
+[maxjcompiler] ----------
+[maxjcompiler] 214. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 3)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain is never used
+[maxjcompiler] ----------
+[maxjcompiler] 215. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 4)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count is never used
+[maxjcompiler] ----------
+[maxjcompiler] 216. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 5)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 217. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 6)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params is never used
+[maxjcompiler] ----------
+[maxjcompiler] 218. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 7)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory is never used
+[maxjcompiler] ----------
+[maxjcompiler] 219. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 8)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel is never used
+[maxjcompiler] ----------
+[maxjcompiler] 220. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 9)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters is never used
+[maxjcompiler] ----------
+[maxjcompiler] 221. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 11)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.MathUtils;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.MathUtils is never used
+[maxjcompiler] ----------
+[maxjcompiler] 222. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 12)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.utils.Bits;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.utils.Bits is never used
+[maxjcompiler] ----------
+[maxjcompiler] 223. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 14)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath is never used
+[maxjcompiler] ----------
+[maxjcompiler] 224. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 15)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 225. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 16)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr is never used
+[maxjcompiler] ----------
+[maxjcompiler] 226. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 17)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions is never used
+[maxjcompiler] ----------
+[maxjcompiler] 227. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 18)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO is never used
+[maxjcompiler] ----------
+[maxjcompiler] 228. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 19)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator is never used
+[maxjcompiler] ----------
+[maxjcompiler] 229. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 20)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 230. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 22)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType is never used
+[maxjcompiler] ----------
+[maxjcompiler] 231. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 23)
+[maxjcompiler] 	import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[maxjcompiler] The import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode is never used
+[maxjcompiler] ----------
+[maxjcompiler] 232. WARNING in /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/maxj/src/kernels/pipe805_reduce_kernel.maxj (at line 24)
+[maxjcompiler] 	import java.util.Arrays;
+[maxjcompiler] 	       ^^^^^^^^^^^^^^^^
+[maxjcompiler] The import java.util.Arrays is never used
+[maxjcompiler] ----------
+[maxjcompiler] 232 problems (1 error, 231 warnings)
+
+BUILD FAILED
+/local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/build.xml:40: /local/ssd/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/unit/8_SimpleFold/out/build.xml:40: Compile failed; see the compiler error output for details.
+
+Total time: 3 seconds
+make: *** [bitstream-sim] Error 1

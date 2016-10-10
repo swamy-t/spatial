@@ -1,0 +1,1560 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Graph version="2014.1" pxg_version="1" maxfile_name="Top" design_name="TopKernel" compilation_phase="final-simulation" has_longest_path="false">
+	<Node group="[]" id="5" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000060; 96.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:48)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000001100000</Value>
+		<HexValue>0x00000060</HexValue>
+		<NumericValue>96.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="13" dst_node_input="sm_maxIn_0" src_node_id="5" src_node_output="value" />
+	<Edge dst_node_id="16" dst_node_input="max0" src_node_id="5" src_node_output="value" />
+	<Node group="[]" id="16" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+		<Input name="en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="reset" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="counter0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="counter0_extension0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="counter0_extension1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="counter0_extension2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="saturated" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>State Machine (CounterChain457_sm)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:92)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>CounterChain457_sm</Name>
+	</Node>
+	<Edge dst_node_id="19" dst_node_input="b" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="23" dst_node_input="a" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="28" dst_node_input="option0" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="37" dst_node_input="option0" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="46" dst_node_input="option0" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="55" dst_node_input="option0" src_node_id="16" src_node_output="counter0" />
+	<Edge dst_node_id="20" dst_node_input="b" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="28" dst_node_input="option1" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="32" dst_node_input="a" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="37" dst_node_input="option1" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="46" dst_node_input="option1" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="55" dst_node_input="option1" src_node_id="16" src_node_output="counter0_extension0" />
+	<Edge dst_node_id="21" dst_node_input="b" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="28" dst_node_input="option2" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="37" dst_node_input="option2" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="41" dst_node_input="a" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="46" dst_node_input="option2" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="55" dst_node_input="option2" src_node_id="16" src_node_output="counter0_extension1" />
+	<Edge dst_node_id="22" dst_node_input="b" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="28" dst_node_input="option3" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="37" dst_node_input="option3" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="46" dst_node_input="option3" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="50" dst_node_input="a" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="55" dst_node_input="option3" src_node_id="16" src_node_output="counter0_extension2" />
+	<Edge dst_node_id="154" dst_node_input="input" src_node_id="16" src_node_output="done" />
+	<Node group="[]" id="154" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="17" dst_node_input="input" src_node_id="154" src_node_output="output" />
+	<Node group="[]" id="17" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:96)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="13" dst_node_input="ctr_done" src_node_id="17" src_node_output="output" />
+	<Node group="[]" id="155" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="150" dst_node_input="input" src_node_id="155" src_node_output="output" />
+	<Node group="[]" id="150" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:81)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="13" dst_node_input="rst_done" src_node_id="150" src_node_output="output" />
+	<Node group="[]" id="13" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+		<Input name="ctr_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="rst_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_maxIn_0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="ctr_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="ctr_maxOut_0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="rst_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="sm_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>State Machine (pipe469_sm)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:76)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>pipe469_sm</Name>
+	</Node>
+	<Edge dst_node_id="164" dst_node_input="input" src_node_id="13" src_node_output="ctr_en" />
+	<Edge dst_node_id="16" dst_node_input="en" src_node_id="13" src_node_output="ctr_en" />
+	<Edge dst_node_id="155" dst_node_input="input" src_node_id="13" src_node_output="rst_en" />
+	<Edge dst_node_id="156" dst_node_input="input" src_node_id="13" src_node_output="sm_done" />
+	<Node group="[]" id="156" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="151" dst_node_input="input" src_node_id="156" src_node_output="output" />
+	<Node group="[]" id="151" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="8" dst_node_input="s0_done" src_node_id="151" src_node_output="output" />
+	<Edge dst_node_id="16" dst_node_input="reset" src_node_id="151" src_node_output="output" />
+	<Node group="[]" id="157" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="63" dst_node_input="input" src_node_id="157" src_node_output="output" />
+	<Node group="[]" id="63" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:133)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="59" dst_node_input="ctr_done" src_node_id="63" src_node_output="output" />
+	<Node group="[]" id="158" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="152" dst_node_input="input" src_node_id="158" src_node_output="output" />
+	<Node group="[]" id="152" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:131)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="59" dst_node_input="rst_done" src_node_id="152" src_node_output="output" />
+	<Node group="[]" id="159" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="59" dst_node_input="sm_en" src_node_id="159" src_node_output="output" />
+	<Node group="[]" id="62" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>{HWOffsetFix:32, 0, TWOSCOMPLEMENT}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:132)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="59" dst_node_input="sm_maxIn_0" src_node_id="62" src_node_output="value" />
+	<Node group="[]" id="59" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+		<Input name="ctr_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="rst_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_maxIn_0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="ctr_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="ctr_maxOut_0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="rst_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="sm_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>State Machine (void474_sm)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:126)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>void474_sm</Name>
+	</Node>
+	<Edge dst_node_id="157" dst_node_input="input" src_node_id="59" src_node_output="ctr_en" />
+	<Edge dst_node_id="158" dst_node_input="input" src_node_id="59" src_node_output="rst_en" />
+	<Edge dst_node_id="153" dst_node_input="input" src_node_id="59" src_node_output="sm_done" />
+	<Node group="[]" id="153" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:269)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:128)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="8" dst_node_input="s1_done" src_node_id="153" src_node_output="output" />
+	<Node group="[]" id="160" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="76" dst_node_input="enable" src_node_id="160" src_node_output="output" />
+	<Edge dst_node_id="179" dst_node_input="input" src_node_id="160" src_node_output="output" />
+	<Node group="[]" id="183" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(33, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:33, 0, UNSIGNED}\n0x000000060; 96.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:383)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:47)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>000000000000000000000000001100000</Value>
+		<HexValue>0x000000060</HexValue>
+		<NumericValue>96.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="76" dst_node_input="max" src_node_id="183" src_node_output="value" />
+	<Node group="[]" id="76" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(33, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.makeCounter(Count.java:383)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:47)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="79" dst_node_input="a" src_node_id="76" src_node_output="count" />
+	<Edge dst_node_id="77" dst_node_input="input" src_node_id="76" src_node_output="wrap" />
+	<Node group="[]" id="77" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:48)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="1" dst_node_input="intr_done" src_node_id="77" src_node_output="output" />
+	<Node group="[]" id="0" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (en)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:26)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>en</Name>
+	</Node>
+	<Edge dst_node_id="1" dst_node_input="sm_en" src_node_id="0" src_node_output="en" />
+	<Node group="[]" id="1" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+		<Input name="intr_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="run_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="cycles" type="dfeOffsetFix(64, 0, UNSIGNED)" />
+		<Output latency="0" name="intr_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="run_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="sm_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>State Machine (mainSm)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:32)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>mainSm</Name>
+	</Node>
+	<Edge dst_node_id="110" dst_node_input="data" src_node_id="1" src_node_output="cycles" />
+	<Edge dst_node_id="160" dst_node_input="input" src_node_id="1" src_node_output="intr_en" />
+	<Edge dst_node_id="8" dst_node_input="sm_en" src_node_id="1" src_node_output="run_en" />
+	<Node group="[]" id="10" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000001; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:62)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000000000001</Value>
+		<HexValue>0x00000001</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="8" dst_node_input="sm_numIter" src_node_id="10" src_node_output="value" />
+	<Node group="[]" id="8" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStateMachine">
+		<Input name="s0_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="s1_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="sm_numIter" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="0" name="rst_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="s0_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="s1_en" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="sm_done" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>State Machine (void476_sm)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib.addStateMachine(KernelLib.java:493)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:59)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>void476_sm</Name>
+	</Node>
+	<Edge dst_node_id="13" dst_node_input="sm_en" src_node_id="8" src_node_output="s0_en" />
+	<Edge dst_node_id="159" dst_node_input="input" src_node_id="8" src_node_output="s1_en" />
+	<Edge dst_node_id="161" dst_node_input="input" src_node_id="8" src_node_output="sm_done" />
+	<Node group="[]" id="161" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="9" dst_node_input="input" src_node_id="161" src_node_output="output" />
+	<Node group="[]" id="9" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="-1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>stream offset: -1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.offset(Stream.java:245)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:61)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="174" dst_node_input="input" src_node_id="9" src_node_output="output" />
+	<Edge dst_node_id="1" dst_node_input="run_done" src_node_id="9" src_node_output="output" />
+	<Node group="[]" id="174" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="6" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(6)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="74" dst_node_input="load" src_node_id="174" src_node_output="output" />
+	<Node group="[]" id="3" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="argin451" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar input (argin451)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:29)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>argin451</Name>
+	</Node>
+	<Edge dst_node_id="66" dst_node_input="a" src_node_id="3" src_node_output="argin451" />
+	<Edge dst_node_id="67" dst_node_input="a" src_node_id="3" src_node_output="argin451" />
+	<Node group="[]" id="67" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>[1:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectRport(BramLib.maxj:372)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>2</Width>
+	</Node>
+	<Edge dst_node_id="68" dst_node_input="input" src_node_id="67" src_node_output="result" />
+	<Node group="[]" id="68" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:2, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectRport(BramLib.maxj:372)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="73" dst_node_input="sel" src_node_id="68" src_node_output="output" />
+	<Node group="[]" id="23" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>[1:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>2</Width>
+	</Node>
+	<Edge dst_node_id="24" dst_node_input="input" src_node_id="23" src_node_output="result" />
+	<Node group="[]" id="24" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:2, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="142" dst_node_input="input" src_node_id="24" src_node_output="output" />
+	<Node group="[]" id="142" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(2)" />
+		<Text>&lt;{HWRawBits:2}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="28" dst_node_input="sel" src_node_id="142" src_node_output="output" />
+	<Edge dst_node_id="162" dst_node_input="input" src_node_id="142" src_node_output="output" />
+	<Node group="[]" id="28" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:864)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="30" dst_node_input="a" src_node_id="28" src_node_output="result" />
+	<Node group="[]" id="30" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(5)" />
+		<Text>[6:2]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:230)
+engine.BramLib.connectWport(BramLib.maxj:866)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>2</Base>
+		<Width>5</Width>
+	</Node>
+	<Edge dst_node_id="31" dst_node_input="input" src_node_id="30" src_node_output="result" />
+	<Node group="[]" id="31" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.write(BoxedMem.maxj:32)
+engine.BramLib.connectWport(BramLib.maxj:867)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="163" dst_node_input="input" src_node_id="31" src_node_output="output" />
+	<Node group="[]" id="163" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="116" dst_node_input="addrA" src_node_id="163" src_node_output="output" />
+	<Node group="[]" id="162" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="2" name="output" type="dfeBits(2)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="sel" src_node_id="162" src_node_output="output" />
+	<Node group="[]" id="2" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="argin450" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar input (argin450)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarInput(IO.java:1106)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:28)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>argin450</Name>
+	</Node>
+	<Edge dst_node_id="19" dst_node_input="a" src_node_id="2" src_node_output="argin450" />
+	<Edge dst_node_id="20" dst_node_input="a" src_node_id="2" src_node_output="argin450" />
+	<Edge dst_node_id="21" dst_node_input="a" src_node_id="2" src_node_output="argin450" />
+	<Edge dst_node_id="22" dst_node_input="a" src_node_id="2" src_node_output="argin450" />
+	<Node group="[]" id="19" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMul">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>*</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:956)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:112)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="option0" src_node_id="19" src_node_output="result" />
+	<Edge dst_node_id="38" dst_node_input="option0" src_node_id="19" src_node_output="result" />
+	<Edge dst_node_id="47" dst_node_input="option0" src_node_id="19" src_node_output="result" />
+	<Edge dst_node_id="56" dst_node_input="option0" src_node_id="19" src_node_output="result" />
+	<Node group="[]" id="20" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMul">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>*</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:956)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:113)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="option1" src_node_id="20" src_node_output="result" />
+	<Edge dst_node_id="38" dst_node_input="option1" src_node_id="20" src_node_output="result" />
+	<Edge dst_node_id="47" dst_node_input="option1" src_node_id="20" src_node_output="result" />
+	<Edge dst_node_id="56" dst_node_input="option1" src_node_id="20" src_node_output="result" />
+	<Node group="[]" id="21" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMul">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>*</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:956)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:114)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="option2" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="38" dst_node_input="option2" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="47" dst_node_input="option2" src_node_id="21" src_node_output="result" />
+	<Edge dst_node_id="56" dst_node_input="option2" src_node_id="21" src_node_output="result" />
+	<Node group="[]" id="22" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMul">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="2" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>*</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.mul(DFEVar.java:956)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:115)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="29" dst_node_input="option3" src_node_id="22" src_node_output="result" />
+	<Edge dst_node_id="38" dst_node_input="option3" src_node_id="22" src_node_output="result" />
+	<Edge dst_node_id="47" dst_node_input="option3" src_node_id="22" src_node_output="result" />
+	<Edge dst_node_id="56" dst_node_input="option3" src_node_id="22" src_node_output="result" />
+	<Node group="[]" id="29" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:865)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="116" dst_node_input="dina" src_node_id="29" src_node_output="result" />
+	<Node group="[]" id="164" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="3" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(3)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="116" dst_node_input="wea" src_node_id="164" src_node_output="output" />
+	<Edge dst_node_id="117" dst_node_input="wea" src_node_id="164" src_node_output="output" />
+	<Edge dst_node_id="118" dst_node_input="wea" src_node_id="164" src_node_output="output" />
+	<Edge dst_node_id="119" dst_node_input="wea" src_node_id="164" src_node_output="output" />
+	<Node group="[]" id="66" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(5)" />
+		<Text>[6:2]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:230)
+engine.BramLib.connectRport(BramLib.maxj:371)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>2</Base>
+		<Width>5</Width>
+	</Node>
+	<Edge dst_node_id="69" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Edge dst_node_id="70" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Edge dst_node_id="71" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Edge dst_node_id="72" dst_node_input="input" src_node_id="66" src_node_output="result" />
+	<Node group="[]" id="69" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.read(BoxedMem.maxj:28)
+engine.BramLib.connectRport(BramLib.maxj:375)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="116" dst_node_input="addrB" src_node_id="69" src_node_output="output" />
+	<Node group="[]" id="116" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeRAM">
+		<Input name="addrA" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Input name="dina" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="wea" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="addrB" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="doutb" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>RAM(RAM_TWO_PORT)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.alloc(Mem.java:67)
+engine.BoxedMem.&lt;init&gt;(BoxedMem.maxj:24)
+engine.BramLib.common(BramLib.maxj:79)
+engine.BramLib.&lt;init&gt;(BramLib.maxj:132)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:36)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<CollisionMode>READ_FIRST</CollisionMode>
+	</Node>
+	<Edge dst_node_id="73" dst_node_input="option0" src_node_id="116" src_node_output="doutb" />
+	<Node group="[]" id="32" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>[1:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>2</Width>
+	</Node>
+	<Edge dst_node_id="33" dst_node_input="input" src_node_id="32" src_node_output="result" />
+	<Node group="[]" id="33" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:2, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="143" dst_node_input="input" src_node_id="33" src_node_output="output" />
+	<Node group="[]" id="143" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(2)" />
+		<Text>&lt;{HWRawBits:2}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="37" dst_node_input="sel" src_node_id="143" src_node_output="output" />
+	<Edge dst_node_id="165" dst_node_input="input" src_node_id="143" src_node_output="output" />
+	<Node group="[]" id="37" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:864)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="39" dst_node_input="a" src_node_id="37" src_node_output="result" />
+	<Node group="[]" id="39" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(5)" />
+		<Text>[6:2]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:230)
+engine.BramLib.connectWport(BramLib.maxj:866)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>2</Base>
+		<Width>5</Width>
+	</Node>
+	<Edge dst_node_id="40" dst_node_input="input" src_node_id="39" src_node_output="result" />
+	<Node group="[]" id="40" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.write(BoxedMem.maxj:32)
+engine.BramLib.connectWport(BramLib.maxj:867)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="166" dst_node_input="input" src_node_id="40" src_node_output="output" />
+	<Node group="[]" id="166" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="117" dst_node_input="addrA" src_node_id="166" src_node_output="output" />
+	<Node group="[]" id="165" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="2" name="output" type="dfeBits(2)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="38" dst_node_input="sel" src_node_id="165" src_node_output="output" />
+	<Node group="[]" id="38" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:865)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="117" dst_node_input="dina" src_node_id="38" src_node_output="result" />
+	<Node group="[]" id="70" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.read(BoxedMem.maxj:28)
+engine.BramLib.connectRport(BramLib.maxj:375)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="117" dst_node_input="addrB" src_node_id="70" src_node_output="output" />
+	<Node group="[]" id="117" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeRAM">
+		<Input name="addrA" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Input name="dina" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="wea" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="addrB" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="doutb" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>RAM(RAM_TWO_PORT)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.alloc(Mem.java:67)
+engine.BoxedMem.&lt;init&gt;(BoxedMem.maxj:24)
+engine.BramLib.common(BramLib.maxj:79)
+engine.BramLib.&lt;init&gt;(BramLib.maxj:132)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:36)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<CollisionMode>READ_FIRST</CollisionMode>
+	</Node>
+	<Edge dst_node_id="73" dst_node_input="option1" src_node_id="117" src_node_output="doutb" />
+	<Node group="[]" id="41" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>[1:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>2</Width>
+	</Node>
+	<Edge dst_node_id="42" dst_node_input="input" src_node_id="41" src_node_output="result" />
+	<Node group="[]" id="42" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:2, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="144" dst_node_input="input" src_node_id="42" src_node_output="output" />
+	<Node group="[]" id="144" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(2)" />
+		<Text>&lt;{HWRawBits:2}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="46" dst_node_input="sel" src_node_id="144" src_node_output="output" />
+	<Edge dst_node_id="168" dst_node_input="input" src_node_id="144" src_node_output="output" />
+	<Node group="[]" id="46" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:864)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="48" dst_node_input="a" src_node_id="46" src_node_output="result" />
+	<Node group="[]" id="48" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(5)" />
+		<Text>[6:2]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:230)
+engine.BramLib.connectWport(BramLib.maxj:866)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>2</Base>
+		<Width>5</Width>
+	</Node>
+	<Edge dst_node_id="49" dst_node_input="input" src_node_id="48" src_node_output="result" />
+	<Node group="[]" id="49" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.write(BoxedMem.maxj:32)
+engine.BramLib.connectWport(BramLib.maxj:867)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="169" dst_node_input="input" src_node_id="49" src_node_output="output" />
+	<Node group="[]" id="169" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="118" dst_node_input="addrA" src_node_id="169" src_node_output="output" />
+	<Node group="[]" id="168" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="2" name="output" type="dfeBits(2)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="47" dst_node_input="sel" src_node_id="168" src_node_output="output" />
+	<Node group="[]" id="47" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:865)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="118" dst_node_input="dina" src_node_id="47" src_node_output="result" />
+	<Node group="[]" id="71" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.read(BoxedMem.maxj:28)
+engine.BramLib.connectRport(BramLib.maxj:375)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="118" dst_node_input="addrB" src_node_id="71" src_node_output="output" />
+	<Node group="[]" id="118" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeRAM">
+		<Input name="addrA" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Input name="dina" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="wea" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="addrB" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="doutb" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>RAM(RAM_TWO_PORT)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.alloc(Mem.java:67)
+engine.BoxedMem.&lt;init&gt;(BoxedMem.maxj:24)
+engine.BramLib.common(BramLib.maxj:79)
+engine.BramLib.&lt;init&gt;(BramLib.maxj:132)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:36)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<CollisionMode>READ_FIRST</CollisionMode>
+	</Node>
+	<Edge dst_node_id="73" dst_node_input="option2" src_node_id="118" src_node_output="doutb" />
+	<Node group="[]" id="50" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(2)" />
+		<Text>[1:0]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>0</Base>
+		<Width>2</Width>
+	</Node>
+	<Edge dst_node_id="51" dst_node_input="input" src_node_id="50" src_node_output="result" />
+	<Node group="[]" id="51" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:2, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:228)
+engine.BramLib.connectWport(BramLib.maxj:860)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="145" dst_node_input="input" src_node_id="51" src_node_output="output" />
+	<Node group="[]" id="145" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(2)" />
+		<Text>&lt;{HWRawBits:2}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="55" dst_node_input="sel" src_node_id="145" src_node_output="output" />
+	<Edge dst_node_id="171" dst_node_input="input" src_node_id="145" src_node_output="output" />
+	<Node group="[]" id="55" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:864)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="57" dst_node_input="a" src_node_id="55" src_node_output="result" />
+	<Node group="[]" id="57" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeSlice">
+		<Input name="a" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="0" name="result" type="dfeBits(5)" />
+		<Text>[6:2]</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.slice(DFEVar.java:318)
+engine.BramLib.bankAndLocalAddr(BramLib.maxj:230)
+engine.BramLib.connectWport(BramLib.maxj:866)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Base>2</Base>
+		<Width>5</Width>
+	</Node>
+	<Edge dst_node_id="58" dst_node_input="input" src_node_id="57" src_node_output="result" />
+	<Node group="[]" id="58" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.write(BoxedMem.maxj:32)
+engine.BramLib.connectWport(BramLib.maxj:867)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="172" dst_node_input="input" src_node_id="58" src_node_output="output" />
+	<Node group="[]" id="172" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="119" dst_node_input="addrA" src_node_id="172" src_node_output="output" />
+	<Node group="[]" id="171" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(2)" />
+		<Output latency="2" name="output" type="dfeBits(2)" />
+		<Text>FIFO(2)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="56" dst_node_input="sel" src_node_id="171" src_node_output="output" />
+	<Node group="[]" id="56" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeBits(2)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectWport(BramLib.maxj:865)
+engine.BramLib.connectWport(BramLib.maxj:830)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:118)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="119" dst_node_input="dina" src_node_id="56" src_node_output="result" />
+	<Node group="[]" id="72" isControl="true" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeBits(5)" />
+		<Output latency="0" name="output" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Text>&lt;{HWOffsetFix:5, 0, UNSIGNED}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.cast(DFEVar.java:152)
+engine.BoxedMem.read(BoxedMem.maxj:28)
+engine.BramLib.connectRport(BramLib.maxj:375)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="119" dst_node_input="addrB" src_node_id="72" src_node_output="output" />
+	<Node group="[]" id="119" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeRAM">
+		<Input name="addrA" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Input name="dina" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="wea" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="addrB" type="dfeOffsetFix(5, 0, UNSIGNED)" />
+		<Output latency="2" name="doutb" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>RAM(RAM_TWO_PORT)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Mem.alloc(Mem.java:67)
+engine.BoxedMem.&lt;init&gt;(BoxedMem.maxj:24)
+engine.BramLib.common(BramLib.maxj:79)
+engine.BramLib.&lt;init&gt;(BramLib.maxj:132)
+engine.BaseLib.&lt;init&gt;(BaseLib.maxj:36)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:30)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<CollisionMode>READ_FIRST</CollisionMode>
+	</Node>
+	<Edge dst_node_id="73" dst_node_input="option3" src_node_id="119" src_node_output="doutb" />
+	<Node group="[]" id="73" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeMux">
+		<Input name="sel" type="dfeOffsetFix(2, 0, UNSIGNED)" />
+		<Input name="option0" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option1" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option2" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Input name="option3" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>MUX</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Control.mux(Control.java:116)
+engine.BramLib.connectRport(BramLib.maxj:380)
+engine.BramLib.connectRport(BramLib.maxj:360)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:140)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="74" dst_node_input="data" src_node_id="73" src_node_output="result" />
+	<Node group="[]" id="74" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, TWOSCOMPLEMENT)" />
+		<Text>Scalar output (argout452)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarOutput(IO.java:881)
+engine.TopKernelLib.&lt;init&gt;(TopKernelLib.maxj:143)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:42)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>argout452</Name>
+	</Node>
+	<Node group="[]" id="179" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="80" dst_node_input="a" src_node_id="179" src_node_output="output" />
+	<Edge dst_node_id="114" dst_node_input="a" src_node_id="179" src_node_output="output" />
+	<Edge dst_node_id="107" dst_node_input="input" src_node_id="179" src_node_output="output" />
+	<Node group="[]" id="182" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000000; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:51)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="79" dst_node_input="b" src_node_id="182" src_node_output="value" />
+	<Node group="[]" id="79" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.eq(DFEVar.java:585)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:51)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="80" dst_node_input="b" src_node_id="79" src_node_output="result" />
+	<Node group="[]" id="80" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar.and(DFEVar.java:518)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:51)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="98" dst_node_input="a" src_node_id="80" src_node_output="result" />
+	<Node group="[]" id="96" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_intrCmd_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_intrCmd_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>io_intrCmd_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="97" dst_node_input="a" src_node_id="96" src_node_output="io_intrCmd_force_disabled" />
+	<Node group="[]" id="97" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="98" dst_node_input="b" src_node_id="97" src_node_output="result" />
+	<Node group="[]" id="98" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="99" dst_node_input="output_control" src_node_id="98" src_node_output="result" />
+	<Node group="[]" id="107" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(1)" />
+		<Text>&lt;{HWRawBits:1}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="177" dst_node_input="input" src_node_id="107" src_node_output="output" />
+	<Node group="[]" id="177" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeFIFO">
+		<Input name="input" type="dfeBits(1)" />
+		<Output latency="1" name="output" type="dfeBits(1)" />
+		<Text>FIFO(1)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.DFEManager.build(DFEManager.java:357)
+engine.TopManager.main(MaxJManager.maxj:158)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="108" dst_node_input="in0" src_node_id="177" src_node_output="output" />
+	<Node group="[]" id="136" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeBits(15)" />
+		<Text>{HWRawBits:15}\n0x0001</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>000000000000001</Value>
+		<HexValue>0x0001</HexValue>
+	</Node>
+	<Edge dst_node_id="106" dst_node_input="in0" src_node_id="136" src_node_output="value" />
+	<Node group="[]" id="138" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(8, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:8, 0, UNSIGNED}\n0x00; 0.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000</Value>
+		<HexValue>0x00</HexValue>
+		<NumericValue>0.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="103" dst_node_input="input" src_node_id="138" src_node_output="value" />
+	<Node group="[]" id="103" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeReinterpret">
+		<Input name="input" type="dfeOffsetFix(8, 0, UNSIGNED)" />
+		<Output latency="0" name="output" type="dfeBits(8)" />
+		<Text>&lt;{HWRawBits:8}&gt;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="104" dst_node_input="in0" src_node_id="103" src_node_output="output" />
+	<Node group="[]" id="140" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeBits(8)" />
+		<Text>{HWRawBits:8}\n0x01</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000001</Value>
+		<HexValue>0x01</HexValue>
+	</Node>
+	<Edge dst_node_id="102" dst_node_input="in0" src_node_id="140" src_node_output="value" />
+	<Node group="[]" id="141" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeBits(32)" />
+		<Text>{HWRawBits:32}\n0x00000000</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000000000000</Value>
+		<HexValue>0x00000000</HexValue>
+	</Node>
+	<Edge dst_node_id="102" dst_node_input="in1" src_node_id="141" src_node_output="value" />
+	<Node group="[]" id="102" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+		<Input name="in0" type="dfeBits(8)" />
+		<Input name="in1" type="dfeBits(32)" />
+		<Output latency="0" name="result" type="dfeBits(40)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="104" dst_node_input="in1" src_node_id="102" src_node_output="result" />
+	<Node group="[]" id="104" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+		<Input name="in0" type="dfeBits(8)" />
+		<Input name="in1" type="dfeBits(40)" />
+		<Output latency="0" name="result" type="dfeBits(48)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="106" dst_node_input="in1" src_node_id="104" src_node_output="result" />
+	<Node group="[]" id="106" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+		<Input name="in0" type="dfeBits(15)" />
+		<Input name="in1" type="dfeBits(48)" />
+		<Output latency="0" name="result" type="dfeBits(63)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="108" dst_node_input="in1" src_node_id="106" src_node_output="result" />
+	<Node group="[]" id="108" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeCat">
+		<Input name="in0" type="dfeBits(1)" />
+		<Input name="in1" type="dfeBits(63)" />
+		<Output latency="0" name="result" type="dfeBits(64)" />
+		<Text>@</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="99" dst_node_input="data" src_node_id="108" src_node_output="result" />
+	<Node group="[]" id="99" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeBits(64)" />
+		<Text>Output(intrCmd)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.LMemCommandStream.makeKernelOutput(LMemCommandStream.java:78)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:50)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>intrCmd</Name>
+	</Node>
+	<Node group="[]" id="109" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarOutput(IO.java:1056)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:59)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="110" dst_node_input="load" src_node_id="109" src_node_output="value" />
+	<Node group="[]" id="110" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(64, 0, UNSIGNED)" />
+		<Text>Scalar output (cycles)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.scalarOutput(IO.java:1056)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:59)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>cycles</Name>
+	</Node>
+	<Node group="[]" id="112" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="io_intrStream_force_disabled" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Scalar input (io_intrStream_force_disabled)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:60)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>io_intrStream_force_disabled</Name>
+	</Node>
+	<Edge dst_node_id="113" dst_node_input="a" src_node_id="112" src_node_output="io_intrStream_force_disabled" />
+	<Node group="[]" id="113" isControl="true" isVisible="false" pipelineFactor="0.0" type="NodeNot">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>~</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:60)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="114" dst_node_input="b" src_node_id="113" src_node_output="result" />
+	<Node group="[]" id="114" isControl="false" isVisible="false" pipelineFactor="0.0" type="NodeAnd">
+		<Input name="a" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Output latency="0" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>&amp;</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:60)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="115" dst_node_input="output_control" src_node_id="114" src_node_output="result" />
+	<Node group="[]" id="111" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:32, 0, UNSIGNED}\n0x00000005; 5.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Constant.var(Constant.java:99)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:60)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>00000000000000000000000000000101</Value>
+		<HexValue>0x00000005</HexValue>
+		<NumericValue>5.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="115" dst_node_input="data" src_node_id="111" src_node_output="value" />
+	<Node group="[]" id="115" isControl="false" isVisible="true" pipelineFactor="1.0" type="NodeOutput">
+		<Input name="output_control" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(32, 0, UNSIGNED)" />
+		<Text>Output(intrStream)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.IO.output(IO.java:685)
+engine.TopKernel.&lt;init&gt;(TopKernel.maxj:60)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>intrStream</Name>
+	</Node>
+	<Node group="[]" id="124" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="125" dst_node_input="load" src_node_id="124" src_node_output="value" />
+	<Node group="[]" id="181" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="122" dst_node_input="enable" src_node_id="181" src_node_output="value" />
+	<Node group="[]" id="121" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="122" dst_node_input="max" src_node_id="121" src_node_output="value" />
+	<Node group="[]" id="122" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="123" dst_node_input="input" src_node_id="122" src_node_output="count" />
+	<Node group="[]" id="123" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeStreamOffset">
+		<Input name="input" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="output" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>stream offset: 1</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="125" dst_node_input="data" src_node_id="123" src_node_output="output" />
+	<Node group="[]" id="125" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeOutputMappedReg">
+		<Input name="load" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="data" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar output (current_run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>current_run_cycle_count</Name>
+	</Node>
+	<Node group="[]" id="180" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:1, 0, UNSIGNED}\n0x1; 1.0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1</Value>
+		<HexValue>0x1</HexValue>
+		<NumericValue>1.0</NumericValue>
+	</Node>
+	<Edge dst_node_id="128" dst_node_input="enable" src_node_id="180" src_node_output="value" />
+	<Node group="[]" id="127" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeConstantRawBits">
+		<Output latency="0" name="value" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Text>{HWOffsetFix:49, 0, UNSIGNED}\n0x1000000000000; 2.81474976710656E14</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Value>1000000000000000000000000000000000000000000000000</Value>
+		<HexValue>0x1000000000000</HexValue>
+		<NumericValue>2.81474976710656E14</NumericValue>
+	</Node>
+	<Edge dst_node_id="128" dst_node_input="max" src_node_id="127" src_node_output="value" />
+	<Node group="[]" id="128" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeCounterV1">
+		<Input name="enable" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Input name="max" type="dfeOffsetFix(49, 0, UNSIGNED)" />
+		<Output latency="0" name="count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="0" name="wrap" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>Counter(NUMERIC_INCREMENTING)\nInc: 1\nReset: 0\nInit: 0</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Increment>1</Increment>
+		<WrapValue>0</WrapValue>
+		<InitValue>0</InitValue>
+		<CountMode>NUMERIC_INCREMENTING</CountMode>
+		<WrapMode>COUNT_LT_MAX_THEN_WRAP</WrapMode>
+	</Node>
+	<Edge dst_node_id="131" dst_node_input="a" src_node_id="128" src_node_output="count" />
+	<Node group="[]" id="130" isControl="true" isVisible="false" pipelineFactor="1.0" type="NodeInputMappedReg">
+		<Output latency="0" name="run_cycle_count" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Text>Scalar input (run_cycle_count)</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+		<Name>run_cycle_count</Name>
+	</Node>
+	<Edge dst_node_id="131" dst_node_input="b" src_node_id="130" src_node_output="run_cycle_count" />
+	<Node group="[]" id="131" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeEq">
+		<Input name="a" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Input name="b" type="dfeOffsetFix(48, 0, UNSIGNED)" />
+		<Output latency="1" name="result" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>==</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+	<Edge dst_node_id="129" dst_node_input="start" src_node_id="131" src_node_output="result" />
+	<Node group="[]" id="129" isControl="false" isVisible="false" pipelineFactor="1.0" type="NodeFlush">
+		<Input name="start" type="dfeOffsetFix(1, 0, UNSIGNED)" />
+		<Text>flush on trigger</Text>
+		<OriginStackTrace>com.maxeler.maxcompiler.v2.managers.custom.CustomManager.addKernel(CustomManager.java:996)
+engine.TopManager.&lt;init&gt;(MaxJManager.maxj:68)
+engine.TopManager.main(MaxJManager.maxj:148)</OriginStackTrace>
+	</Node>
+</Graph>
