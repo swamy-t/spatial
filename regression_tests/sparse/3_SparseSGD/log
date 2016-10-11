@@ -1,8 +1,0 @@
-Ignoring silly LD_PRELOAD  e r r o r
-Ignoring silly LD_PRELOAD  e r r o r
-Error: Could not find or load main class SparseSGD
-[delite info 2016-10-09 21:41:39.055732]: Generating DEG file with options: {'enable_pir': True, 'verbose': False, 'no_fusion': False, 'cluster': False, 'debuglast': False, 'no_blas': False, 'no_multidimgpu': False, 'latency': False, 'xdebug': False, 'jar_app': False, 'opencl': False, 'build_dir': '/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial', 'maxj': False, 'dump_exception': True, 'no_soa': False, 'strict_control': False, 'profile': False, 'enable_dse': True, 'debug': False, 'optimize': 0, 'long_int': False, 'xnocache': False, 'cuda': False, 'cpp': False, 'dot': False}
-[delite error 2016-10-09 21:41:39.256458]: Delite compilation failed
-[delite error 2016-10-09 21:41:39.356620]: couldn't find DEG file: SparseSGD
-Parsing log
-Running Spatial with arguments: 
