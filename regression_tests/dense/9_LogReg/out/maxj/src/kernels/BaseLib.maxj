@@ -1,0 +1,169 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class BaseLib extends KernelLib {
+BaseLib(KernelLib owner) { super(owner); }
+      SpatialUtils spatialUtils = new SpatialUtils(this);
+DFEVar argin2529 = io.scalarInput("argin2529", dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT) );
+// DFEVar Sym(2531) = int2530.cast(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT))
+DFEVar void2798_done = dfeBool().newInstance(this);
+DFEVar void2595_done = dfeBool().newInstance(this);
+DFEVar void2595_en = dfeBool().newInstance(this);
+DFEVar metapipe2756_done = dfeBool().newInstance(this);
+DFEVar metapipe2756_en = dfeBool().newInstance(this);
+DFEVar pipe2781_done = dfeBool().newInstance(this);
+DFEVar pipe2781_en = dfeBool().newInstance(this);
+DFEVar void2796_done = dfeBool().newInstance(this);
+DFEVar void2796_en = dfeBool().newInstance(this);
+/* Bram_new { */
+BramLib BRAM2580_0 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+BramLib BRAM2580_1 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+/* } Bram_new */
+DFEVar void2582_done = dfeBool().newInstance(this);
+DFEVar void2582_en = dfeBool().newInstance(this);
+DFEVar pipe2593_done = dfeBool().newInstance(this);
+DFEVar pipe2593_en = dfeBool().newInstance(this);
+DFEVar FIFO2581_trashEn = dfeBool().newInstance(this); // Send stream to trash for when read is not burst-aligned
+DFEVar pipe2593_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2584_done = dfeBool().newInstance(this);
+/* Bram_new { */
+BramLib BRAM2596_0 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+BramLib BRAM2596_1 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+/* } Bram_new */
+DFEVar void2642_done = dfeBool().newInstance(this);
+DFEVar void2642_en = dfeBool().newInstance(this);
+DFEVar metapipe2727_done = dfeBool().newInstance(this);
+DFEVar metapipe2727_en = dfeBool().newInstance(this);
+DFEVar pipe2754_done = dfeBool().newInstance(this);
+DFEVar pipe2754_en = dfeBool().newInstance(this);
+/* Bram_new { */
+NBufKernelLib BRAM2602_0 = new NBufKernelLib(this, "BRAM2602_0",
+                  192, 384, /*size0, size1*/
+                  dfeFloat(8,24), new int[] {1,4}, new int[] {384,1}, 2, /*banks, strides, depth*/
+                  true, /*all_same access (row_major or col_major)*/
+                  new boolean[] {true,true}, /*rowmajor read?*/
+                  4, 4 /*writepar, readpar*/);
+NBufKernelLib BRAM2602_1 = new NBufKernelLib(this, "BRAM2602_1",
+                  192, 384, /*size0, size1*/
+                  dfeFloat(8,24), new int[] {1,4}, new int[] {384,1}, 2, /*banks, strides, depth*/
+                  true, /*all_same access (row_major or col_major)*/
+                  new boolean[] {true,true}, /*rowmajor read?*/
+                  4, 4 /*writepar, readpar*/);
+/* } Bram_new */
+/* Bram_new { */
+NBufKernelLib BRAM2603_0 = new NBufKernelLib(this, "BRAM2603_0",
+                  192, 1, /*size0, size1*/
+                  dfeFloat(8,24), 4, 1, 2, /*banks, strides, depth*/
+                  true, /*all_same access (row_major or col_major)*/
+                  new boolean[] {true}, /*rowmajor read?*/
+                  4, 1 /*writepar, readpar*/);
+/* } Bram_new */
+DFEVar metapipe2625_done = dfeBool().newInstance(this);
+DFEVar metapipe2625_en = dfeBool().newInstance(this);
+DFEVar void2640_done = dfeBool().newInstance(this);
+DFEVar void2640_en = dfeBool().newInstance(this);
+DFEVar void2610_done = dfeBool().newInstance(this);
+DFEVar void2610_en = dfeBool().newInstance(this);
+DFEVar void2612_done = dfeBool().newInstance(this);
+DFEVar void2612_en = dfeBool().newInstance(this);
+DFEVar pipe2623_done = dfeBool().newInstance(this);
+DFEVar pipe2623_en = dfeBool().newInstance(this);
+/* Reg_new { */
+NBufReg reg2607_0_lib = new NBufReg(this, dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), "reg2607_0", 1, new Bits(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT).getTotalBits(), 0), 2); //2 depth
+/* Reg_new } */
+DFEVar void2610_rst_done = dfeBool().newInstance(this);
+DFEVar FIFO2604_trashEn = dfeBool().newInstance(this); // Send stream to trash for when read is not burst-aligned
+DFEVar pipe2623_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2614_done = dfeBool().newInstance(this);
+DFEVar void2627_done = dfeBool().newInstance(this);
+DFEVar void2627_en = dfeBool().newInstance(this);
+DFEVar pipe2638_done = dfeBool().newInstance(this);
+DFEVar pipe2638_en = dfeBool().newInstance(this);
+DFEVar FIFO2626_trashEn = dfeBool().newInstance(this); // Send stream to trash for when read is not burst-aligned
+DFEVar pipe2638_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2629_done = dfeBool().newInstance(this);
+/* Bram_new { */
+BramLib BRAM2643_0 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+NBufKernelLib BRAM2643_1 = new NBufKernelLib(this, "BRAM2643_1",
+                  384, 1, /*size0, size1*/
+                  dfeFloat(8,24), 4, 1, 2, /*banks, strides, depth*/
+                  true, /*all_same access (row_major or col_major)*/
+                  new boolean[] {true,true}, /*rowmajor read?*/
+                  4, 4 /*writepar, readpar*/);
+/* } Bram_new */
+DFEVar pipe2674_done = dfeBool().newInstance(this);
+DFEVar pipe2674_en = dfeBool().newInstance(this);
+DFEVar void2684_done = dfeBool().newInstance(this);
+DFEVar void2684_en = dfeBool().newInstance(this);
+DFEVar pipe2703_done = dfeBool().newInstance(this);
+DFEVar pipe2703_en = dfeBool().newInstance(this);
+DFEVar pipe2725_done = dfeBool().newInstance(this);
+DFEVar pipe2725_en = dfeBool().newInstance(this);
+/* Reg_new { */
+NBufReg reg2648_0_lib = new NBufReg(this, dfeFloat(8,24), "reg2648_0", 1, new Bits(dfeFloat(8,24).getTotalBits(), 0), 2); //2 depth
+/* Reg_new } */
+/* Bram_new { */
+NBufKernelLib BRAM2649_0 = new NBufKernelLib(this, "BRAM2649_0",
+                  384, 1, /*size0, size1*/
+                  dfeFloat(8,24), 4, 1, 2, /*banks, strides, depth*/
+                  true, /*all_same access (row_major or col_major)*/
+                  new boolean[] {true}, /*rowmajor read?*/
+                  4, 4 /*writepar, readpar*/);
+/* } Bram_new */
+/* Reg_new { */
+NBufReg reg2650_1_lib = new NBufReg(this, dfeFloat(8,24), "reg2650_1", 1, new Bits(dfeFloat(8,24).getTotalBits(), 0), 2); //2 depth
+/* Reg_new } */
+DFEVar pipe2674_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2652_done = dfeBool().newInstance(this);
+DFEVar void2684_rst_done = dfeBool().newInstance(this);
+DFEVar pipe2703_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2686_done = dfeBool().newInstance(this);
+DFEVar pipe2725_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2647_done = dfeBool().newInstance(this);
+DFEVar pipe2754_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2601_done = dfeBool().newInstance(this);
+/* Bram_new { */
+BramLib BRAM2757_0 = new BramLib(this, 384, 1, dfeFloat(8,24), /*banks*/ 4, /* stride */ 1, 1);
+/* } Bram_new */
+DFEVar pipe2781_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2759_done = dfeBool().newInstance(this);
+DFEVar pipe2793_done = dfeBool().newInstance(this);
+DFEVar pipe2793_en = dfeBool().newInstance(this);
+DFEVar void2794_done = dfeBool().newInstance(this);
+DFEVar void2794_en = dfeBool().newInstance(this);
+DFEVar pipe2793_rst_done = dfeBool().newInstance(this);
+DFEVar CounterChain2784_done = dfeBool().newInstance(this);
+// Emit argin reads
+DFEVar FixedPoint2533 = argin2529; // reg read
+DFEVar FixedPoint2597 = argin2529; // reg read
+DFEVar const0_FloatPoint257 = constant.var( dfeFloat(8,24), 0 ); 
+DFEVar const192_FixedPoint1668 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 192 ); 
+DFEVar const73728_FixedPoint1674 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 73728 ); 
+DFEVar const384_FixedPoint5 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 384 ); 
+DFEVar const10p0_FloatPoint8 = constant.var( dfeFloat(8,24), 10.0 ); 
+DFEVar const1p0_FloatPoint147 = constant.var( dfeFloat(8,24), 1.0 ); 
+DFEVar const1_FixedPoint265 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1 ); 
+DFEVar const0_FixedPoint244 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 0 ); 
+DFEVar const512_FixedPoint262 = constant.var( dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 512 ); 
+}

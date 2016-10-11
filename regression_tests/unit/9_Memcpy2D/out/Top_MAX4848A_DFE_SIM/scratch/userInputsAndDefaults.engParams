@@ -1,0 +1,11 @@
+#user parameters:
+DFEModel=MAX4848A
+maxFileName=Top
+target=DFE_SIM
+enableMPCX=false
+
+#default parameters:
+MPPRStartCT=1
+MPPREndCT=1
+MPPRThreads=1
+MPPRRetryThreshold=0

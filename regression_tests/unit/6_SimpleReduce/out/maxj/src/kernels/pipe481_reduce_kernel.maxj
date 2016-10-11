@@ -1,0 +1,42 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class pipe481_reduce_kernel extends KernelLib {
+void common( /*1*/ 
+                DFEVar FixedPoint478 /*2*/ , DFEVar FixedPoint398,DFEVar FixedPoint475 /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+DFEVar FixedPoint477 = FixedPoint475 * FixedPoint398;
+FixedPoint478 <== FixedPoint477; // is tree result, do not add Sym(476)
+/* Unknown Deff Sym(479) Reg_write(Sym(390),Sym(478),Sym(27)) */
+/* Unknown Deff Sym(480) Reify(Sym(479),Summary(mayRead(Sym(469), Sym(390)), mstRead(Sym(469), Sym(390)), mayWrite(Sym(390)), mstWrite(Sym(390))),List(Sym(475), Sym(476), Sym(479))) */
+}
+
+pipe481_reduce_kernel(KernelLib owner  /*1*/  , /*2*/
+                DFEVar FixedPoint478 , /*3*/  DFEVar FixedPoint398,DFEVar FixedPoint475) {
+  super(owner);
+  common(  FixedPoint478 , FixedPoint398,FixedPoint475);
+}
+}

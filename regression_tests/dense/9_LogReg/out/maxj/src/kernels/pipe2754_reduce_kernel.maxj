@@ -1,0 +1,71 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class pipe2754_reduce_kernel extends KernelLib {
+void common(DFEVector<DFEVar> Vector2728,DFEVector<DFEVar> Vector2729 /*1*/ ,
+                DFEVar FloatPoint2750,DFEVar FloatPoint2735,DFEVar FloatPoint2740,DFEVar FloatPoint2745 /*2*/ , DFEVar FixedPoint2029,DFEVar FixedPoint2260,DFEVar FixedPoint2261,DFEVar FixedPoint2262,DFEVar FixedPoint2263,DFEVar FixedPoint2597,DFEVar const0_FloatPoint257,DFEVar const384_FixedPoint5 /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+DFEVar FloatPoint2730 = Vector2729[0];
+DFEVar FloatPoint2731 = Vector2728[0];
+DFEVar Bit2264 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2264 = FixedPoint2260 < const384_FixedPoint5;
+DFEVar Bit2732 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2732 = FixedPoint2029 < FixedPoint2597;
+DFEVar Bit2733 = Bit2732 & Bit2264;
+DFEVar FloatPoint2734 = Bit2733 ? FloatPoint2731 : const0_FloatPoint257 ;
+FloatPoint2735 <== FloatPoint2734 + FloatPoint2730;
+DFEVar FloatPoint2736 = Vector2729[1];
+DFEVar FloatPoint2737 = Vector2728[1];
+DFEVar Bit2265 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2265 = FixedPoint2261 < const384_FixedPoint5;
+DFEVar Bit2738 = Bit2732 & Bit2265;
+DFEVar FloatPoint2739 = Bit2738 ? FloatPoint2737 : const0_FloatPoint257 ;
+FloatPoint2740 <== FloatPoint2739 + FloatPoint2736;
+DFEVar FloatPoint2741 = Vector2729[2];
+DFEVar FloatPoint2742 = Vector2728[2];
+DFEVar Bit2266 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2266 = FixedPoint2262 < const384_FixedPoint5;
+DFEVar Bit2743 = Bit2732 & Bit2266;
+DFEVar FloatPoint2744 = Bit2743 ? FloatPoint2742 : const0_FloatPoint257 ;
+FloatPoint2745 <== FloatPoint2744 + FloatPoint2741;
+DFEVar FloatPoint2746 = Vector2729[3];
+DFEVar FloatPoint2747 = Vector2728[3];
+DFEVar Bit2267 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit2267 = FixedPoint2263 < const384_FixedPoint5;
+DFEVar Bit2748 = Bit2732 & Bit2267;
+DFEVar FloatPoint2749 = Bit2748 ? FloatPoint2747 : const0_FloatPoint257 ;
+FloatPoint2750 <== FloatPoint2749 + FloatPoint2746;
+/* Unknown Deff Sym(2751) Vector_from_list(List(Sym(2735), Sym(2740), Sym(2745), Sym(2750))) */
+/* Unknown Deff Sym(2752) Par_bram_store(Sym(2021),Sym(2268),Sym(2751)) */
+/* Unknown Deff Sym(2753) Reify(Const(()),Summary(mayRead(Sym(2643), Sym(2021)), mstRead(Sym(2643), Sym(2021)), mayWrite(Sym(2021)), mstWrite(Sym(2021))),List(Sym(2728), Sym(2729), Sym(2752))) */
+}
+
+pipe2754_reduce_kernel(KernelLib owner , /*1*/ DFEVector<DFEVar> Vector2728,DFEVector<DFEVar> Vector2729 , /*2*/
+                DFEVar FloatPoint2750,DFEVar FloatPoint2735,DFEVar FloatPoint2740,DFEVar FloatPoint2745 , /*3*/  DFEVar FixedPoint2029,DFEVar FixedPoint2260,DFEVar FixedPoint2261,DFEVar FixedPoint2262,DFEVar FixedPoint2263,DFEVar FixedPoint2597,DFEVar const0_FloatPoint257,DFEVar const384_FixedPoint5) {
+  super(owner);
+  common(Vector2728, Vector2729 , FloatPoint2735,FloatPoint2740,FloatPoint2745,FloatPoint2750 , FixedPoint2029,FixedPoint2260,FixedPoint2261,FixedPoint2262,FixedPoint2263,FixedPoint2597,const0_FloatPoint257,const384_FixedPoint5);
+}
+}

@@ -1,0 +1,91 @@
+
+#!/bin/bash
+# Override env vars to point to a separate directory for this regression test
+export TESTS_HOME=/home/mattfel/transform_regression_tests_21-24
+export SPATIAL_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial
+export PUB_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial
+export HYPER_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl
+export PATH=/opt/maxcompiler/bin:/opt/maxcompiler2016/bin:/opt/maxeler/bin:/opt/altera/quartus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export FORGE_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/forge
+export DELITE_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/delite
+export LMS_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/virtualization-lms-core
+export PIR_HOME=/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial
+
+sleep 4 # Backoff time to prevent those weird file IO errors
+
+cd /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial
+/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial/bin/spatial --outdir=/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/out TPCHQ1 2>&1 | tee -a /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+
+sed -i "s/^ERROR.*ignored\./Ignoring silly LD_PRELOAD  e r r o r/g" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+sed -i "s/error retrieving current directory/Ignoring getcwd e r r o r/g" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+sed -i "s/error: illegal sharing of mutable object/Ignoring scattergather mutable sharing e r r o r/g" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+
+wc=$(cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log | grep "couldn't find DEG file" | wc -l)
+if [ "$wc" -ne 0 ]; then
+	echo "PASS: -1 (TPCHQ1 Spatial Error)"
+	if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+	    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+   		echo "[STATUS] Declaring failure app_not_written"
+    	touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_app_not_written.4_TPCHQ1
+    fi
+	exit 1
+fi
+
+wc=$(cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log | grep "error" | wc -l)
+if [ "$wc" -ne 0 ]; then
+	echo "PASS: -2 (TPCHQ1 Spatial Error)"
+	if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+	    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+	    cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+	    echo "[STATUS] Declaring failure build_in_spatial"
+    	touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_build_in_spatial.4_TPCHQ1
+    fi
+	exit 1
+fi
+
+cd /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/out
+make clean sim 2>&1 | tee -a /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+wc=$(cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log | sed "s/Error 1 (ignored)/ignore e r r o r/g" | grep "BUILD FAILED\|Error 1" | wc -l)
+if [ "$wc" -ne 0 ]; then
+	echo "PASS: -3 (TPCHQ1 Spatial Error)"
+	if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+	    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+	    echo "[STATUS] Declaring failure compile_maxj"
+	    touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_compile_maxj.4_TPCHQ1
+	fi
+	exit 1
+fi
+
+cd out
+bash /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/out/run.sh 960 2>&1 | tee -a /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log
+if grep -q "PASS: 1" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log; then
+  if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+    touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/pass.4_TPCHQ1
+	cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log | grep "Kernel done, cycles" | sed "s/Kernel done, cycles = //g" > /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/pass.4_TPCHQ1
+  fi
+elif grep -q "PASS: true" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log; then
+  if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+    touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/pass.4_TPCHQ1
+	cat /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log | grep "Kernel done, cycles" | sed "s/Kernel done, cycles = //g" > /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/pass.4_TPCHQ1
+  fi
+elif grep -q "PASS: 0" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log; then
+  if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+    echo "[STATUS] Declaring failure validation"
+	touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_validation.4_TPCHQ1
+  fi
+elif grep -q "PASS: false" /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/4_TPCHQ1/log; then
+  if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+    echo "[STATUS] Declaring failure validation"
+    touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_validation.4_TPCHQ1
+  fi
+else 
+  if [ -e /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1 ]; then
+    rm /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_did_not_finish.4_TPCHQ1
+    echo "[STATUS] Declaring failure no_validation_check"
+	touch /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/regression_tests/sparse/results/failed_no_validation_check.4_TPCHQ1		
+  fi
+fi

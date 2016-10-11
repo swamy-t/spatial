@@ -1,0 +1,42 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class void811_reduce_kernel extends KernelLib {
+void common( /*1*/ 
+                DFEVar FixedPoint808 /*2*/ , DFEVar FixedPoint806 /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+/* Unknown Deff Sym(101) ConstBit(true) */
+FixedPoint808 <== FixedPoint806; // is tree result, do not add Sym(807)
+/* Unknown Deff Sym(809) Reg_write(Sym(763),Sym(808),Sym(101)) */
+/* Unknown Deff Sym(810) Reify(Sym(809),Summary(mayRead(Sym(782), Sym(763)), mstRead(Sym(782), Sym(763)), mayWrite(Sym(763)), mstWrite(Sym(763))),List(Sym(806), Sym(807), Sym(809))) */
+}
+
+void811_reduce_kernel(KernelLib owner  /*1*/  , /*2*/
+                DFEVar FixedPoint808 , /*3*/  DFEVar FixedPoint806) {
+  super(owner);
+  common(  FixedPoint808 , FixedPoint806);
+}
+}

@@ -1,0 +1,376 @@
+/*****************************************
+  MaxJ BACKEND: emitSource 
+*******************************************/
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class TopKernelLib extends BaseLib {
+TopKernelLib(KernelLib owner, DFEVar top_en, DFEVar top_done) {
+super(owner);
+
+
+
+
+
+
+int DRAM1220 = 1048576;
+
+
+int DRAM1221 = 2097152;
+
+
+
+
+
+
+/* Emitting Hwblock dependencies { */
+// Dep: const0_FixedPoint49 = ConstFixPt(0,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$Signed,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B32,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: String1 = ArrayApply(Sym(0),Const(0))
+// Dep: argin1217 = Reflect(Argin_new(Sym(49)),Summary(mutable),List())
+DFEVar FixedPoint2 = dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT).newInstance(this);
+FixedPoint2 <== argin1217;
+// Dep: FixedPoint2 = Tpes_String_to_fixpt(Sym(1))
+// Dep: void1218 = Reflect(Set_arg(Sym(1217),Sym(2)),Summary(mayRead(Sym(1217)), mstRead(Sym(1217)), mayWrite(Sym(1217)), mstWrite(Sym(1217))),List(Sym(1217)))
+
+// Dep: FixedPoint1219 = Reflect(Reg_read(Sym(1217)),Summary(mayRead(Sym(1217)), mstRead(Sym(1217))),List(Sym(1217), Sym(1218)))
+// Dep: const96_FixedPoint54 = ConstFixPt(96,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$Signed,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B32,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const1_FixedPoint62 = ConstFixPt(1,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$Signed,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B32,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: const512_FixedPoint71 = ConstFixPt(512,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$Signed,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B32,BlockReduce1D$@690e1883.type#spatial.shared.SpatialIdentifiers$B0)
+// Dep: DRAM1220 = Reflect(Offchip_new(Sym(1219)),Summary(mutable),List())
+// Dep: DRAM1221 = Reflect(Offchip_new(Sym(54)),Summary(mutable),List())
+/*  End Hwblock dependencies } */
+/* quoteSuffix = Map(Sym(1290) -> Map(Sym(1054) -> _chain[0].read()), Sym(1278) -> Map()) */
+DFEVar void1306_en = top_en;
+top_done <== void1306_done;
+// Hwblock: childrenOf(void1306) = List(Sym(1292), Sym(1304))
+/* void1306_SeqSM void1306 { */
+SMIO void1306_sm = addStateMachine("void1306_sm", new void1306_SeqSM(this));
+    void1306_sm.connectInput("sm_en", void1306_en);
+    void1306_done <== stream.offset(void1306_sm.getOutput("sm_done"),-1);
+void1306_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1306_rst_en = void1306_sm.getOutput("rst_en");
+void1306_sm.connectInput("s0_done", metapipe1292_done);
+metapipe1292_en <== void1306_sm.getOutput("s0_en");
+void1306_sm.connectInput("s1_done", void1304_done);
+void1304_en <== void1306_sm.getOutput("s1_en");
+DFEVar void1306_datapath_en = void1306_en & ~void1306_rst_en;
+DFEVar void1306_ctr_en = void1306_datapath_en;
+/* } void1306_SeqSM void1306 */
+/* ParPipeReduce metapipe1292 = ParPipeReduce(CounterChain1263, BRAM1260) { */
+{
+/* MPSM to be emitted */
+/* ParPipeReduce metapipe1292 controller { */
+/* metapipe1292_MPSM metapipe1292 { */
+SMIO metapipe1292_sm = addStateMachine("metapipe1292_sm", new metapipe1292_MPSM(this));
+    metapipe1292_sm.connectInput("sm_en", metapipe1292_en);
+    metapipe1292_done <== stream.offset(metapipe1292_sm.getOutput("sm_done"),-1);
+DFEVar metapipe1292_niter = ((FixedPoint1261 - const0_FixedPoint49) / (const96_FixedPoint54 * 1));
+metapipe1292_sm.connectInput("sm_numIter", metapipe1292_niter.cast(dfeUInt(32)));
+DFEVar metapipe1292_rst_en = metapipe1292_sm.getOutput("rst_en");
+metapipe1292_sm.connectInput("s0_done", void1278_done);
+void1278_en <== metapipe1292_sm.getOutput("s0_en");
+metapipe1292_sm.connectInput("s1_done", pipe1290_done);
+pipe1290_en <== metapipe1292_sm.getOutput("s1_en");
+DFEVar Counter1262_max_0 = FixedPoint1261;
+DFEVar metapipe1292_datapath_en = metapipe1292_en;
+DFEVar metapipe1292_ctr_en = void1278_done;
+/* CustomCounterChain { */
+DFEVar CounterChain1263_en = void1278_done;
+DFEVar[] CounterChain1263_max = {FixedPoint1261};
+int[] CounterChain1263_strides = {96};
+OffsetExpr CounterChain1263_offset = stream.makeOffsetAutoLoop("CounterChain1263_offset");
+SMIO CounterChain1263 = addStateMachine("CounterChain1263_sm", new CounterChain1263_CtrSM(owner, CounterChain1263_strides)); // gap = 0
+CounterChain1263.connectInput("en", CounterChain1263_en);
+CounterChain1263.connectInput("reset", metapipe1292_done);
+DFEVar CounterChain1263_maxed = CounterChain1263.getOutput("saturated");
+DFEVar CounterChain1263_done = stream.offset(CounterChain1263.getOutput("done"), -1);
+OffsetExpr CounterChain1263_additionalOffset = new OffsetExpr();
+CounterChain1263.connectInput("max0", CounterChain1263_max[0]);
+DFEVar Counter1262 = CounterChain1263.getOutput("counter0");
+/* } CustomCounterChain */
+/* } metapipe1292_MPSM metapipe1292 */
+/* } metapipe1292 controller */
+/* ParPipeReduce metapipe1292 par loop { */
+DFEVar FixedPoint1054 = Counter1262;
+/* } metapipe1292 par loop */
+DblBufReg[] FixedPoint1054_chain = spatialUtils.getRegChain(
+              "metapipe1292_FixedPoint1054", 2, FixedPoint1054,
+              new DFEVar[]{void1278_done,pipe1290_done});
+/* ParPipeReduce metapipe1292 func block { */
+// FIFO FIFO1267 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint71, const0_FixedPoint49);
+DFEVector<DFEVar> FIFO1267_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this);
+DFEVector<DFEVar> FIFO1267_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this);
+DFEVar FIFO1267_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1267_writeEn = dfeBool().newInstance(this);
+// Unit pipe writtenIn(void1278) = List()
+/* void1278_MPSM void1278 { */
+SMIO void1278_sm = addStateMachine("void1278_sm", new void1278_MPSM(this));
+    void1278_sm.connectInput("sm_en", void1278_en);
+    void1278_done <== stream.offset(void1278_sm.getOutput("sm_done"),-1);
+void1278_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1278_rst_en = void1278_sm.getOutput("rst_en");
+void1278_sm.connectInput("s0_done", void1268_done);
+void1268_en <== void1278_sm.getOutput("s0_en");
+void1278_sm.connectInput("s1_done", pipe1276_done);
+pipe1276_en <== void1278_sm.getOutput("s1_en");
+DFEVar void1278_datapath_en = void1278_en & ~void1278_rst_en;
+DFEVar void1278_ctr_en = void1278_datapath_en;
+/* } void1278_MPSM void1278 */
+/* Block void1278 Unitpipe { */
+{
+MemoryCmdGenLib void1268 = new MemoryCmdGenLib(
+              this,
+              void1268_en, void1268_done,
+              DRAM1220, FixedPoint1054,
+              "DRAM1220_void1268_in",
+              96,
+              FIFO1267_readEn, FIFO1267_rdata);
+FIFO1267_writeEn <== void1268_en;
+FIFO1267_wdata <== FIFO1267_rdata;
+/* ParPipeForeach pipe1276 = ParPipeForeach(CounterChain1270) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1276 { */
+OffsetExpr pipe1276_offset = stream.makeOffsetAutoLoop("pipe1276_offset");
+SMIO pipe1276_sm = addStateMachine("pipe1276_sm", new PipeSM(this, 1));
+    pipe1276_sm.connectInput("sm_en", pipe1276_en);
+    pipe1276_done <== stream.offset(pipe1276_sm.getOutput("sm_done"),-1-pipe1276_offset);
+DFEVar pipe1276_rst_en = pipe1276_sm.getOutput("rst_en");
+pipe1276_sm.connectInput("rst_done", pipe1276_rst_done);
+pipe1276_rst_done <== stream.offset(pipe1276_rst_en, -pipe1276_offset-1);
+pipe1276_sm.connectInput("sm_maxIn_0", const96_FixedPoint54);
+DFEVar Counter1269_max_0 = pipe1276_sm.getOutput("ctr_maxOut_0");
+pipe1276_sm.connectInput("ctr_done", CounterChain1270_done);
+DFEVar pipe1276_datapath_en = pipe1276_sm.getOutput("ctr_en");
+DFEVar pipe1276_ctr_en = pipe1276_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1270_en = pipe1276_datapath_en;
+DFEVar[] CounterChain1270_max = {const96_FixedPoint54};
+int[] CounterChain1270_strides = {1};
+OffsetExpr CounterChain1270_offset = stream.makeOffsetAutoLoop("CounterChain1270_offset");
+SMIO CounterChain1270 = addStateMachine("CounterChain1270_sm", new CounterChain1270_CtrSM(owner, CounterChain1270_strides)); // gap = 0
+CounterChain1270.connectInput("en", CounterChain1270_en);
+CounterChain1270.connectInput("reset", pipe1276_done);
+DFEVar CounterChain1270_maxed = CounterChain1270.getOutput("saturated");
+CounterChain1270_done <== stream.offset(CounterChain1270.getOutput("done"), -1);
+OffsetExpr CounterChain1270_additionalOffset = new OffsetExpr();
+CounterChain1270.connectInput("max0", CounterChain1270_max[0]);
+DFEVar Counter1269 = CounterChain1270.getOutput("counter0");
+/* } CustomCounterChain */
+/* } PipeSM pipe1276 */
+DFEVar pipe1276_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1060 = Counter1269;
+// DFEVar Vector1271 = Par_pop_fifo(FIFO1267, 1);
+FIFO1267_readEn <== pipe1276_ctr_en;
+DFEVector<DFEVar> Vector1271 = FIFO1267_rdata;
+DFEVector<DFEVar> Vector1064 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1060));
+DFEVar FixedPoint1272 = Vector1271[0];
+DFEVector<DFEVar> Vector1273 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1272));
+/* Bram_store { */
+BRAM1266_0.connectWport(Vector1064, Vector1273, pipe1276_datapath_en, new int[] {0}); //w8
+/* } Bram_store */
+}
+/* } ParPipeForeach pipe1276 */
+}
+/* } Block void1278 Unitpipe */
+/* ParPipeForeach pipe1290 = ParPipeForeach(CounterChain1265) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1290 { */
+OffsetExpr pipe1290_offset = stream.makeOffsetAutoLoop("pipe1290_offset");
+SMIO pipe1290_sm = addStateMachine("pipe1290_sm", new PipeSM(this, 1));
+    pipe1290_sm.connectInput("sm_en", pipe1290_en);
+    pipe1290_done <== stream.offset(pipe1290_sm.getOutput("sm_done"),-1-pipe1290_offset);
+DFEVar pipe1290_rst_en = pipe1290_sm.getOutput("rst_en");
+pipe1290_sm.connectInput("rst_done", pipe1290_rst_done);
+pipe1290_rst_done <== stream.offset(pipe1290_rst_en, -pipe1290_offset-1);
+pipe1290_sm.connectInput("sm_maxIn_0", const96_FixedPoint54);
+DFEVar Counter1264_max_0 = pipe1290_sm.getOutput("ctr_maxOut_0");
+pipe1290_sm.connectInput("ctr_done", CounterChain1265_done);
+DFEVar pipe1290_datapath_en = pipe1290_sm.getOutput("ctr_en");
+DFEVar pipe1290_ctr_en = pipe1290_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1265_en = pipe1290_datapath_en;
+DFEVar[] CounterChain1265_max = {const96_FixedPoint54};
+int[] CounterChain1265_strides = {1};
+OffsetExpr CounterChain1265_offset = stream.makeOffsetAutoLoop("CounterChain1265_offset");
+SMIO CounterChain1265 = addStateMachine("CounterChain1265_sm", new CounterChain1265_CtrSM(owner, CounterChain1265_strides)); // gap = 0
+CounterChain1265.connectInput("en", CounterChain1265_en);
+CounterChain1265.connectInput("reset", pipe1290_done);
+DFEVar CounterChain1265_maxed = CounterChain1265.getOutput("saturated");
+CounterChain1265_done <== stream.offset(CounterChain1265.getOutput("done"), -1);
+OffsetExpr CounterChain1265_additionalOffset = new OffsetExpr();
+CounterChain1265.connectInput("max0", CounterChain1265_max[0]);
+DFEVar Counter1264 = CounterChain1265.getOutput("counter0");
+/* } CustomCounterChain */
+/* } PipeSM pipe1290 */
+DFEVar pipe1290_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1073 = Counter1264;
+DFEVar FixedPoint1286 = dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT).newInstance(this);
+DFEVector<DFEVar> Vector1075 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1073));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1279 = new DFEVectorType<DFEVar>(BRAM1266_0.type, 1).newInstance(this, Arrays.asList(BRAM1266_0.connectRport(FixedPoint1073, new int[] {1}))); //r2
+/* } Bram_load */
+/* Bram_load { */
+DFEVector<DFEVar> Vector1280 = new DFEVectorType<DFEVar>(BRAM1260_0.type, 1).newInstance(this, Arrays.asList(BRAM1260_0.connectRport(FixedPoint1073, new int[] {0}))); //r2
+/* } Bram_load */
+// FixedPoint1281 already emitted in pipe1290;
+// FixedPoint1282 already emitted in pipe1290;
+// Bit1074 already emitted in Sym(1290)
+// Bit1283 already emitted in Sym(1290)
+// Bit1284 already emitted in Sym(1290)
+// FixedPoint1285 already emitted in Sym(1290)
+// FixedPoint1286 already emitted in pipe1290;
+DFEVector<DFEVar> Vector1287 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1286));
+/* Bram_store { */
+BRAM1260_0.connectWport(stream.offset(Vector1075, -pipe1290_offset),
+                stream.offset(Vector1287, -pipe1290_offset), stream.offset(pipe1290_datapath_en & pipe1290_redLoop_done /*wtf pipe is ParPipeForeach(Sym(1265),Block(Sym(1289)),List(List(Sym(1073))))*/, -pipe1290_offset), new int[] {0}); //w3
+BRAM1260_1.connectWport(stream.offset(Vector1075, -pipe1290_offset),
+                stream.offset(Vector1287, -pipe1290_offset), stream.offset(pipe1290_datapath_en & pipe1290_redLoop_done /*wtf pipe is ParPipeForeach(Sym(1265),Block(Sym(1289)),List(List(Sym(1073))))*/, -pipe1290_offset), new int[] {0}); //w3
+/* } Bram_store */
+new pipe1290_reduce_kernel(owner , Vector1279,Vector1280 , FixedPoint1286 , FixedPoint1054_chain[0].read(),FixedPoint1073,FixedPoint1261,const0_FixedPoint49,const96_FixedPoint54); // Reduce kernel
+}
+/* } ParPipeForeach pipe1290 */
+/* } metapipe1292 func block */
+}
+/* } ParPipeReduce metapipe1292 */
+// FIFO FIFO1293 = Fifo_new[dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT)](const512_FixedPoint71, const0_FixedPoint49);
+DFEVector<DFEVar> FIFO1293_rdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this);
+DFEVector<DFEVar> FIFO1293_wdata = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this);
+DFEVar FIFO1293_readEn = dfeBool().newInstance(this);
+DFEVar FIFO1293_writeEn = dfeBool().newInstance(this);
+// Unit pipe writtenIn(void1304) = List()
+/* void1304_MPSM void1304 { */
+SMIO void1304_sm = addStateMachine("void1304_sm", new void1304_MPSM(this));
+    void1304_sm.connectInput("sm_en", void1304_en);
+    void1304_done <== stream.offset(void1304_sm.getOutput("sm_done"),-1);
+void1304_sm.connectInput("sm_numIter", constant.var(dfeUInt(32), 1));
+DFEVar void1304_rst_en = void1304_sm.getOutput("rst_en");
+void1304_sm.connectInput("s0_done", pipe1301_done);
+pipe1301_en <== void1304_sm.getOutput("s0_en");
+void1304_sm.connectInput("s1_done", void1302_done);
+void1302_en <== void1304_sm.getOutput("s1_en");
+DFEVar void1304_datapath_en = void1304_en & ~void1304_rst_en;
+DFEVar void1304_ctr_en = void1304_datapath_en;
+/* } void1304_MPSM void1304 */
+/* Block void1304 Unitpipe { */
+{
+/* ParPipeForeach pipe1301 = ParPipeForeach(CounterChain1295) { */
+{
+/* PipeSM to be emitted */
+/* PipeSM pipe1301 { */
+OffsetExpr pipe1301_offset = stream.makeOffsetAutoLoop("pipe1301_offset");
+SMIO pipe1301_sm = addStateMachine("pipe1301_sm", new PipeSM(this, 1));
+    pipe1301_sm.connectInput("sm_en", pipe1301_en);
+    pipe1301_done <== stream.offset(pipe1301_sm.getOutput("sm_done"),-1-pipe1301_offset);
+DFEVar pipe1301_rst_en = pipe1301_sm.getOutput("rst_en");
+pipe1301_sm.connectInput("rst_done", pipe1301_rst_done);
+pipe1301_rst_done <== stream.offset(pipe1301_rst_en, -pipe1301_offset-1);
+pipe1301_sm.connectInput("sm_maxIn_0", const96_FixedPoint54);
+DFEVar Counter1294_max_0 = pipe1301_sm.getOutput("ctr_maxOut_0");
+pipe1301_sm.connectInput("ctr_done", CounterChain1295_done);
+DFEVar pipe1301_datapath_en = pipe1301_sm.getOutput("ctr_en");
+DFEVar pipe1301_ctr_en = pipe1301_datapath_en;
+/* CustomCounterChain { */
+DFEVar CounterChain1295_en = pipe1301_datapath_en;
+DFEVar[] CounterChain1295_max = {const96_FixedPoint54};
+int[] CounterChain1295_strides = {1};
+OffsetExpr CounterChain1295_offset = stream.makeOffsetAutoLoop("CounterChain1295_offset");
+SMIO CounterChain1295 = addStateMachine("CounterChain1295_sm", new CounterChain1295_CtrSM(owner, CounterChain1295_strides)); // gap = 0
+CounterChain1295.connectInput("en", CounterChain1295_en);
+CounterChain1295.connectInput("reset", pipe1301_done);
+DFEVar CounterChain1295_maxed = CounterChain1295.getOutput("saturated");
+CounterChain1295_done <== stream.offset(CounterChain1295.getOutput("done"), -1);
+OffsetExpr CounterChain1295_additionalOffset = new OffsetExpr();
+CounterChain1295.connectInput("max0", CounterChain1295_max[0]);
+DFEVar Counter1294 = CounterChain1295.getOutput("counter0");
+/* } CustomCounterChain */
+/* } PipeSM pipe1301 */
+DFEVar pipe1301_redLoop_done = constant.var(true); // Hack for new fold unrolling...
+DFEVar FixedPoint1094 = Counter1294;
+DFEVector<DFEVar> Vector1095 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1094));
+/* Bram_load { */
+DFEVector<DFEVar> Vector1296 = new DFEVectorType<DFEVar>(BRAM1260_1.type, 1).newInstance(this, Arrays.asList(BRAM1260_1.connectRport(FixedPoint1094, new int[] {0}))); //r2
+/* } Bram_load */
+DFEVar Bit1099 = dfeFixOffset(1, 0, SignMode.UNSIGNED).newInstance(this);
+Bit1099 <== FixedPoint1094 < const96_FixedPoint54;
+DFEVector<DFEVar> Vector1100 = new DFEVectorType<DFEVar>(dfeFixOffset(1, 0, SignMode.UNSIGNED), 1).newInstance(this, Arrays.asList(Bit1099));
+DFEVar FixedPoint1297 = Vector1296[0];
+DFEVector<DFEVar> Vector1298 = new DFEVectorType<DFEVar>(dfeFixOffset( 32,0, SignMode.TWOSCOMPLEMENT), 1).newInstance(this, Arrays.asList(FixedPoint1297));
+// Par_push_fifo(FIFO1293, Vector1298, Vector1100, true);
+FIFO1293_writeEn <== pipe1301_ctr_en;
+FIFO1293_wdata <== Vector1298;
+}
+/* } ParPipeForeach pipe1301 */
+// void1302: Offchip_store_cmd(DRAM1221,FIFO1293, const0_FixedPoint49, const96_FixedPoint54, 1)
+MemoryCmdStLib void1302 = new MemoryCmdStLib(
+          this,
+          void1302_en, void1302_done,
+          DRAM1221, const0_FixedPoint49,
+          "DRAM1221_void1302_out",
+          const96_FixedPoint54,
+          FIFO1293_writeEn, FIFO1293_wdata);
+FIFO1293_readEn <== void1302_en;
+}
+/* } Block void1304 Unitpipe */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// rdone signals for N-Buffers go here
+BRAM1266_0.connectStageCtrl(pipe1290_done, pipe1290_en, new int[] { 1 }); /*read*/
+BRAM1266_0.connectStageCtrl(void1278_done, void1278_en, new int[] { 0 }); /*write*/
+BRAM1266_0.connectUnwrittenPorts(new int[] {1});
+BRAM1266_0.connectUnreadPorts(new int[] {0});
+BRAM1266_0.connectUntouchedPorts(new int[] {});
+BRAM1266_0.connectDummyBroadcast();
+// Emit consts
+	}
+}
+/*****************************************
+  End of MaxJ BACKEND 
+*******************************************/

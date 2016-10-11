@@ -1,0 +1,652 @@
+Ignoring silly LD_PRELOAD  e r r o r
+Ignoring silly LD_PRELOAD  e r r o r
+Delite Application Being Staged:[GDA$]
+******Generating the program******
+Loaded RoutingLUTs model from file
+Loaded FanoutRegisters model from file
+Loaded UnavailableALMs model from file
+Resource Estimate Breakdown: 
+-----------------------------
+Estimated unavailable ALMs: 481
+LUT3: 43271
+LUT4: 13394
+LUT5: 14950
+LUT6: 10688
+LUT7: 558
+Estimated routing luts: 28653
+Logic+register ALMs: 66698
+Register-only ALMS:  0
+Recovered ALMs:      51966
+MEM64: 4619
+MEM32: 519
+MEM16: 1531
+Design registers: 109572
+Memory registers: 4608
+Fanout registers: 4775
+Design BRAMs: 340
+Fanout BRAMs: 73
+
+Resource Estimate Summary: 
+---------------------------
+ALMs: 66698 / 262400 (25.42%)
+Regs: 118955
+DSPs: 10 / 1963 (0.51%)
+BRAM: 413 / 2567 (16.09%)
+
+Loaded TileLoadModel model from file
+Estimated cycles: 203083832
+Estimated runtime (at 150.00MHz): 1.35389221s
+Instruction statistics:
+  Instructions: 1232280478 (1.232 GI)
+  FLOPs: 218880000 (0.219 GFLOPs)
+  On-chip loads: 12211204608 bits (1.422 GB)
+  On-chip stores: 3732482560 bits (0.435 GB)
+  Off-chip loads: 414720512 bits (0.048 GB)
+  Off-chip stores: 2048 bits (0.000 GB)
+--
+  Total on-chip transfers: 1.856 GB
+  Total off-chip transfers: 0.048 GB
+
+Performance statistics (based on estimated runtime):
+  Instructions: 0.910 GIPS
+  Floating point: 0.162 GFLOPS
+  On-chip load bandwidth: 1.050 GB/s
+  On-chip store bandwidth: 0.321 GB/s
+  Off-chip load bandwidth: 0.036 GB/s
+  Off-chip store bandwidth: 0.000 GB/s
+--
+  Total on-chip bandwidth: 1.371 GB/s
+  Total off-chip bandwidth: 0.036 GB/s
+ Reduction pipe5656 unroll Sym(4539) FixPt_Mul(Sym(4535),Sym(313))
+ Reduction pipe5656 unroll Sym(4540) FixPt_Add(Sym(4539),Sym(4536))
+ Reduction pipe5656 unroll Sym(4541) Vector_from_list(List(Sym(4540)))
+ Reduction pipe5656 unroll Sym(5643) Par_bram_load(Sym(5559),Sym(4541))
+ Reduction pipe5656 unroll Sym(5644) Par_bram_load(Sym(5560),Sym(4541))
+ Reduction pipe5656 unroll Sym(5645) Par_bram_load(Sym(4399),Sym(4541))
+ Reduction pipe5656 unroll Sym(5646) Vec_apply(Sym(5645),0)
+ Reduction pipe5656 unroll Sym(4533) FixPt_Lt(Sym(4407),Sym(3462))
+ Reduction pipe5656 unroll Sym(4537) FixPt_Lt(Sym(4535),Sym(313))
+ Reduction pipe5656 unroll Sym(4538) FixPt_Lt(Sym(4536),Sym(313))
+ Reduction pipe5656 unroll Sym(4549) Bit_And(Sym(4537),Sym(4538))
+ Reduction pipe5656 unroll Sym(4550) Bit_And(Sym(4533),Sym(4549))
+ Reduction pipe5656 unroll Sym(5647) Vec_apply(Sym(5643),0)
+ Reduction pipe5656 unroll Sym(5648) Mux2(Sym(4550),Sym(5647),Sym(314))
+ Reduction pipe5656 unroll Sym(4534) FixPt_Lt(Sym(4408),Sym(3462))
+ Reduction pipe5656 unroll Sym(4551) Bit_And(Sym(4534),Sym(4549))
+ Reduction pipe5656 unroll Sym(5649) Vec_apply(Sym(5644),0)
+ Reduction pipe5656 unroll Sym(5650) Mux2(Sym(4551),Sym(5649),Sym(314))
+ Reduction pipe5656 unroll Sym(5651) FltPt_Add(Sym(5648),Sym(5650))
+ Reduction pipe5656 unroll Sym(5652) FltPt_Add(Sym(5651),Sym(5646))
+ Reduction pipe5656 unroll Sym(5653) Vector_from_list(List(Sym(5652)))
+ Reduction pipe5656 unroll Sym(5654) Par_bram_store(Sym(4399),Sym(4541),Sym(5653))
+ Reduction pipe5656 unroll Sym(5655) Reify(Const(()),Summary(mayRead(Sym(5559), Sym(5560), Sym(4399)), mstRead(Sym(5559), Sym(5560), Sym(4399)), mayWrite(Sym(4399)), mstWrite(Sym(4399))),List(Sym(5643), Sym(5644), Sym(5645), Sym(5654)))
+ Reduction pipe5758 unroll Sym(4703) FixPt_Mul(Sym(4699),Sym(313))
+ Reduction pipe5758 unroll Sym(4704) FixPt_Add(Sym(4703),Sym(4700))
+ Reduction pipe5758 unroll Sym(4705) Vector_from_list(List(Sym(4704)))
+ Reduction pipe5758 unroll Sym(5745) Par_bram_load(Sym(5661),Sym(4705))
+ Reduction pipe5758 unroll Sym(5746) Par_bram_load(Sym(5662),Sym(4705))
+ Reduction pipe5758 unroll Sym(5747) Par_bram_load(Sym(4563),Sym(4705))
+ Reduction pipe5758 unroll Sym(5748) Vec_apply(Sym(5747),0)
+ Reduction pipe5758 unroll Sym(4697) FixPt_Lt(Sym(4571),Sym(3462))
+ Reduction pipe5758 unroll Sym(4701) FixPt_Lt(Sym(4699),Sym(313))
+ Reduction pipe5758 unroll Sym(4702) FixPt_Lt(Sym(4700),Sym(313))
+ Reduction pipe5758 unroll Sym(4713) Bit_And(Sym(4701),Sym(4702))
+ Reduction pipe5758 unroll Sym(4714) Bit_And(Sym(4697),Sym(4713))
+ Reduction pipe5758 unroll Sym(5749) Vec_apply(Sym(5745),0)
+ Reduction pipe5758 unroll Sym(5750) Mux2(Sym(4714),Sym(5749),Sym(314))
+ Reduction pipe5758 unroll Sym(4698) FixPt_Lt(Sym(4572),Sym(3462))
+ Reduction pipe5758 unroll Sym(4715) Bit_And(Sym(4698),Sym(4713))
+ Reduction pipe5758 unroll Sym(5751) Vec_apply(Sym(5746),0)
+ Reduction pipe5758 unroll Sym(5752) Mux2(Sym(4715),Sym(5751),Sym(314))
+ Reduction pipe5758 unroll Sym(5753) FltPt_Add(Sym(5750),Sym(5752))
+ Reduction pipe5758 unroll Sym(5754) FltPt_Add(Sym(5753),Sym(5748))
+ Reduction pipe5758 unroll Sym(5755) Vector_from_list(List(Sym(5754)))
+ Reduction pipe5758 unroll Sym(5756) Par_bram_store(Sym(4563),Sym(4705),Sym(5755))
+ Reduction pipe5758 unroll Sym(5757) Reify(Const(()),Summary(mayRead(Sym(5661), Sym(5662), Sym(4563)), mstRead(Sym(5661), Sym(5662), Sym(4563)), mayWrite(Sym(4563)), mstWrite(Sym(4563))),List(Sym(5745), Sym(5746), Sym(5747), Sym(5756)))
+ Reduction pipe5789 unroll Sym(4739) FixPt_Mul(Sym(4733),Sym(313))
+ Reduction pipe5789 unroll Sym(4740) FixPt_Add(Sym(4739),Sym(4734))
+ Reduction pipe5789 unroll Sym(4741) FixPt_Add(Sym(4739),Sym(4735))
+ Reduction pipe5789 unroll Sym(4742) Vector_from_list(List(Sym(4740), Sym(4741)))
+ Reduction pipe5789 unroll Sym(5763) Par_bram_load(Sym(5545),Sym(4742))
+ Reduction pipe5789 unroll Sym(5764) Par_bram_load(Sym(5546),Sym(4742))
+ Reduction pipe5789 unroll Sym(5765) Par_bram_load(Sym(4265),Sym(4742))
+ Reduction pipe5789 unroll Sym(5766) Vec_apply(Sym(5765),0)
+ Reduction pipe5789 unroll Sym(5767) Vec_apply(Sym(5763),0)
+ Reduction pipe5789 unroll Sym(4736) FixPt_Lt(Sym(4733),Sym(313))
+ Reduction pipe5789 unroll Sym(4737) FixPt_Lt(Sym(4734),Sym(313))
+ Reduction pipe5789 unroll Sym(4754) Bit_And(Sym(4736),Sym(4737))
+ Reduction pipe5789 unroll Sym(5768) FixPt_Lt(Sym(4273),Sym(5457))
+ Reduction pipe5789 unroll Sym(5769) Bit_And(Sym(5768),Sym(4754))
+ Reduction pipe5789 unroll Sym(5770) Mux2(Sym(5769),Sym(5767),Sym(314))
+ Reduction pipe5789 unroll Sym(5771) Vec_apply(Sym(5764),0)
+ Reduction pipe5789 unroll Sym(5772) FixPt_Lt(Sym(4274),Sym(5457))
+ Reduction pipe5789 unroll Sym(5773) Bit_And(Sym(5772),Sym(4754))
+ Reduction pipe5789 unroll Sym(5774) Mux2(Sym(5773),Sym(5771),Sym(314))
+ Reduction pipe5789 unroll Sym(5775) FltPt_Add(Sym(5770),Sym(5774))
+ Reduction pipe5789 unroll Sym(5776) FltPt_Add(Sym(5775),Sym(5766))
+ Reduction pipe5789 unroll Sym(5777) Vec_apply(Sym(5765),1)
+ Reduction pipe5789 unroll Sym(5778) Vec_apply(Sym(5763),1)
+ Reduction pipe5789 unroll Sym(4738) FixPt_Lt(Sym(4735),Sym(313))
+ Reduction pipe5789 unroll Sym(4761) Bit_And(Sym(4736),Sym(4738))
+ Reduction pipe5789 unroll Sym(5779) Bit_And(Sym(5768),Sym(4761))
+ Reduction pipe5789 unroll Sym(5780) Mux2(Sym(5779),Sym(5778),Sym(314))
+ Reduction pipe5789 unroll Sym(5781) Vec_apply(Sym(5764),1)
+ Reduction pipe5789 unroll Sym(5782) Bit_And(Sym(5772),Sym(4761))
+ Reduction pipe5789 unroll Sym(5783) Mux2(Sym(5782),Sym(5781),Sym(314))
+ Reduction pipe5789 unroll Sym(5784) FltPt_Add(Sym(5780),Sym(5783))
+ Reduction pipe5789 unroll Sym(5785) FltPt_Add(Sym(5784),Sym(5777))
+ Reduction pipe5789 unroll Sym(5786) Vector_from_list(List(Sym(5776), Sym(5785)))
+ Reduction pipe5789 unroll Sym(5787) Par_bram_store(Sym(4265),Sym(4742),Sym(5786))
+ Reduction pipe5789 unroll Sym(5788) Reify(Const(()),Summary(mayRead(Sym(5545), Sym(5546), Sym(4265)), mstRead(Sym(5545), Sym(5546), Sym(4265)), mayWrite(Sym(4265)), mstWrite(Sym(4265))),List(Sym(5763), Sym(5764), Sym(5765), Sym(5787)))
+[getFileStream] Created file /home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial/generated/GDA//maxj/kernels//TopKernelLib.maxj
+[emitAnyNode] s = x1, tpestr = java.lang.String
+[emitAnyNode] s = x1, tpestr = string 
+[emitAnyNode] s = x1, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(0))[0m
+[emitAnyNode] kernelName = x1, node = ArrayApply, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x2, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x2, tpestr = int32_t 
+[emitAnyNode] s = x2, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(1))[0m
+[emitAnyNode] kernelName = x2, node = Tpes_String_to_fixpt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5, tpestr = Int
+[emitAnyNode] s = x5, tpestr = int32_t 
+[emitAnyNode] s = x5, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(2))[0m
+[emitAnyNode] kernelName = x5, node = Tpes_Fix_to_int, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x3, tpestr = java.lang.String
+[emitAnyNode] s = x3, tpestr = string 
+[emitAnyNode] s = x3, tpestr = java.lang.String
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(1))[0m
+[emitAnyNode] kernelName = x3, node = ArrayApply, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x4, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x4, tpestr = int32_t 
+[emitAnyNode] s = x4, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(3))[0m
+[emitAnyNode] kernelName = x4, node = Tpes_String_to_fixpt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x7, tpestr = Int
+[emitAnyNode] s = x7, tpestr = int32_t 
+[emitAnyNode] s = x7, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(4))[0m
+[emitAnyNode] kernelName = x7, node = Tpes_Fix_to_int, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x9, tpestr = FloatPoint[B24,B8]
+[emitAnyNode] s = x9, tpestr = float 
+[emitAnyNode] s = x9, tpestr = spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]
+[emitAnyNode] kernelName = x9, node = ConstFltPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5242, tpestr = Array[Array[FloatPoint[B24,B8]]]
+[emitAnyNode] s = x5242, tpestr = cppDeliteArraycppDeliteArrayfloat *
+[emitAnyNode] s = x5242, tpestr = ppl.delite.framework.datastructures.DeliteArray[ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(5),<function1>)[0m
+[emitAnyNode] kernelName = x5242, node = DeliteArrayFromFunction, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x101, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x101, tpestr = int32_t 
+[emitAnyNode] s = x101, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x101, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5281, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x5281, tpestr = cppDeliteArrayint32_t *
+[emitAnyNode] s = x5281, tpestr = ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(5),<function1>)[0m
+[emitAnyNode] kernelName = x5281, node = DeliteArrayFromFunction, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5321, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5321, tpestr = cppDeliteArrayfloat *
+[emitAnyNode] s = x5321, tpestr = ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(7),<function1>)[0m
+[emitAnyNode] kernelName = x5321, node = DeliteArrayFromFunction, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5361, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5361, tpestr = cppDeliteArrayfloat *
+[emitAnyNode] s = x5361, tpestr = ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(7),<function1>)[0m
+[emitAnyNode] kernelName = x5361, node = DeliteArrayFromFunction, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x295, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x295, tpestr = int32_t 
+[emitAnyNode] s = x295, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x295, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5362, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x5362, tpestr = int32_t  *
+[emitAnyNode] s = x5362, tpestr = spatial.compiler.ops.Register[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x5362, node = Argin_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5363, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x5363, tpestr = int32_t  *
+[emitAnyNode] s = x5363, tpestr = spatial.compiler.ops.Register[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x5363, node = Argin_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5364, tpestr = Int
+[emitAnyNode] s = x5364, tpestr = int32_t 
+[emitAnyNode] s = x5364, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(5281))[0m
+[emitAnyNode] kernelName = x5364, node = DeliteArrayLength, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5365, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5365, tpestr = int32_t 
+[emitAnyNode] s = x5365, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5365, node = Tpes_Int_to_fix, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5366, tpestr = Unit
+[emitAnyNode] s = x5366, tpestr = void 
+[emitAnyNode] s = x5366, tpestr = Unit
+[emitAnyNode] kernelName = x5366, node = Set_arg, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5367, tpestr = Int
+[emitAnyNode] s = x5367, tpestr = int32_t 
+[emitAnyNode] s = x5367, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(5321))[0m
+[emitAnyNode] kernelName = x5367, node = DeliteArrayLength, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5368, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5368, tpestr = int32_t 
+[emitAnyNode] s = x5368, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5368, node = Tpes_Int_to_fix, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5369, tpestr = Unit
+[emitAnyNode] s = x5369, tpestr = void 
+[emitAnyNode] s = x5369, tpestr = Unit
+[emitAnyNode] kernelName = x5369, node = Set_arg, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5370, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5370, tpestr = int32_t 
+[emitAnyNode] s = x5370, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5370, node = Reg_read, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5371, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5371, tpestr = int32_t 
+[emitAnyNode] s = x5371, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5371, node = Reg_read, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5372, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5372, tpestr = int32_t 
+[emitAnyNode] s = x5372, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5372, node = FixPt_Mul, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5373, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5373, tpestr = maxjLmem *
+[emitAnyNode] s = x5373, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[emitAnyNode] kernelName = x5373, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5374, tpestr = Array[FixedPoint[Signed,B32,B0]]
+[emitAnyNode] s = x5374, tpestr = maxjLmem *
+[emitAnyNode] s = x5374, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]]
+[emitAnyNode] kernelName = x5374, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5375, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5375, tpestr = maxjLmem *
+[emitAnyNode] s = x5375, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[emitAnyNode] kernelName = x5375, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5376, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5376, tpestr = maxjLmem *
+[emitAnyNode] s = x5376, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[emitAnyNode] kernelName = x5376, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5377, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x5377, tpestr = int32_t 
+[emitAnyNode] s = x5377, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x5377, node = FixPt_Mul, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5378, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5378, tpestr = maxjLmem *
+[emitAnyNode] s = x5378, tpestr = spatial.compiler.ops.DRAM[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[emitAnyNode] kernelName = x5378, node = Offchip_new, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5379, tpestr = Int
+[emitAnyNode] s = x5379, tpestr = int32_t 
+[emitAnyNode] s = x5379, tpestr = Int
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(5242))[0m
+[emitAnyNode] kernelName = x5379, node = DeliteArrayLength, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5417, tpestr = Array[FloatPoint[B24,B8]]
+[emitAnyNode] s = x5417, tpestr = cppDeliteArrayfloat *
+[emitAnyNode] s = x5417, tpestr = ppl.delite.framework.datastructures.DeliteArray[spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]]
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayNew(Sym(250),spatial.compiler.ops.FloatPoint[GDA$@3cc48550.type#spatial.shared.SpatialIdentifiers$B24, GDA$@3cc48550.type#spatial.shared.SpatialIdentifiers$B8],PartitionTag(DeliteArray,false))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(5242),Sym(242))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(245))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(245),Sym(244))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayGetActSize()[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(248))[0m
+[30m[43mmaxj: don't know how to generate code for: DIntMinus(Sym(5387),Const(1))[0m
+[30m[43mmaxj: don't know how to generate code for: DGreaterThan(Sym(5386),Sym(5388))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteIfThenElse(Sym(5389),Block(Sym(5399)),Block(Sym(5401)),false)[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(5242),Sym(242))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(245))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayApply(Sym(245),Sym(244))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayGetActSize()[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(248))[0m
+[30m[43mmaxj: don't know how to generate code for: DIntMinus(Sym(5387),Const(1))[0m
+[30m[43mmaxj: don't know how to generate code for: DGreaterThan(Sym(5386),Sym(5388))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteIfThenElse(Sym(5389),Block(Sym(5399)),Block(Sym(5401)),false)[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayNew(Sym(250),spatial.compiler.ops.FloatPoint[GDA$@3cc48550.type#spatial.shared.SpatialIdentifiers$B24, GDA$@3cc48550.type#spatial.shared.SpatialIdentifiers$B8],PartitionTag(DeliteArray,false))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayCopy(Sym(253),Sym(251),Sym(248),Sym(252),Sym(250))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(248))[0m
+[30m[43mmaxj: don't know how to generate code for: DGreaterThan(Sym(5404),Sym(250))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteIfThenElse(Sym(5405),Block(Sym(5409)),Block(Const(())),false)[0m
+[emitAnyNode] kernelName = x5417, node = SimpleFatLoop, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5418, tpestr = Unit
+[emitAnyNode] s = x5418, tpestr = void 
+[emitAnyNode] s = x5418, tpestr = Unit
+[emitAnyNode] kernelName = x5418, node = Set_mem, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5419, tpestr = Unit
+[emitAnyNode] s = x5419, tpestr = void 
+[emitAnyNode] s = x5419, tpestr = Unit
+[emitAnyNode] kernelName = x5419, node = Set_mem, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5420, tpestr = Unit
+[emitAnyNode] s = x5420, tpestr = void 
+[emitAnyNode] s = x5420, tpestr = Unit
+[emitAnyNode] kernelName = x5420, node = Set_mem, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5421, tpestr = Unit
+[emitAnyNode] s = x5421, tpestr = void 
+[emitAnyNode] s = x5421, tpestr = Unit
+[emitAnyNode] kernelName = x5421, node = Set_mem, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x313, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x313, tpestr = int32_t 
+[emitAnyNode] s = x313, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x313, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x314, tpestr = FloatPoint[B24,B8]
+[emitAnyNode] s = x314, tpestr = float 
+[emitAnyNode] s = x314, tpestr = spatial.compiler.ops.FloatPoint[spatial.shared.B24, spatial.shared.B8]
+[emitAnyNode] kernelName = x314, node = ConstFltPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x321, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x321, tpestr = int32_t 
+[emitAnyNode] s = x321, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x321, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x1220, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x1220, tpestr = int32_t 
+[emitAnyNode] s = x1220, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x1220, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x3462, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x3462, tpestr = int32_t 
+[emitAnyNode] s = x3462, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x3462, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x3464, tpestr = FixedPoint[Signed,B32,B0]
+[emitAnyNode] s = x3464, tpestr = int32_t 
+[emitAnyNode] s = x3464, tpestr = spatial.compiler.ops.FixedPoint[spatial.shared.Signed, spatial.shared.B32, spatial.shared.B0]
+[emitAnyNode] kernelName = x3464, node = ConstFixPt, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x515, tpestr = Boolean
+[emitAnyNode] s = x515, tpestr = bool 
+[emitAnyNode] s = x515, tpestr = spatial.compiler.ops.SpatialBit
+[emitAnyNode] kernelName = x515, node = ConstBit, supportedTargets = ListBuffer(scala, cpp, maxj)
+[emitAnyNode] s = x5818, tpestr = Unit
+[emitAnyNode] s = x5818, tpestr = void 
+[emitAnyNode] s = x5818, tpestr = Unit
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(1))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(3))[0m
+[30m[43mmaxj: don't know how to generate code for: ArrayApply(Sym(0),Const(0))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_String_to_fixpt(Sym(1))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(2))[0m
+[30m[43mmaxj: don't know how to generate code for: Tpes_Fix_to_int(Sym(4))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(5),<function1>)[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(5),<function1>)[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayFromFunction(Sym(7),<function1>)[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(5321))[0m
+[30m[43mmaxj: don't know how to generate code for: DeliteArrayLength(Sym(5281))[0m
+Checking writers of Sym(5485) ((Sym(5487),(Sym(5489),false))) for Sym(5487)
+Checking writers of Sym(5523) ((Sym(5525),(Sym(5527),false))) for Sym(5525)
+Exception in thread "main" java.lang.Exception: Cannot handle multiple NBuf readers if they do not have the same access par! (List(1, 2))
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$95.apply(MemoryTemplateOpsExp.scala:1026)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$95.apply(MemoryTemplateOpsExp.scala:1026)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:13)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44$$anonfun$apply$mcV$sp$69.apply$mcV$sp(MemoryTemplateOpsExp.scala:1025)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44$$anonfun$apply$mcV$sp$69.apply(MemoryTemplateOpsExp.scala:1016)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44$$anonfun$apply$mcV$sp$69.apply(MemoryTemplateOpsExp.scala:1016)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:14)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44.apply$mcV$sp(MemoryTemplateOpsExp.scala:1009)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44.apply(MemoryTemplateOpsExp.scala:1009)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94$$anonfun$apply$44.apply(MemoryTemplateOpsExp.scala:1009)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:14)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94.apply(MemoryTemplateOpsExp.scala:1006)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$94.apply(MemoryTemplateOpsExp.scala:1003)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66.apply$mcV$sp(MemoryTemplateOpsExp.scala:1003)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66.apply(MemoryTemplateOpsExp.scala:990)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16$$anonfun$apply$mcV$sp$66.apply(MemoryTemplateOpsExp.scala:990)
+	at scala.virtualization.lms.internal.GenericCodegen$class.withStream(GenericCodegen.scala:145)
+	at spatial.compiler.SpatialCompiler$$anon$6.withStream(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16.apply$mcV$sp(MemoryTemplateOpsExp.scala:990)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16.apply(MemoryTemplateOpsExp.scala:984)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$$anonfun$emitNode$16.apply(MemoryTemplateOpsExp.scala:984)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:13)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$class.emitNode(MemoryTemplateOpsExp.scala:984)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenLoweredPipeOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenLoweredPipeOps$class.emitNode(LoweredPipeOpsExp.scala:379)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$MaxJGenDeliteOps$$super$emitNode(Spatial.scala:232)
+	at ppl.delite.framework.ops.MaxJGenDeliteOps$class.emitNode(DeliteOpsMaxJGen.scala:134)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitNode(Spatial.scala:232)
+	at scala.virtualization.lms.internal.MaxJNestedCodegen$class.emitNode(MaxJCodegen.scala:264)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenControllerTemplateOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenControllerTemplateOps$class.emitNode(PipeTemplateOpsExp.scala:664)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternCounterOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternCounterOps$class.emitNode(ExternCounterOpsExp.scala:149)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternPrimitiveOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternPrimitiveOps$class.emitNode(ExternPrimitiveOpsExp.scala:439)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenMemoryTemplateOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$class.emitNode(MemoryTemplateOpsExp.scala:1103)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenLoweredPipeOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenLoweredPipeOps$class.emitNode(LoweredPipeOpsExp.scala:379)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$MaxJGenDeliteOps$$super$emitNode(Spatial.scala:232)
+	at ppl.delite.framework.ops.MaxJGenDeliteOps$class.emitNode(DeliteOpsMaxJGen.scala:134)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitNode(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericCodegen$class.traverseStm(GenericCodegen.scala:151)
+	at scala.virtualization.lms.internal.GenericNestedCodegen$class.traverseStm(GenericCodegen.scala:285)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$GenericFatCodegen$$super$traverseStm(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericFatCodegen$class.traverseStm(FatCodegen.scala:14)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$GenericGenDeliteOps$$super$traverseStm(Spatial.scala:232)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply$mcV$sp(DeliteOpsBaseGenericGen.scala:1424)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply(DeliteOpsBaseGenericGen.scala:1424)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply(DeliteOpsBaseGenericGen.scala:1424)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:14)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$class.traverseStm(DeliteOpsBaseGenericGen.scala:1410)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseStm(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseStmsInBlock$1.apply(BlockTraversal.scala:130)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseStmsInBlock$1.apply(BlockTraversal.scala:130)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseStmsInBlock(BlockTraversal.scala:130)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$MaxJNestedCodegen$$super$traverseStmsInBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.MaxJNestedCodegen$class.traverseStmsInBlock(MaxJCodegen.scala:272)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseStmsInBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlockFocused$1.apply(BlockTraversal.scala:114)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlockFocused$1.apply(BlockTraversal.scala:113)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$$anonfun$focusExactScopeSubGraph$1.apply(GraphTraversal.scala:143)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at spatial.compiler.SpatialCompiler$$anon$6.withInnerScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusExactScopeSubGraph(GraphTraversal.scala:140)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScopeSubGraph(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScopeFat(BlockTraversal.scala:64)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$common$LoopFusionOpt$$super$focusExactScopeFat(Spatial.scala:232)
+	at scala.virtualization.lms.common.LoopFusionOpt$class.focusExactScopeFat(OldLoopFusionOpt.scala:208)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScopeFat(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScope(BlockTraversal.scala:61)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseBlockFocused(BlockTraversal.scala:113)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseBlockFocused(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply$mcV$sp(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.FatBlockTraversal$$anonfun$focusFatBlock$1.apply(FatTraversal.scala:17)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at spatial.compiler.SpatialCompiler$$anon$6.withInnerScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusSubGraph(GraphTraversal.scala:72)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusSubGraph(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusFatBlock(BlockTraversal.scala:57)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$FatBlockTraversal$$super$focusFatBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.FatBlockTraversal$class.focusFatBlock(FatTraversal.scala:15)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusFatBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusBlock(BlockTraversal.scala:54)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$BaseGenDeliteOps$$super$focusBlock(Spatial.scala:232)
+	at ppl.delite.framework.ops.BaseGenDeliteOps$class.focusBlock(DeliteOpsBaseGenericGen.scala:73)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseBlock(BlockTraversal.scala:107)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericCodegen$class.emitBlock(GenericCodegen.scala:155)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitBlock(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenLoweredPipeOps$class.emitNode(LoweredPipeOpsExp.scala:357)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$MaxJGenDeliteOps$$super$emitNode(Spatial.scala:232)
+	at ppl.delite.framework.ops.MaxJGenDeliteOps$class.emitNode(DeliteOpsMaxJGen.scala:134)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitNode(Spatial.scala:232)
+	at scala.virtualization.lms.internal.MaxJNestedCodegen$class.emitNode(MaxJCodegen.scala:264)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenControllerTemplateOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenControllerTemplateOps$class.emitNode(PipeTemplateOpsExp.scala:664)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternCounterOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternCounterOps$class.emitNode(ExternCounterOpsExp.scala:149)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternPrimitiveOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternPrimitiveOps$class.emitNode(ExternPrimitiveOpsExp.scala:439)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenMemoryTemplateOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$class.emitNode(MemoryTemplateOpsExp.scala:1103)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenLoweredPipeOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenLoweredPipeOps$class.emitNode(LoweredPipeOpsExp.scala:379)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$MaxJGenDeliteOps$$super$emitNode(Spatial.scala:232)
+	at ppl.delite.framework.ops.MaxJGenDeliteOps$class.emitNode(DeliteOpsMaxJGen.scala:134)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitNode(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericCodegen$class.traverseStm(GenericCodegen.scala:151)
+	at scala.virtualization.lms.internal.GenericNestedCodegen$class.traverseStm(GenericCodegen.scala:285)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$GenericFatCodegen$$super$traverseStm(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericFatCodegen$class.traverseStm(FatCodegen.scala:14)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$GenericGenDeliteOps$$super$traverseStm(Spatial.scala:232)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply$mcV$sp(DeliteOpsBaseGenericGen.scala:1424)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply(DeliteOpsBaseGenericGen.scala:1424)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$$anonfun$traverseStm$3.apply(DeliteOpsBaseGenericGen.scala:1424)
+	at scala.virtualization.lms.common.IfThenElse$class.__ifThenElse(IfThenElse.scala:14)
+	at spatial.compiler.SpatialApplicationCompiler.__ifThenElse(Spatial.scala:38)
+	at ppl.delite.framework.ops.GenericGenDeliteOps$class.traverseStm(DeliteOpsBaseGenericGen.scala:1410)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseStm(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseStmsInBlock$1.apply(BlockTraversal.scala:130)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseStmsInBlock$1.apply(BlockTraversal.scala:130)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseStmsInBlock(BlockTraversal.scala:130)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$MaxJNestedCodegen$$super$traverseStmsInBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.MaxJNestedCodegen$class.traverseStmsInBlock(MaxJCodegen.scala:272)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseStmsInBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlockFocused$1.apply(BlockTraversal.scala:114)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlockFocused$1.apply(BlockTraversal.scala:113)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$$anonfun$focusExactScopeSubGraph$1.apply(GraphTraversal.scala:143)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at spatial.compiler.SpatialCompiler$$anon$6.withInnerScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusExactScopeSubGraph(GraphTraversal.scala:140)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScopeSubGraph(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScopeFat(BlockTraversal.scala:64)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$common$LoopFusionOpt$$super$focusExactScopeFat(Spatial.scala:232)
+	at scala.virtualization.lms.common.LoopFusionOpt$class.focusExactScopeFat(OldLoopFusionOpt.scala:208)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScopeFat(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScope(BlockTraversal.scala:61)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusExactScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseBlockFocused(BlockTraversal.scala:113)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseBlockFocused(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply$mcV$sp(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.FatBlockTraversal$$anonfun$focusFatBlock$1.apply(FatTraversal.scala:17)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at spatial.compiler.SpatialCompiler$$anon$6.withInnerScope(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusSubGraph(GraphTraversal.scala:72)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusSubGraph(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusFatBlock(BlockTraversal.scala:57)
+	at spatial.compiler.SpatialCompiler$$anon$6.scala$virtualization$lms$internal$FatBlockTraversal$$super$focusFatBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.FatBlockTraversal$class.focusFatBlock(FatTraversal.scala:15)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusFatBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusBlock(BlockTraversal.scala:54)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$BaseGenDeliteOps$$super$focusBlock(Spatial.scala:232)
+	at ppl.delite.framework.ops.BaseGenDeliteOps$class.focusBlock(DeliteOpsBaseGenericGen.scala:73)
+	at spatial.compiler.SpatialCompiler$$anon$6.focusBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseBlock(BlockTraversal.scala:107)
+	at spatial.compiler.SpatialCompiler$$anon$6.traverseBlock(Spatial.scala:232)
+	at scala.virtualization.lms.internal.GenericCodegen$class.emitBlock(GenericCodegen.scala:155)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitBlock(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenControllerTemplateOps$class.emitNode(PipeTemplateOpsExp.scala:520)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternCounterOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternCounterOps$class.emitNode(ExternCounterOpsExp.scala:149)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenExternPrimitiveOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenExternPrimitiveOps$class.emitNode(ExternPrimitiveOpsExp.scala:439)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenMemoryTemplateOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenMemoryTemplateOps$class.emitNode(MemoryTemplateOpsExp.scala:1103)
+	at spatial.compiler.SpatialCompiler$$anon$6.spatial$compiler$ops$MaxJGenLoweredPipeOps$$super$emitNode(Spatial.scala:232)
+	at spatial.compiler.ops.MaxJGenLoweredPipeOps$class.emitNode(LoweredPipeOpsExp.scala:379)
+	at spatial.compiler.SpatialCompiler$$anon$6.ppl$delite$framework$ops$MaxJGenDeliteOps$$super$emitNode(Spatial.scala:232)
+	at ppl.delite.framework.ops.MaxJGenDeliteOps$class.emitNode(DeliteOpsMaxJGen.scala:134)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitNode(Spatial.scala:232)
+	at ppl.delite.framework.codegen.delite.DeliteKernelCodegen$$anonfun$emitKernel$1.apply$mcV$sp(DeliteKernelCodegen.scala:100)
+	at ppl.delite.framework.codegen.delite.DeliteKernelCodegen$$anonfun$emitKernel$1.apply(DeliteKernelCodegen.scala:100)
+	at ppl.delite.framework.codegen.delite.DeliteKernelCodegen$$anonfun$emitKernel$1.apply(DeliteKernelCodegen.scala:100)
+	at scala.virtualization.lms.internal.GenericCodegen$class.withStream(GenericCodegen.scala:145)
+	at spatial.compiler.SpatialCompiler$$anon$6.withStream(Spatial.scala:232)
+	at ppl.delite.framework.codegen.delite.DeliteKernelCodegen$class.emitKernel(DeliteKernelCodegen.scala:100)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitKernel(Spatial.scala:232)
+	at ppl.delite.framework.codegen.delite.DeliteKernelCodegen$class.emitKernel(DeliteKernelCodegen.scala:55)
+	at spatial.compiler.SpatialCompiler$$anon$6.emitKernel(Spatial.scala:232)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$6$$anonfun$apply$1.apply$mcV$sp(DeliteGenTaskGraph.scala:169)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$6$$anonfun$apply$1.apply(DeliteGenTaskGraph.scala:169)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$6$$anonfun$apply$1.apply(DeliteGenTaskGraph.scala:169)
+	at scala.virtualization.lms.internal.GenericCodegen$class.withStream(GenericCodegen.scala:145)
+	at spatial.compiler.SpatialCompiler$$anon$6.withStream(Spatial.scala:232)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$6.apply(DeliteGenTaskGraph.scala:169)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$6.apply(DeliteGenTaskGraph.scala:157)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$class.emitAnyNode(DeliteGenTaskGraph.scala:157)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$class.emitNode(DeliteGenTaskGraph.scala:28)
+	at ppl.delite.framework.DeliteApplication$$anon$1.emitNode(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.GenericNestedCodegen$class.emitNode(GenericCodegen.scala:291)
+	at ppl.delite.framework.DeliteApplication$$anon$1.scala$virtualization$lms$internal$GenericFatCodegen$$super$emitNode(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.GenericFatCodegen$class.emitNode(FatCodegen.scala:19)
+	at ppl.delite.framework.DeliteApplication$$anon$1.ppl$delite$framework$codegen$delite$generators$DeliteGenTaskGraph$$super$emitNode(DeliteApplication.scala:60)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$$anonfun$emitAnyNode$1.apply$mcV$sp(DeliteGenTaskGraph.scala:60)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$class.withEffectWrapper(DeliteGenTaskGraph.scala:34)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$class.emitAnyNode(DeliteGenTaskGraph.scala:59)
+	at ppl.delite.framework.codegen.delite.generators.DeliteGenTaskGraph$class.emitNode(DeliteGenTaskGraph.scala:28)
+	at ppl.delite.framework.DeliteApplication$$anon$1.emitNode(DeliteApplication.scala:60)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$traverseBlockFocused$3$$anonfun$apply$17.emitAnyNode$1(DeliteCodegen.scala:162)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$traverseBlockFocused$3$$anonfun$apply$17.apply(DeliteCodegen.scala:167)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$traverseBlockFocused$3$$anonfun$apply$17.apply(DeliteCodegen.scala:143)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$traverseBlockFocused$3.apply(DeliteCodegen.scala:143)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$traverseBlockFocused$3.apply(DeliteCodegen.scala:132)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$$anonfun$focusExactScopeSubGraph$1.apply(GraphTraversal.scala:143)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at ppl.delite.framework.DeliteApplication$$anon$1.withInnerScope(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusExactScopeSubGraph(GraphTraversal.scala:140)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusExactScopeSubGraph(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScopeFat(BlockTraversal.scala:64)
+	at ppl.delite.framework.DeliteApplication$$anon$1.scala$virtualization$lms$common$LoopFusionOpt$$super$focusExactScopeFat(DeliteApplication.scala:60)
+	at scala.virtualization.lms.common.LoopFusionOpt$class.focusExactScopeFat(OldLoopFusionOpt.scala:208)
+	at ppl.delite.framework.DeliteApplication$$anon$1.ppl$delite$framework$transform$LoopSoAOpt$$super$focusExactScopeFat(DeliteApplication.scala:60)
+	at ppl.delite.framework.transform.LoopSoAOpt$class.focusExactScopeFat(MultiLoopSoA.scala:427)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusExactScopeFat(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusExactScope(BlockTraversal.scala:61)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusExactScope(DeliteApplication.scala:60)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$class.traverseBlockFocused(DeliteCodegen.scala:132)
+	at ppl.delite.framework.DeliteApplication$$anon$1.traverseBlockFocused(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply$mcV$sp(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$$anonfun$traverseBlock$1.apply(BlockTraversal.scala:108)
+	at scala.virtualization.lms.internal.FatBlockTraversal$$anonfun$focusFatBlock$1.apply(FatTraversal.scala:17)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.withInnerScope(GraphTraversal.scala:55)
+	at ppl.delite.framework.DeliteApplication$$anon$1.withInnerScope(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedGraphTraversal$class.focusSubGraph(GraphTraversal.scala:72)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusSubGraph(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusFatBlock(BlockTraversal.scala:57)
+	at ppl.delite.framework.DeliteApplication$$anon$1.scala$virtualization$lms$internal$FatBlockTraversal$$super$focusFatBlock(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.FatBlockTraversal$class.focusFatBlock(FatTraversal.scala:15)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusFatBlock(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.focusBlock(BlockTraversal.scala:54)
+	at ppl.delite.framework.DeliteApplication$$anon$1.focusBlock(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.NestedBlockTraversal$class.traverseBlock(BlockTraversal.scala:107)
+	at ppl.delite.framework.DeliteApplication$$anon$1.traverseBlock(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.GenericCodegen$class.emitBlock(GenericCodegen.scala:155)
+	at ppl.delite.framework.DeliteApplication$$anon$1.emitBlock(DeliteApplication.scala:60)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$emitSource$1.apply$mcV$sp(DeliteCodegen.scala:105)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$emitSource$1.apply(DeliteCodegen.scala:103)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$$anonfun$emitSource$1.apply(DeliteCodegen.scala:103)
+	at scala.virtualization.lms.internal.GenericCodegen$class.withStream(GenericCodegen.scala:145)
+	at ppl.delite.framework.DeliteApplication$$anon$1.withStream(DeliteApplication.scala:60)
+	at ppl.delite.framework.codegen.delite.DeliteCodegen$class.emitSource(DeliteCodegen.scala:103)
+	at ppl.delite.framework.DeliteApplication$$anon$1.emitSource(DeliteApplication.scala:60)
+	at scala.virtualization.lms.internal.GenericCodegen$class.emitSource(GenericCodegen.scala:169)
+	at ppl.delite.framework.DeliteApplication$$anon$1.emitSource(DeliteApplication.scala:60)
+	at ppl.delite.framework.DeliteApplication$class.emitRegisteredSource(DeliteApplication.scala:253)
+	at spatial.compiler.SpatialApplicationCompiler.emitRegisteredSource(Spatial.scala:38)
+	at ppl.delite.framework.DeliteApplication$class.main(DeliteApplication.scala:144)
+	at spatial.compiler.SpatialApplicationCompiler.main(Spatial.scala:38)
+	at GDA.main(GDA.scala)
+[delite info 2016-10-09 21:41:42.704025]: Generating DEG file with options: {'enable_pir': True, 'verbose': False, 'no_fusion': False, 'cluster': False, 'debuglast': False, 'no_blas': False, 'no_multidimgpu': False, 'latency': False, 'xdebug': False, 'jar_app': False, 'opencl': False, 'build_dir': '/home/mattfel/transform_regression_tests_21-24/hyperdsl/spatial/published/Spatial', 'maxj': False, 'dump_exception': True, 'no_soa': False, 'strict_control': False, 'profile': False, 'enable_dse': True, 'debug': False, 'optimize': 0, 'long_int': False, 'xnocache': False, 'cuda': False, 'cpp': False, 'dot': False}
+[delite error 2016-10-09 21:47:13.831228]: Delite compilation failed
+Ignoring silly LD_PRELOAD  e r r o r
+Ignoring silly LD_PRELOAD  e r r o r
+Exception in thread "main" java.lang.RuntimeException: Couldn't parse the DEG file:
+[710.1] failure: end of input
+
+
+^
+	at ppl.delite.runtime.graph.DeliteTaskGraph$.apply(DeliteTaskGraph.scala:25)
+	at ppl.delite.runtime.Delite$.loadDeliteDEG(Delite.scala:180)
+	at ppl.delite.runtime.Delite$.walkTime$1(Delite.scala:95)
+	at ppl.delite.runtime.Delite$.walkAndRun(Delite.scala:160)
+	at ppl.delite.runtime.Delite$.embeddedMain(Delite.scala:61)
+	at ppl.delite.runtime.Delite$.main(Delite.scala:53)
+	at ppl.delite.runtime.Delite.main(Delite.scala)
+[delite info 2016-10-09 21:47:13.933124]: executing application: GDA.deg 
+[delite error 2016-10-09 21:47:15.200245]: Delite execution failed
+Parsing log
+Running Spatial with arguments: 

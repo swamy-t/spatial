@@ -1,0 +1,57 @@
+package engine;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Counter;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.WrapMode;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Count.Params;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.memory.Memory;
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.utils.MathUtils;
+import com.maxeler.maxcompiler.v2.utils.Bits;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.KernelMath;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.Stream.OffsetExpr;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Reductions;
+import com.maxeler.maxcompiler.v2.kernelcompiler.SMIO;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.Accumulator;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVector;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.composite.DFEVectorType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEFix.SignMode;
+import java.util.Arrays;
+class pipe805_reduce_kernel extends KernelLib {
+void common(DFEVector<DFEVar> Vector785 /*1*/ ,
+                DFEVar FixedPoint802 /*2*/   /*3*/) {
+// For now, I just regenerate constants because java is being annoying about class extensions
+
+
+/* Unknown Deff Sym(101) ConstBit(true) */
+DFEVar FixedPoint787 = Vector785[0];
+DFEVar FixedPoint788 = Vector785[1];
+DFEVar FixedPoint789 = FixedPoint787 + FixedPoint788;
+DFEVar FixedPoint790 = Vector785[2];
+DFEVar FixedPoint791 = Vector785[3];
+DFEVar FixedPoint792 = FixedPoint790 + FixedPoint791;
+DFEVar FixedPoint793 = FixedPoint789 + FixedPoint792;
+DFEVar FixedPoint794 = Vector785[4];
+DFEVar FixedPoint795 = Vector785[5];
+DFEVar FixedPoint796 = FixedPoint794 + FixedPoint795;
+DFEVar FixedPoint797 = Vector785[6];
+DFEVar FixedPoint798 = Vector785[7];
+DFEVar FixedPoint799 = FixedPoint797 + FixedPoint798;
+DFEVar FixedPoint800 = FixedPoint796 + FixedPoint799;
+DFEVar FixedPoint801 = FixedPoint793 + FixedPoint800;
+FixedPoint802 <== FixedPoint801; // is tree result, do not add Sym(786)
+/* Unknown Deff Sym(803) Reg_write(Sym(619),Sym(802),Sym(101)) */
+/* Unknown Deff Sym(804) Reify(Sym(803),Summary(mayRead(Sym(769), Sym(619)), mstRead(Sym(769), Sym(619)), mayWrite(Sym(619)), mstWrite(Sym(619))),List(Sym(785), Sym(786), Sym(803))) */
+}
+
+pipe805_reduce_kernel(KernelLib owner , /*1*/ DFEVector<DFEVar> Vector785 , /*2*/
+                DFEVar FixedPoint802  /*3*/  ) {
+  super(owner);
+  common(Vector785 , FixedPoint802  );
+}
+}
