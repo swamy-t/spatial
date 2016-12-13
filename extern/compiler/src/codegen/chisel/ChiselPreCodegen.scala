@@ -1248,7 +1248,7 @@ ${quote(sym)}_reduce_kernel(KernelLib owner $first_comma /*1*/ $vec_input_args $
             is (pipeRun) {""")
                 val condStr = (0 until numParallel).map("bitVector(" + _ + ")").reduce(_ + " & " + _)
                 emit(s"""
-                    IF($condStr) {
+                    when($condStr) {
                         (0 until numParallel) foreach { i => bitVector(i) := Bool(false) }
                         stateFF := pipeDone
                     }
@@ -1261,7 +1261,6 @@ ${quote(sym)}_reduce_kernel(KernelLib owner $first_comma /*1*/ $vec_input_args $
             }
             
             }
-                }
             }
             """)
     }
