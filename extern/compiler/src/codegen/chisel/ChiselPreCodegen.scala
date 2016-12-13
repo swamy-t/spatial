@@ -1320,142 +1320,108 @@ ${quote(sym)}_reduce_kernel(KernelLib owner $first_comma /*1*/ $vec_input_args $
             emit(s"""//Number of stages = 0 for ${name}. Nothing is emitted""")
             return
         }
-    emit("""
-package engine;
-  import com.maxeler.maxcompiler.v2.kernelcompiler.KernelLib;
-  import com.maxeler.maxcompiler.v2.statemachine.DFEsmInput;
-  import com.maxeler.maxcompiler.v2.statemachine.DFEsmOutput;
-  import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateEnum;
-  import com.maxeler.maxcompiler.v2.statemachine.DFEsmStateValue;
-  import com.maxeler.maxcompiler.v2.statemachine.kernel.KernelStateMachine;
-  import com.maxeler.maxcompiler.v2.statemachine.types.DFEsmValueType;
-""")
+    emit("""import Chisel._""")
 
   val smName = name
   val states = getStates(numStates)
-  emit(s"""class ${smName}_MPSM extends KernelStateMachine {""")
+  emit(s"""class ${smName}_MPSM {""")
 
 
   // val stateNames = states.map("S" + _.map( _.toString).reduce(_+_))
   val stateNames = states.map(stateStr(_))
   emit(s"""
     // States
-    enum States {
-      INIT,
-      RSET,
-      ${stateNames.reduce(_ + ",\n      " + _) + ",\nDONE"}
-    }
+    val pipeInit :: pipeReset :: ${stateNames.reduce(_ + " :: " + _)} :: pipeDone:: Nil = Enum(UInt(), ${stateNames.length + 3})
   """)
+
 
   emit("""
 
-    // State IO
-    private final DFEsmOutput sm_done;
-    private final DFEsmOutput sm_last;
-    private final DFEsmInput sm_en;
-    private final DFEsmInput sm_numIter;
-    private final DFEsmOutput rst_en;
+    // Module IO
+    val io = new Bundle {
+      val sm_done = Bool(OUTPUT)
+      val sm_last = Bool(OUTPUT)
+      val sm_en = Bool(INPUT)
+      val sm_numIter = UInt(INPUT)
+      val rst_en = Bool(OUTPUT)
   """)
 
   for(i <- 0 until numStates) {
     emit(s"""
-    private final DFEsmInput s${i}_done;
-    private final DFEsmOutput s${i}_en;
+    val s${i}_done = Bool(INPUT)
+    val s${i}_en = Bool(OUTPUT)
     """)
   }
+  emit(s"""}""")
 
   emit(s"""
     // State storage
-    private final DFEsmStateValue sizeFF;
+    val sizeFF = Reg(init = UInt(0, 32))
     private final DFEsmStateValue lastFF;
-    private final DFEsmStateEnum<States> stateFF;
-    private final DFEsmStateValue counterFF;
-    private final DFEsmStateValue rstCounterFF;
-    private final DFEsmStateValue[] bitVector;
+    val lastFF = Reg(init = Bool(false))
+    val stateFF = Reg(init = pipeInit)
+    val counterFF = Reg(init = UInt(0, 32))
+    val resetCounterFF = Reg(init = UInt(0, 32))
+    val bitVector = Vec.fill(${numStates}) {Reg(init = Bool(false))}
 
-    private final int numStates = ${numStates};
-    private final int rstCycles = 10; // <-- hardcoded
-    // Initialize state machine in constructor
-    public ${smName}_MPSM(KernelLib owner) {
-      super(owner);
+    val numStates = ${numStates}
+    val rstCycles = 10 // <-- hardcoded
 
-      // Declare all types required to wire the state machine together
-      DFEsmValueType counterType = dfeUInt(32);
-      DFEsmValueType wireType = dfeBool();
-
-      // Define state machine IO
-      sm_done = io.output("sm_done", wireType);
-      sm_last = io.output("sm_last", wireType);
-      sm_en = io.input("sm_en", wireType);
-      sm_numIter = io.input("sm_numIter", counterType);
-      rst_en = io.output("rst_en", wireType);
+    // Default values
+    io.sm_done := Bool(false);
+    io.sm_last := Bool(false);
+    io.rst_en := Bool(false);
   """)
 
-  for(i <- 0 until numStates) {
+  for (i <- 0 until numStates) {
     emit(s"""
-      s${i}_done = io.input("s${i}_done", wireType);
-      s${i}_en = io.output("s${i}_en", wireType);
-    """)
+      io.s${i}_en := Bool(false);""")
   }
 
-  emit("""
-    // Define state storage elements and initial state
-      stateFF = state.enumerated(States.class, States.INIT);
-      counterFF = state.value(counterType, 0);
-      rstCounterFF = state.value(counterType, 0);
-      sizeFF = state.value(counterType, 0);
-      lastFF = state.value(wireType, 0);
 
-      // Bitvector keeps track of which kernels have finished execution
-      // This is a useful hardware synchronization structure to keep
-      // track of which kernels have executed/finished execution
-      bitVector = new DFEsmStateValue[numStates];
-      for (int i=0; i<numStates; i++) {
-        bitVector[i] = state.value(wireType, 0);
-      }
-    }
-
-    private void resetBitVector() {
-      for (int i=0; i<numStates; i++) {
-        bitVector[i].next <== 0;
-      }
-    }
-      """)
 
   emit(s"""
-    @Override
-    protected void nextState() {
-      IF(sm_en) {
+      when(io.sm_en) {
         // State-agnostic update logic for bitVector
     """)
   for(i <- 0 until numStates) {
     emit(s"""
-        IF (s${i}_done) {
-          bitVector[$i].next <== 1;
-        }""")
+        when (s${i}_done) {
+          bitVector($i) := Bool(true);
+        }
+        when(counterFF >= sizeFF - UInt(1)) {
+          io.sm_last := Bool(true)
+        }
+        .otherwise {
+          io.sm_last := Bool(false)
+        }
+        """)
   }
 
 emit("""
-        IF (counterFF === sizeFF-2) {
-          lastFF.next <== 1;
+        when (counterFF === sizeFF-UInt(2) {
+          lastFF := Bool(true);
         }""")
 
   emit(s"""
-        SWITCH(stateFF) {
-          CASE (States.INIT) {
-            sizeFF.next <== sm_numIter;
-            stateFF.next <== States.RSET;
-            counterFF.next <== 0;
-            rstCounterFF.next <== 0;
-            lastFF.next <== 0;
+        switch(stateFF) {
+          is (pipeInit) {
+            sizeFF := io.sm_numIter;
+            stateFF := pipeReset;
+            counterFF := UInt(0);
+            rstCounterFF := UInt(0);
+            lastFF := Bool(false);
           }
 
-          CASE (States.RSET) {
-            rstCounterFF.next <== rstCounterFF + 1;
-            IF (rstCounterFF === rstCycles) {
-              stateFF.next <== States.S0;
-            } ELSE {
-              stateFF.next <== States.RSET;
+          is (pipeReset) {
+            rstCounterFF := rstCounterFF + UInt(1)
+            io.rst_en := Bool(true)
+
+            when (rstCounterFF === UInt(rstCycles)) {
+              stateFF := S0;
+            }
+            .otherwise {
+              stateFF := pipeReset;
             }
           }
           """)
@@ -1464,73 +1430,24 @@ emit("""
     val state = states(i)
     val name = stateNames(i)
     emit(s"""
-          CASE (States.${name}) {""")
-      stateText(state, numStates)
+          is (${name}) {""")
+            for (s <- state) {
+               emit(s"""s${s}_en := ~(bitVector($s) | io.s${s}_done)""")
+            }
+            stateText(state, numStates)
     emit(s"""
           }""")
   }
 
   emit(s"""
-         CASE (States.DONE) {
-           resetBitVector();
-           stateFF.next <== States.INIT;
+         is (pipeDone) {
+          io.sm_done := Bool(true)
+          (0 until numStates) foreach { i => bitVector(i) := Bool(false) }
+          stateFF := pipeInit
          }
-
-         OTHERWISE {
-           stateFF.next <== stateFF;
-         }
-        }
-      }
-    }""")
-
-  emit(s"""
-  @Override
-    protected void outputFunction() {
-      sm_done <== 0;
-      sm_last <== 0;
-      rst_en <== 0;
-      """)
-
-  for (i <- 0 until numStates) {
-    emit(s"""
-      s${i}_en <== 0;""")
-  }
-
-  emit(s"""
-     IF (sm_en) {
-        IF (counterFF >= sizeFF-1) {
-          sm_last <== 1;
-        } ELSE {
-          sm_last <== 0;
-        }
-       SWITCH(stateFF) {
-            CASE (States.RSET) {
-              rst_en <== 1;
-            }""")
-
-        for(i <- 0 until states.size) {
-          val state = states(i)
-          val name = stateNames(i)
-          emit(s"""
-            CASE (States.$name) {""")
-             for (s <- state) {
-               emit(s"""s${s}_en <== ~(bitVector[$s] | s${s}_done);""")
-             }
-          emit(s"""
-                }""")
-        }
-
-        emit(s"""
-          CASE (States.DONE) {
-            sm_done <== 1;
-          }""")
-
-  emit("""
       }
     }
-  }
-  }
-  """)
+    }""")
   }
 
 }
